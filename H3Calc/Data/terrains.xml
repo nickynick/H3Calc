@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Terrains xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Terrain>
+    <Id>0</Id>
+    <Name>Dirt</Name>
+  </Terrain>
+  <Terrain>
+    <Id>1</Id>
+    <Name>Sand</Name>
+  </Terrain>
+  <Terrain>
+    <Id>2</Id>
+    <Name>Grass</Name>
+  </Terrain>
+  <Terrain>
+    <Id>3</Id>
+    <Name>Snow</Name>
+  </Terrain>
+  <Terrain>
+    <Id>4</Id>
+    <Name>Swamp</Name>
+  </Terrain>
+  <Terrain>
+    <Id>5</Id>
+    <Name>Rough</Name>
+  </Terrain>
+  <Terrain>
+    <Id>6</Id>
+    <Name>Subterranean</Name>
+  </Terrain>
+  <Terrain>
+    <Id>7</Id>
+    <Name>Lava</Name>
+  </Terrain>
+</Terrains>
