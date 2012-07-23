@@ -31,70 +31,70 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.defenderComboBox = new System.Windows.Forms.ComboBox();
             this.attackerGroupBox = new System.Windows.Forms.GroupBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.immediateNumericUpDown1 = new H3Calc.ImmediateNumericUpDown();
-            this.immediateNumericUpDown4 = new H3Calc.ImmediateNumericUpDown();
+            this.attackerPrecisionChbx = new System.Windows.Forms.CheckBox();
+            this.attackerFrenzyChbx = new System.Windows.Forms.CheckBox();
+            this.attackerWeaknessChbx = new System.Windows.Forms.CheckBox();
+            this.attackerBlessChbx = new System.Windows.Forms.CheckBox();
+            this.attackerPrayerChbx = new System.Windows.Forms.CheckBox();
+            this.attackerCurseChbx = new System.Windows.Forms.CheckBox();
+            this.attackerBloodlustChbx = new System.Windows.Forms.CheckBox();
+            this.attackerSlayerChbx = new System.Windows.Forms.CheckBox();
+            this.attackerHeroArcheryLbl = new System.Windows.Forms.Label();
+            this.attackerHeroArcheryComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.attackerHeroLevelLbl = new System.Windows.Forms.Label();
+            this.attackerHeroComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroWaterComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroAttackLbl = new System.Windows.Forms.Label();
+            this.attackerHeroOffenseLbl = new System.Windows.Forms.Label();
+            this.attackerHeroEarthLbl = new System.Windows.Forms.Label();
+            this.attackerHeroOffenseComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroEarthComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroAirLbl = new System.Windows.Forms.Label();
+            this.attackerHeroFireLbl = new System.Windows.Forms.Label();
+            this.attackerHeroAirComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroFireComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroWaterLbl = new System.Windows.Forms.Label();
             this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.defenderHeroDefenseLbl = new System.Windows.Forms.Label();
             this.defenderGroupBox = new System.Windows.Forms.GroupBox();
-            this.immediateNumericUpDown3 = new H3Calc.ImmediateNumericUpDown();
-            this.immediateNumericUpDown2 = new H3Calc.ImmediateNumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderHeroLevelLbl = new System.Windows.Forms.Label();
+            this.defenderHeroWaterComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroEarthLbl = new System.Windows.Forms.Label();
+            this.defenderHeroEarthComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroFireLbl = new System.Windows.Forms.Label();
+            this.defenderHeroFireComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroWaterLbl = new System.Windows.Forms.Label();
+            this.defenderHeroAirComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroAirLbl = new System.Windows.Forms.Label();
+            this.defenderHeroArmorerComboBox = new System.Windows.Forms.ComboBox();
+            this.defenderHeroArmorerLbl = new System.Windows.Forms.Label();
             this.terrainComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.terrainGroupBox = new System.Windows.Forms.GroupBox();
             this.calculatedDamageLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.calculatedKillsLbl = new System.Windows.Forms.Label();
             this.notesLbl = new System.Windows.Forms.Label();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.defenderAirShieldChbx = new System.Windows.Forms.CheckBox();
+            this.defenderShieldChbx = new System.Windows.Forms.CheckBox();
+            this.defenderPrayerChbx = new System.Windows.Forms.CheckBox();
+            this.defenderStoneSkinChbx = new System.Windows.Forms.CheckBox();
+            this.defenderFrenzyChbx = new System.Windows.Forms.CheckBox();
+            this.defenderDisruptingRayChbx = new System.Windows.Forms.CheckBox();
             this.attackerGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).BeginInit();
             this.defenderGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown2)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
+            this.terrainGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // defenderComboBox
@@ -111,32 +111,32 @@
             // 
             // attackerGroupBox
             // 
-            this.attackerGroupBox.Controls.Add(this.checkBox7);
-            this.attackerGroupBox.Controls.Add(this.checkBox8);
-            this.attackerGroupBox.Controls.Add(this.checkBox4);
-            this.attackerGroupBox.Controls.Add(this.checkBox5);
-            this.attackerGroupBox.Controls.Add(this.checkBox6);
-            this.attackerGroupBox.Controls.Add(this.checkBox3);
-            this.attackerGroupBox.Controls.Add(this.checkBox2);
-            this.attackerGroupBox.Controls.Add(this.checkBox1);
-            this.attackerGroupBox.Controls.Add(this.label16);
-            this.attackerGroupBox.Controls.Add(this.comboBox13);
-            this.attackerGroupBox.Controls.Add(this.immediateNumericUpDown1);
-            this.attackerGroupBox.Controls.Add(this.immediateNumericUpDown4);
+            this.attackerGroupBox.Controls.Add(this.attackerPrecisionChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerFrenzyChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerWeaknessChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerBlessChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerPrayerChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerCurseChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerBloodlustChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerSlayerChbx);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroArcheryLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroArcheryComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroLevelUpDn);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroAttackUpDn);
             this.attackerGroupBox.Controls.Add(this.attackerComboBox);
-            this.attackerGroupBox.Controls.Add(this.label3);
-            this.attackerGroupBox.Controls.Add(this.comboBox2);
-            this.attackerGroupBox.Controls.Add(this.comboBox1);
-            this.attackerGroupBox.Controls.Add(this.label15);
-            this.attackerGroupBox.Controls.Add(this.label14);
-            this.attackerGroupBox.Controls.Add(this.label4);
-            this.attackerGroupBox.Controls.Add(this.comboBox12);
-            this.attackerGroupBox.Controls.Add(this.comboBox3);
-            this.attackerGroupBox.Controls.Add(this.label13);
-            this.attackerGroupBox.Controls.Add(this.label5);
-            this.attackerGroupBox.Controls.Add(this.comboBox11);
-            this.attackerGroupBox.Controls.Add(this.comboBox10);
-            this.attackerGroupBox.Controls.Add(this.label12);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroLevelLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroWaterComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroAttackLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroOffenseLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroEarthLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroOffenseComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroEarthComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroAirLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroFireLbl);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroAirComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroFireComboBox);
+            this.attackerGroupBox.Controls.Add(this.attackerHeroWaterLbl);
             this.attackerGroupBox.Location = new System.Drawing.Point(68, 12);
             this.attackerGroupBox.Name = "attackerGroupBox";
             this.attackerGroupBox.Size = new System.Drawing.Size(301, 292);
@@ -144,132 +144,132 @@
             this.attackerGroupBox.TabStop = false;
             this.attackerGroupBox.Text = "Attacker";
             // 
-            // checkBox7
+            // attackerPrecisionChbx
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(6, 269);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(69, 17);
-            this.checkBox7.TabIndex = 58;
-            this.checkBox7.Text = "Precision";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.attackerPrecisionChbx.AutoSize = true;
+            this.attackerPrecisionChbx.Location = new System.Drawing.Point(6, 269);
+            this.attackerPrecisionChbx.Name = "attackerPrecisionChbx";
+            this.attackerPrecisionChbx.Size = new System.Drawing.Size(69, 17);
+            this.attackerPrecisionChbx.TabIndex = 58;
+            this.attackerPrecisionChbx.Text = "Precision";
+            this.attackerPrecisionChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // attackerFrenzyChbx
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(95, 246);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(57, 17);
-            this.checkBox8.TabIndex = 57;
-            this.checkBox8.Text = "Frenzy";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.attackerFrenzyChbx.AutoSize = true;
+            this.attackerFrenzyChbx.Location = new System.Drawing.Point(95, 246);
+            this.attackerFrenzyChbx.Name = "attackerFrenzyChbx";
+            this.attackerFrenzyChbx.Size = new System.Drawing.Size(57, 17);
+            this.attackerFrenzyChbx.TabIndex = 57;
+            this.attackerFrenzyChbx.Text = "Frenzy";
+            this.attackerFrenzyChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // attackerWeaknessChbx
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(218, 246);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(77, 17);
-            this.checkBox4.TabIndex = 56;
-            this.checkBox4.Text = "Weakness";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.attackerWeaknessChbx.AutoSize = true;
+            this.attackerWeaknessChbx.Location = new System.Drawing.Point(218, 246);
+            this.attackerWeaknessChbx.Name = "attackerWeaknessChbx";
+            this.attackerWeaknessChbx.Size = new System.Drawing.Size(77, 17);
+            this.attackerWeaknessChbx.TabIndex = 56;
+            this.attackerWeaknessChbx.Text = "Weakness";
+            this.attackerWeaknessChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // attackerBlessChbx
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 223);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(51, 17);
-            this.checkBox5.TabIndex = 55;
-            this.checkBox5.Text = "Bless";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.attackerBlessChbx.AutoSize = true;
+            this.attackerBlessChbx.Location = new System.Drawing.Point(6, 223);
+            this.attackerBlessChbx.Name = "attackerBlessChbx";
+            this.attackerBlessChbx.Size = new System.Drawing.Size(51, 17);
+            this.attackerBlessChbx.TabIndex = 55;
+            this.attackerBlessChbx.Text = "Bless";
+            this.attackerBlessChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // attackerPrayerChbx
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(95, 223);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(56, 17);
-            this.checkBox6.TabIndex = 54;
-            this.checkBox6.Text = "Prayer";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.attackerPrayerChbx.AutoSize = true;
+            this.attackerPrayerChbx.Location = new System.Drawing.Point(95, 223);
+            this.attackerPrayerChbx.Name = "attackerPrayerChbx";
+            this.attackerPrayerChbx.Size = new System.Drawing.Size(56, 17);
+            this.attackerPrayerChbx.TabIndex = 54;
+            this.attackerPrayerChbx.Text = "Prayer";
+            this.attackerPrayerChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // attackerCurseChbx
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(218, 223);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(53, 17);
-            this.checkBox3.TabIndex = 53;
-            this.checkBox3.Text = "Curse";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.attackerCurseChbx.AutoSize = true;
+            this.attackerCurseChbx.Location = new System.Drawing.Point(218, 223);
+            this.attackerCurseChbx.Name = "attackerCurseChbx";
+            this.attackerCurseChbx.Size = new System.Drawing.Size(53, 17);
+            this.attackerCurseChbx.TabIndex = 53;
+            this.attackerCurseChbx.Text = "Curse";
+            this.attackerCurseChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // attackerBloodlustChbx
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 246);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(69, 17);
-            this.checkBox2.TabIndex = 52;
-            this.checkBox2.Text = "Bloodlust";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.attackerBloodlustChbx.AutoSize = true;
+            this.attackerBloodlustChbx.Location = new System.Drawing.Point(6, 246);
+            this.attackerBloodlustChbx.Name = "attackerBloodlustChbx";
+            this.attackerBloodlustChbx.Size = new System.Drawing.Size(69, 17);
+            this.attackerBloodlustChbx.TabIndex = 52;
+            this.attackerBloodlustChbx.Text = "Bloodlust";
+            this.attackerBloodlustChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // attackerSlayerChbx
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(95, 269);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(55, 17);
-            this.checkBox1.TabIndex = 51;
-            this.checkBox1.Text = "Slayer";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.attackerSlayerChbx.AutoSize = true;
+            this.attackerSlayerChbx.Location = new System.Drawing.Point(95, 269);
+            this.attackerSlayerChbx.Name = "attackerSlayerChbx";
+            this.attackerSlayerChbx.Size = new System.Drawing.Size(55, 17);
+            this.attackerSlayerChbx.TabIndex = 51;
+            this.attackerSlayerChbx.Text = "Slayer";
+            this.attackerSlayerChbx.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // attackerHeroArcheryLbl
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 157);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 13);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Archery";
+            this.attackerHeroArcheryLbl.AutoSize = true;
+            this.attackerHeroArcheryLbl.Location = new System.Drawing.Point(3, 157);
+            this.attackerHeroArcheryLbl.Name = "attackerHeroArcheryLbl";
+            this.attackerHeroArcheryLbl.Size = new System.Drawing.Size(43, 13);
+            this.attackerHeroArcheryLbl.TabIndex = 50;
+            this.attackerHeroArcheryLbl.Text = "Archery";
             // 
-            // comboBox13
+            // attackerHeroArcheryComboBox
             // 
-            this.comboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(59, 154);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(77, 21);
-            this.comboBox13.TabIndex = 49;
+            this.attackerHeroArcheryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroArcheryComboBox.FormattingEnabled = true;
+            this.attackerHeroArcheryComboBox.Location = new System.Drawing.Point(59, 154);
+            this.attackerHeroArcheryComboBox.Name = "attackerHeroArcheryComboBox";
+            this.attackerHeroArcheryComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroArcheryComboBox.TabIndex = 49;
             // 
-            // immediateNumericUpDown1
+            // attackerHeroLevelUpDn
             // 
-            this.immediateNumericUpDown1.Location = new System.Drawing.Point(218, 61);
-            this.immediateNumericUpDown1.Maximum = new decimal(new int[] {
+            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
             108,
             0,
             0,
             0});
-            this.immediateNumericUpDown1.Minimum = new decimal(new int[] {
+            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.immediateNumericUpDown1.Name = "immediateNumericUpDown1";
-            this.immediateNumericUpDown1.Size = new System.Drawing.Size(42, 20);
-            this.immediateNumericUpDown1.TabIndex = 40;
-            this.immediateNumericUpDown1.Value = new decimal(new int[] {
+            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
+            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroLevelUpDn.TabIndex = 40;
+            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // immediateNumericUpDown4
+            // attackerHeroAttackUpDn
             // 
-            this.immediateNumericUpDown4.Location = new System.Drawing.Point(59, 101);
-            this.immediateNumericUpDown4.Name = "immediateNumericUpDown4";
-            this.immediateNumericUpDown4.Size = new System.Drawing.Size(42, 20);
-            this.immediateNumericUpDown4.TabIndex = 36;
+            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(59, 101);
+            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
+            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroAttackUpDn.TabIndex = 36;
             // 
             // attackerComboBox
             // 
@@ -283,122 +283,122 @@
             this.attackerComboBox.TabIndex = 1;
             this.attackerComboBox.SelectedIndexChanged += new System.EventHandler(this.attackerComboBox_SelectedIndexChanged);
             // 
-            // label3
+            // attackerHeroLevelLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Level";
+            this.attackerHeroLevelLbl.AutoSize = true;
+            this.attackerHeroLevelLbl.Location = new System.Drawing.Point(176, 63);
+            this.attackerHeroLevelLbl.Name = "attackerHeroLevelLbl";
+            this.attackerHeroLevelLbl.Size = new System.Drawing.Size(33, 13);
+            this.attackerHeroLevelLbl.TabIndex = 37;
+            this.attackerHeroLevelLbl.Text = "Level";
             // 
-            // comboBox2
+            // attackerHeroComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 60);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 21);
-            this.comboBox2.TabIndex = 34;
+            this.attackerHeroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroComboBox.FormattingEnabled = true;
+            this.attackerHeroComboBox.Location = new System.Drawing.Point(6, 60);
+            this.attackerHeroComboBox.Name = "attackerHeroComboBox";
+            this.attackerHeroComboBox.Size = new System.Drawing.Size(130, 21);
+            this.attackerHeroComboBox.TabIndex = 34;
             // 
-            // comboBox1
+            // attackerHeroWaterComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(218, 181);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(77, 21);
-            this.comboBox1.TabIndex = 46;
+            this.attackerHeroWaterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroWaterComboBox.FormattingEnabled = true;
+            this.attackerHeroWaterComboBox.Location = new System.Drawing.Point(218, 181);
+            this.attackerHeroWaterComboBox.Name = "attackerHeroWaterComboBox";
+            this.attackerHeroWaterComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroWaterComboBox.TabIndex = 46;
             // 
-            // label15
+            // attackerHeroAttackLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 103);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 13);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Attack";
+            this.attackerHeroAttackLbl.AutoSize = true;
+            this.attackerHeroAttackLbl.Location = new System.Drawing.Point(3, 103);
+            this.attackerHeroAttackLbl.Name = "attackerHeroAttackLbl";
+            this.attackerHeroAttackLbl.Size = new System.Drawing.Size(38, 13);
+            this.attackerHeroAttackLbl.TabIndex = 33;
+            this.attackerHeroAttackLbl.Text = "Attack";
             // 
-            // label14
+            // attackerHeroOffenseLbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 130);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Offense";
+            this.attackerHeroOffenseLbl.AutoSize = true;
+            this.attackerHeroOffenseLbl.Location = new System.Drawing.Point(3, 130);
+            this.attackerHeroOffenseLbl.Name = "attackerHeroOffenseLbl";
+            this.attackerHeroOffenseLbl.Size = new System.Drawing.Size(44, 13);
+            this.attackerHeroOffenseLbl.TabIndex = 38;
+            this.attackerHeroOffenseLbl.Text = "Offense";
             // 
-            // label4
+            // attackerHeroEarthLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Earth";
+            this.attackerHeroEarthLbl.AutoSize = true;
+            this.attackerHeroEarthLbl.Location = new System.Drawing.Point(176, 157);
+            this.attackerHeroEarthLbl.Name = "attackerHeroEarthLbl";
+            this.attackerHeroEarthLbl.Size = new System.Drawing.Size(32, 13);
+            this.attackerHeroEarthLbl.TabIndex = 47;
+            this.attackerHeroEarthLbl.Text = "Earth";
             // 
-            // comboBox12
+            // attackerHeroOffenseComboBox
             // 
-            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(59, 127);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(77, 21);
-            this.comboBox12.TabIndex = 35;
+            this.attackerHeroOffenseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroOffenseComboBox.FormattingEnabled = true;
+            this.attackerHeroOffenseComboBox.Location = new System.Drawing.Point(59, 127);
+            this.attackerHeroOffenseComboBox.Name = "attackerHeroOffenseComboBox";
+            this.attackerHeroOffenseComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroOffenseComboBox.TabIndex = 35;
             // 
-            // comboBox3
+            // attackerHeroEarthComboBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(218, 154);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(77, 21);
-            this.comboBox3.TabIndex = 44;
+            this.attackerHeroEarthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroEarthComboBox.FormattingEnabled = true;
+            this.attackerHeroEarthComboBox.Location = new System.Drawing.Point(218, 154);
+            this.attackerHeroEarthComboBox.Name = "attackerHeroEarthComboBox";
+            this.attackerHeroEarthComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroEarthComboBox.TabIndex = 44;
             // 
-            // label13
+            // attackerHeroAirLbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(176, 103);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(19, 13);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Air";
+            this.attackerHeroAirLbl.AutoSize = true;
+            this.attackerHeroAirLbl.Location = new System.Drawing.Point(176, 103);
+            this.attackerHeroAirLbl.Name = "attackerHeroAirLbl";
+            this.attackerHeroAirLbl.Size = new System.Drawing.Size(19, 13);
+            this.attackerHeroAirLbl.TabIndex = 41;
+            this.attackerHeroAirLbl.Text = "Air";
             // 
-            // label5
+            // attackerHeroFireLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(176, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 13);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Fire";
+            this.attackerHeroFireLbl.AutoSize = true;
+            this.attackerHeroFireLbl.Location = new System.Drawing.Point(176, 130);
+            this.attackerHeroFireLbl.Name = "attackerHeroFireLbl";
+            this.attackerHeroFireLbl.Size = new System.Drawing.Size(24, 13);
+            this.attackerHeroFireLbl.TabIndex = 45;
+            this.attackerHeroFireLbl.Text = "Fire";
             // 
-            // comboBox11
+            // attackerHeroAirComboBox
             // 
-            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(218, 100);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(77, 21);
-            this.comboBox11.TabIndex = 39;
+            this.attackerHeroAirComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroAirComboBox.FormattingEnabled = true;
+            this.attackerHeroAirComboBox.Location = new System.Drawing.Point(218, 100);
+            this.attackerHeroAirComboBox.Name = "attackerHeroAirComboBox";
+            this.attackerHeroAirComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroAirComboBox.TabIndex = 39;
             // 
-            // comboBox10
+            // attackerHeroFireComboBox
             // 
-            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(218, 127);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(77, 21);
-            this.comboBox10.TabIndex = 42;
+            this.attackerHeroFireComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attackerHeroFireComboBox.FormattingEnabled = true;
+            this.attackerHeroFireComboBox.Location = new System.Drawing.Point(218, 127);
+            this.attackerHeroFireComboBox.Name = "attackerHeroFireComboBox";
+            this.attackerHeroFireComboBox.Size = new System.Drawing.Size(77, 21);
+            this.attackerHeroFireComboBox.TabIndex = 42;
             // 
-            // label12
+            // attackerHeroWaterLbl
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(176, 184);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 13);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Water";
+            this.attackerHeroWaterLbl.AutoSize = true;
+            this.attackerHeroWaterLbl.Location = new System.Drawing.Point(176, 184);
+            this.attackerHeroWaterLbl.Name = "attackerHeroWaterLbl";
+            this.attackerHeroWaterLbl.Size = new System.Drawing.Size(36, 13);
+            this.attackerHeroWaterLbl.TabIndex = 43;
+            this.attackerHeroWaterLbl.Text = "Water";
             // 
             // attackerCountUpDn
             // 
@@ -434,171 +434,171 @@
             // 
             // defenderGroupBox
             // 
-            this.defenderGroupBox.Controls.Add(this.checkBox9);
-            this.defenderGroupBox.Controls.Add(this.checkBox10);
-            this.defenderGroupBox.Controls.Add(this.checkBox11);
-            this.defenderGroupBox.Controls.Add(this.checkBox12);
-            this.defenderGroupBox.Controls.Add(this.checkBox13);
-            this.defenderGroupBox.Controls.Add(this.checkBox14);
-            this.defenderGroupBox.Controls.Add(this.immediateNumericUpDown3);
-            this.defenderGroupBox.Controls.Add(this.immediateNumericUpDown2);
-            this.defenderGroupBox.Controls.Add(this.label11);
-            this.defenderGroupBox.Controls.Add(this.comboBox8);
-            this.defenderGroupBox.Controls.Add(this.comboBox9);
-            this.defenderGroupBox.Controls.Add(this.label10);
-            this.defenderGroupBox.Controls.Add(this.comboBox7);
-            this.defenderGroupBox.Controls.Add(this.label9);
-            this.defenderGroupBox.Controls.Add(this.comboBox4);
-            this.defenderGroupBox.Controls.Add(this.label6);
+            this.defenderGroupBox.Controls.Add(this.defenderDisruptingRayChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderAirShieldChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderShieldChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderPrayerChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderStoneSkinChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderFrenzyChbx);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroLevelUpDn);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroDefenseUpDn);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroLevelLbl);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroWaterComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroEarthLbl);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroEarthComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroFireLbl);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroFireComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroWaterLbl);
             this.defenderGroupBox.Controls.Add(this.defenderComboBox);
-            this.defenderGroupBox.Controls.Add(this.comboBox5);
-            this.defenderGroupBox.Controls.Add(this.label7);
-            this.defenderGroupBox.Controls.Add(this.comboBox6);
-            this.defenderGroupBox.Controls.Add(this.label8);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroAirComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroAirLbl);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroArmorerComboBox);
+            this.defenderGroupBox.Controls.Add(this.defenderHeroArmorerLbl);
             this.defenderGroupBox.Controls.Add(this.defenderHeroDefenseLbl);
-            this.defenderGroupBox.Location = new System.Drawing.Point(375, 12);
+            this.defenderGroupBox.Location = new System.Drawing.Point(385, 12);
             this.defenderGroupBox.Name = "defenderGroupBox";
             this.defenderGroupBox.Size = new System.Drawing.Size(301, 292);
             this.defenderGroupBox.TabIndex = 6;
             this.defenderGroupBox.TabStop = false;
             this.defenderGroupBox.Text = "Defender";
             // 
-            // immediateNumericUpDown3
+            // defenderHeroLevelUpDn
             // 
-            this.immediateNumericUpDown3.Location = new System.Drawing.Point(218, 61);
-            this.immediateNumericUpDown3.Maximum = new decimal(new int[] {
+            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
             108,
             0,
             0,
             0});
-            this.immediateNumericUpDown3.Minimum = new decimal(new int[] {
+            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.immediateNumericUpDown3.Name = "immediateNumericUpDown3";
-            this.immediateNumericUpDown3.Size = new System.Drawing.Size(42, 20);
-            this.immediateNumericUpDown3.TabIndex = 25;
-            this.immediateNumericUpDown3.Value = new decimal(new int[] {
+            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
+            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroLevelUpDn.TabIndex = 25;
+            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // immediateNumericUpDown2
+            // defenderHeroDefenseUpDn
             // 
-            this.immediateNumericUpDown2.Location = new System.Drawing.Point(59, 101);
-            this.immediateNumericUpDown2.Name = "immediateNumericUpDown2";
-            this.immediateNumericUpDown2.Size = new System.Drawing.Size(42, 20);
-            this.immediateNumericUpDown2.TabIndex = 23;
+            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(59, 101);
+            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
+            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroDefenseUpDn.TabIndex = 23;
             // 
-            // label11
+            // defenderHeroLevelLbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(176, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Level";
+            this.defenderHeroLevelLbl.AutoSize = true;
+            this.defenderHeroLevelLbl.Location = new System.Drawing.Point(176, 63);
+            this.defenderHeroLevelLbl.Name = "defenderHeroLevelLbl";
+            this.defenderHeroLevelLbl.Size = new System.Drawing.Size(33, 13);
+            this.defenderHeroLevelLbl.TabIndex = 24;
+            this.defenderHeroLevelLbl.Text = "Level";
             // 
-            // comboBox8
+            // defenderHeroWaterComboBox
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(218, 181);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(77, 21);
-            this.comboBox8.TabIndex = 31;
+            this.defenderHeroWaterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroWaterComboBox.FormattingEnabled = true;
+            this.defenderHeroWaterComboBox.Location = new System.Drawing.Point(218, 181);
+            this.defenderHeroWaterComboBox.Name = "defenderHeroWaterComboBox";
+            this.defenderHeroWaterComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defenderHeroWaterComboBox.TabIndex = 31;
             // 
-            // comboBox9
+            // defenderHeroComboBox
             // 
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(6, 60);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(130, 21);
-            this.comboBox9.TabIndex = 23;
+            this.defenderHeroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroComboBox.FormattingEnabled = true;
+            this.defenderHeroComboBox.Location = new System.Drawing.Point(6, 60);
+            this.defenderHeroComboBox.Name = "defenderHeroComboBox";
+            this.defenderHeroComboBox.Size = new System.Drawing.Size(130, 21);
+            this.defenderHeroComboBox.TabIndex = 23;
             // 
-            // label10
+            // defenderHeroEarthLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(176, 157);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Earth";
+            this.defenderHeroEarthLbl.AutoSize = true;
+            this.defenderHeroEarthLbl.Location = new System.Drawing.Point(176, 157);
+            this.defenderHeroEarthLbl.Name = "defenderHeroEarthLbl";
+            this.defenderHeroEarthLbl.Size = new System.Drawing.Size(32, 13);
+            this.defenderHeroEarthLbl.TabIndex = 32;
+            this.defenderHeroEarthLbl.Text = "Earth";
             // 
-            // comboBox7
+            // defenderHeroEarthComboBox
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(218, 154);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(77, 21);
-            this.comboBox7.TabIndex = 29;
+            this.defenderHeroEarthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroEarthComboBox.FormattingEnabled = true;
+            this.defenderHeroEarthComboBox.Location = new System.Drawing.Point(218, 154);
+            this.defenderHeroEarthComboBox.Name = "defenderHeroEarthComboBox";
+            this.defenderHeroEarthComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defenderHeroEarthComboBox.TabIndex = 29;
             // 
-            // label9
+            // defenderHeroFireLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(176, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Fire";
+            this.defenderHeroFireLbl.AutoSize = true;
+            this.defenderHeroFireLbl.Location = new System.Drawing.Point(176, 130);
+            this.defenderHeroFireLbl.Name = "defenderHeroFireLbl";
+            this.defenderHeroFireLbl.Size = new System.Drawing.Size(24, 13);
+            this.defenderHeroFireLbl.TabIndex = 30;
+            this.defenderHeroFireLbl.Text = "Fire";
             // 
-            // comboBox4
+            // defenderHeroFireComboBox
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(218, 127);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(77, 21);
-            this.comboBox4.TabIndex = 27;
+            this.defenderHeroFireComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroFireComboBox.FormattingEnabled = true;
+            this.defenderHeroFireComboBox.Location = new System.Drawing.Point(218, 127);
+            this.defenderHeroFireComboBox.Name = "defenderHeroFireComboBox";
+            this.defenderHeroFireComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defenderHeroFireComboBox.TabIndex = 27;
             // 
-            // label6
+            // defenderHeroWaterLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 184);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Water";
+            this.defenderHeroWaterLbl.AutoSize = true;
+            this.defenderHeroWaterLbl.Location = new System.Drawing.Point(176, 184);
+            this.defenderHeroWaterLbl.Name = "defenderHeroWaterLbl";
+            this.defenderHeroWaterLbl.Size = new System.Drawing.Size(36, 13);
+            this.defenderHeroWaterLbl.TabIndex = 28;
+            this.defenderHeroWaterLbl.Text = "Water";
             // 
-            // comboBox5
+            // defenderHeroAirComboBox
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(218, 100);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(77, 21);
-            this.comboBox5.TabIndex = 25;
+            this.defenderHeroAirComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroAirComboBox.FormattingEnabled = true;
+            this.defenderHeroAirComboBox.Location = new System.Drawing.Point(218, 100);
+            this.defenderHeroAirComboBox.Name = "defenderHeroAirComboBox";
+            this.defenderHeroAirComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defenderHeroAirComboBox.TabIndex = 25;
             // 
-            // label7
+            // defenderHeroAirLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(176, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Air";
+            this.defenderHeroAirLbl.AutoSize = true;
+            this.defenderHeroAirLbl.Location = new System.Drawing.Point(176, 103);
+            this.defenderHeroAirLbl.Name = "defenderHeroAirLbl";
+            this.defenderHeroAirLbl.Size = new System.Drawing.Size(19, 13);
+            this.defenderHeroAirLbl.TabIndex = 26;
+            this.defenderHeroAirLbl.Text = "Air";
             // 
-            // comboBox6
+            // defenderHeroArmorerComboBox
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(59, 127);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(77, 21);
-            this.comboBox6.TabIndex = 23;
+            this.defenderHeroArmorerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.defenderHeroArmorerComboBox.FormattingEnabled = true;
+            this.defenderHeroArmorerComboBox.Location = new System.Drawing.Point(59, 127);
+            this.defenderHeroArmorerComboBox.Name = "defenderHeroArmorerComboBox";
+            this.defenderHeroArmorerComboBox.Size = new System.Drawing.Size(77, 21);
+            this.defenderHeroArmorerComboBox.TabIndex = 23;
             // 
-            // label8
+            // defenderHeroArmorerLbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Armorer";
+            this.defenderHeroArmorerLbl.AutoSize = true;
+            this.defenderHeroArmorerLbl.Location = new System.Drawing.Point(6, 130);
+            this.defenderHeroArmorerLbl.Name = "defenderHeroArmorerLbl";
+            this.defenderHeroArmorerLbl.Size = new System.Drawing.Size(43, 13);
+            this.defenderHeroArmorerLbl.TabIndex = 24;
+            this.defenderHeroArmorerLbl.Text = "Armorer";
             // 
             // terrainComboBox
             // 
@@ -612,15 +612,15 @@
             this.terrainComboBox.TabIndex = 13;
             this.terrainComboBox.SelectedIndexChanged += new System.EventHandler(this.terrainComboBox_SelectedIndexChanged);
             // 
-            // groupBox1
+            // terrainGroupBox
             // 
-            this.groupBox1.Controls.Add(this.terrainComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(469, 310);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 51);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Terrain";
+            this.terrainGroupBox.Controls.Add(this.terrainComboBox);
+            this.terrainGroupBox.Location = new System.Drawing.Point(479, 310);
+            this.terrainGroupBox.Name = "terrainGroupBox";
+            this.terrainGroupBox.Size = new System.Drawing.Size(207, 51);
+            this.terrainGroupBox.TabIndex = 14;
+            this.terrainGroupBox.TabStop = false;
+            this.terrainGroupBox.Text = "Terrain";
             // 
             // calculatedDamageLbl
             // 
@@ -666,78 +666,78 @@
             // 
             this.notesLbl.AutoSize = true;
             this.notesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notesLbl.Location = new System.Drawing.Point(255, 342);
+            this.notesLbl.Location = new System.Drawing.Point(253, 342);
             this.notesLbl.Name = "notesLbl";
             this.notesLbl.Size = new System.Drawing.Size(35, 13);
             this.notesLbl.TabIndex = 12;
             this.notesLbl.Text = "blabla";
             // 
-            // checkBox10
+            // defenderAirShieldChbx
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(95, 246);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(70, 17);
-            this.checkBox10.TabIndex = 63;
-            this.checkBox10.Text = "Air Shield";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.defenderAirShieldChbx.AutoSize = true;
+            this.defenderAirShieldChbx.Location = new System.Drawing.Point(95, 246);
+            this.defenderAirShieldChbx.Name = "defenderAirShieldChbx";
+            this.defenderAirShieldChbx.Size = new System.Drawing.Size(70, 17);
+            this.defenderAirShieldChbx.TabIndex = 63;
+            this.defenderAirShieldChbx.Text = "Air Shield";
+            this.defenderAirShieldChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // defenderShieldChbx
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(6, 223);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(55, 17);
-            this.checkBox11.TabIndex = 62;
-            this.checkBox11.Text = "Shield";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.defenderShieldChbx.AutoSize = true;
+            this.defenderShieldChbx.Location = new System.Drawing.Point(6, 223);
+            this.defenderShieldChbx.Name = "defenderShieldChbx";
+            this.defenderShieldChbx.Size = new System.Drawing.Size(55, 17);
+            this.defenderShieldChbx.TabIndex = 62;
+            this.defenderShieldChbx.Text = "Shield";
+            this.defenderShieldChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // defenderPrayerChbx
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(95, 223);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(56, 17);
-            this.checkBox12.TabIndex = 61;
-            this.checkBox12.Text = "Prayer";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.defenderPrayerChbx.AutoSize = true;
+            this.defenderPrayerChbx.Location = new System.Drawing.Point(95, 223);
+            this.defenderPrayerChbx.Name = "defenderPrayerChbx";
+            this.defenderPrayerChbx.Size = new System.Drawing.Size(56, 17);
+            this.defenderPrayerChbx.TabIndex = 61;
+            this.defenderPrayerChbx.Text = "Prayer";
+            this.defenderPrayerChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // defenderStoneSkinChbx
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(6, 246);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(78, 17);
-            this.checkBox13.TabIndex = 60;
-            this.checkBox13.Text = "Stone Skin";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.defenderStoneSkinChbx.AutoSize = true;
+            this.defenderStoneSkinChbx.Location = new System.Drawing.Point(6, 246);
+            this.defenderStoneSkinChbx.Name = "defenderStoneSkinChbx";
+            this.defenderStoneSkinChbx.Size = new System.Drawing.Size(78, 17);
+            this.defenderStoneSkinChbx.TabIndex = 60;
+            this.defenderStoneSkinChbx.Text = "Stone Skin";
+            this.defenderStoneSkinChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // defenderFrenzyChbx
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(218, 223);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(57, 17);
-            this.checkBox14.TabIndex = 59;
-            this.checkBox14.Text = "Frenzy";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.defenderFrenzyChbx.AutoSize = true;
+            this.defenderFrenzyChbx.Location = new System.Drawing.Point(218, 223);
+            this.defenderFrenzyChbx.Name = "defenderFrenzyChbx";
+            this.defenderFrenzyChbx.Size = new System.Drawing.Size(57, 17);
+            this.defenderFrenzyChbx.TabIndex = 59;
+            this.defenderFrenzyChbx.Text = "Frenzy";
+            this.defenderFrenzyChbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // defenderDisruptingRayChbx
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(218, 246);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(66, 17);
-            this.checkBox9.TabIndex = 64;
-            this.checkBox9.Text = "Dis. Ray";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.defenderDisruptingRayChbx.AutoSize = true;
+            this.defenderDisruptingRayChbx.Location = new System.Drawing.Point(218, 246);
+            this.defenderDisruptingRayChbx.Name = "defenderDisruptingRayChbx";
+            this.defenderDisruptingRayChbx.Size = new System.Drawing.Size(66, 17);
+            this.defenderDisruptingRayChbx.TabIndex = 64;
+            this.defenderDisruptingRayChbx.Text = "Dis. Ray";
+            this.defenderDisruptingRayChbx.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 373);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(698, 373);
+            this.Controls.Add(this.terrainGroupBox);
             this.Controls.Add(this.notesLbl);
             this.Controls.Add(this.calculatedKillsLbl);
             this.Controls.Add(this.label2);
@@ -753,14 +753,14 @@
             this.Text = "Heroes III Damage Calculator";
             this.attackerGroupBox.ResumeLayout(false);
             this.attackerGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).EndInit();
             this.defenderGroupBox.ResumeLayout(false);
             this.defenderGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.immediateNumericUpDown2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
+            this.terrainGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,58 +774,58 @@
         private System.Windows.Forms.Label defenderHeroDefenseLbl;
         private ImmediateNumericUpDown attackerCountUpDn;
         private System.Windows.Forms.ComboBox terrainComboBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox terrainGroupBox;
         private System.Windows.Forms.Label calculatedDamageLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label calculatedKillsLbl;
         private System.Windows.Forms.Label notesLbl;
-        private ImmediateNumericUpDown immediateNumericUpDown3;
-        private ImmediateNumericUpDown immediateNumericUpDown2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label8;
+        private ImmediateNumericUpDown defenderHeroLevelUpDn;
+        private ImmediateNumericUpDown defenderHeroDefenseUpDn;
+        private System.Windows.Forms.Label defenderHeroLevelLbl;
+        private System.Windows.Forms.ComboBox defenderHeroWaterComboBox;
+        private System.Windows.Forms.ComboBox defenderHeroComboBox;
+        private System.Windows.Forms.Label defenderHeroEarthLbl;
+        private System.Windows.Forms.ComboBox defenderHeroEarthComboBox;
+        private System.Windows.Forms.Label defenderHeroFireLbl;
+        private System.Windows.Forms.ComboBox defenderHeroFireComboBox;
+        private System.Windows.Forms.Label defenderHeroWaterLbl;
+        private System.Windows.Forms.ComboBox defenderHeroAirComboBox;
+        private System.Windows.Forms.Label defenderHeroAirLbl;
+        private System.Windows.Forms.ComboBox defenderHeroArmorerComboBox;
+        private System.Windows.Forms.Label defenderHeroArmorerLbl;
         private System.Windows.Forms.ComboBox attackerComboBox;
-        private ImmediateNumericUpDown immediateNumericUpDown1;
-        private ImmediateNumericUpDown immediateNumericUpDown4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
+        private ImmediateNumericUpDown attackerHeroLevelUpDn;
+        private ImmediateNumericUpDown attackerHeroAttackUpDn;
+        private System.Windows.Forms.Label attackerHeroLevelLbl;
+        private System.Windows.Forms.ComboBox attackerHeroComboBox;
+        private System.Windows.Forms.ComboBox attackerHeroWaterComboBox;
+        private System.Windows.Forms.Label attackerHeroAttackLbl;
+        private System.Windows.Forms.Label attackerHeroOffenseLbl;
+        private System.Windows.Forms.Label attackerHeroEarthLbl;
+        private System.Windows.Forms.ComboBox attackerHeroOffenseComboBox;
+        private System.Windows.Forms.ComboBox attackerHeroEarthComboBox;
+        private System.Windows.Forms.Label attackerHeroAirLbl;
+        private System.Windows.Forms.Label attackerHeroFireLbl;
+        private System.Windows.Forms.ComboBox attackerHeroAirComboBox;
+        private System.Windows.Forms.ComboBox attackerHeroFireComboBox;
+        private System.Windows.Forms.Label attackerHeroWaterLbl;
+        private System.Windows.Forms.Label attackerHeroArcheryLbl;
+        private System.Windows.Forms.ComboBox attackerHeroArcheryComboBox;
+        private System.Windows.Forms.CheckBox attackerPrecisionChbx;
+        private System.Windows.Forms.CheckBox attackerFrenzyChbx;
+        private System.Windows.Forms.CheckBox attackerWeaknessChbx;
+        private System.Windows.Forms.CheckBox attackerBlessChbx;
+        private System.Windows.Forms.CheckBox attackerPrayerChbx;
+        private System.Windows.Forms.CheckBox attackerCurseChbx;
+        private System.Windows.Forms.CheckBox attackerBloodlustChbx;
+        private System.Windows.Forms.CheckBox attackerSlayerChbx;
+        private System.Windows.Forms.CheckBox defenderDisruptingRayChbx;
+        private System.Windows.Forms.CheckBox defenderAirShieldChbx;
+        private System.Windows.Forms.CheckBox defenderShieldChbx;
+        private System.Windows.Forms.CheckBox defenderPrayerChbx;
+        private System.Windows.Forms.CheckBox defenderStoneSkinChbx;
+        private System.Windows.Forms.CheckBox defenderFrenzyChbx;
 
     }
 }
