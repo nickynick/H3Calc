@@ -41,8 +41,6 @@
             this.attackerSlayerChbx = new System.Windows.Forms.CheckBox();
             this.attackerHeroArcheryLbl = new System.Windows.Forms.Label();
             this.attackerHeroArcheryComboBox = new System.Windows.Forms.ComboBox();
-            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerComboBox = new System.Windows.Forms.ComboBox();
             this.attackerHeroLevelLbl = new System.Windows.Forms.Label();
             this.attackerHeroComboBox = new System.Windows.Forms.ComboBox();
@@ -57,11 +55,14 @@
             this.attackerHeroAirComboBox = new System.Windows.Forms.ComboBox();
             this.attackerHeroFireComboBox = new System.Windows.Forms.ComboBox();
             this.attackerHeroWaterLbl = new System.Windows.Forms.Label();
-            this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.defenderHeroDefenseLbl = new System.Windows.Forms.Label();
             this.defenderGroupBox = new System.Windows.Forms.GroupBox();
-            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderDisruptingRayChbx = new System.Windows.Forms.CheckBox();
+            this.defenderAirShieldChbx = new System.Windows.Forms.CheckBox();
+            this.defenderShieldChbx = new System.Windows.Forms.CheckBox();
+            this.defenderPrayerChbx = new System.Windows.Forms.CheckBox();
+            this.defenderStoneSkinChbx = new System.Windows.Forms.CheckBox();
+            this.defenderFrenzyChbx = new System.Windows.Forms.CheckBox();
             this.defenderHeroLevelLbl = new System.Windows.Forms.Label();
             this.defenderHeroWaterComboBox = new System.Windows.Forms.ComboBox();
             this.defenderHeroComboBox = new System.Windows.Forms.ComboBox();
@@ -81,20 +82,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.calculatedKillsLbl = new System.Windows.Forms.Label();
             this.notesLbl = new System.Windows.Forms.Label();
-            this.defenderAirShieldChbx = new System.Windows.Forms.CheckBox();
-            this.defenderShieldChbx = new System.Windows.Forms.CheckBox();
-            this.defenderPrayerChbx = new System.Windows.Forms.CheckBox();
-            this.defenderStoneSkinChbx = new System.Windows.Forms.CheckBox();
-            this.defenderFrenzyChbx = new System.Windows.Forms.CheckBox();
-            this.defenderDisruptingRayChbx = new System.Windows.Forms.CheckBox();
+            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerGroupBox.SuspendLayout();
+            this.defenderGroupBox.SuspendLayout();
+            this.terrainGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).BeginInit();
-            this.defenderGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
-            this.terrainGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // defenderComboBox
@@ -107,7 +107,6 @@
             this.defenderComboBox.Name = "defenderComboBox";
             this.defenderComboBox.Size = new System.Drawing.Size(289, 21);
             this.defenderComboBox.TabIndex = 5;
-            this.defenderComboBox.SelectedIndexChanged += new System.EventHandler(this.defenderComboBox_SelectedIndexChanged);
             // 
             // attackerGroupBox
             // 
@@ -242,35 +241,6 @@
             this.attackerHeroArcheryComboBox.Size = new System.Drawing.Size(77, 21);
             this.attackerHeroArcheryComboBox.TabIndex = 49;
             // 
-            // attackerHeroLevelUpDn
-            // 
-            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
-            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
-            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroLevelUpDn.TabIndex = 40;
-            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // attackerHeroAttackUpDn
-            // 
-            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(59, 101);
-            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
-            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroAttackUpDn.TabIndex = 36;
-            // 
             // attackerComboBox
             // 
             this.attackerComboBox.DropDownHeight = 500;
@@ -281,7 +251,6 @@
             this.attackerComboBox.Name = "attackerComboBox";
             this.attackerComboBox.Size = new System.Drawing.Size(289, 21);
             this.attackerComboBox.TabIndex = 1;
-            this.attackerComboBox.SelectedIndexChanged += new System.EventHandler(this.attackerComboBox_SelectedIndexChanged);
             // 
             // attackerHeroLevelLbl
             // 
@@ -294,8 +263,10 @@
             // 
             // attackerHeroComboBox
             // 
+            this.attackerHeroComboBox.DropDownHeight = 500;
             this.attackerHeroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attackerHeroComboBox.FormattingEnabled = true;
+            this.attackerHeroComboBox.IntegralHeight = false;
             this.attackerHeroComboBox.Location = new System.Drawing.Point(6, 60);
             this.attackerHeroComboBox.Name = "attackerHeroComboBox";
             this.attackerHeroComboBox.Size = new System.Drawing.Size(130, 21);
@@ -400,33 +371,10 @@
             this.attackerHeroWaterLbl.TabIndex = 43;
             this.attackerHeroWaterLbl.Text = "Water";
             // 
-            // attackerCountUpDn
-            // 
-            this.attackerCountUpDn.Location = new System.Drawing.Point(12, 32);
-            this.attackerCountUpDn.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.attackerCountUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.attackerCountUpDn.Name = "attackerCountUpDn";
-            this.attackerCountUpDn.Size = new System.Drawing.Size(50, 20);
-            this.attackerCountUpDn.TabIndex = 0;
-            this.attackerCountUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.attackerCountUpDn.ValueChanged += new System.EventHandler(this.attackerCountUpDn_ValueChanged);
-            // 
             // defenderHeroDefenseLbl
             // 
             this.defenderHeroDefenseLbl.AutoSize = true;
-            this.defenderHeroDefenseLbl.Location = new System.Drawing.Point(6, 103);
+            this.defenderHeroDefenseLbl.Location = new System.Drawing.Point(3, 103);
             this.defenderHeroDefenseLbl.Name = "defenderHeroDefenseLbl";
             this.defenderHeroDefenseLbl.Size = new System.Drawing.Size(47, 13);
             this.defenderHeroDefenseLbl.TabIndex = 5;
@@ -463,34 +411,65 @@
             this.defenderGroupBox.TabStop = false;
             this.defenderGroupBox.Text = "Defender";
             // 
-            // defenderHeroLevelUpDn
+            // defenderDisruptingRayChbx
             // 
-            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
-            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
-            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroLevelUpDn.TabIndex = 25;
-            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.defenderDisruptingRayChbx.AutoSize = true;
+            this.defenderDisruptingRayChbx.Location = new System.Drawing.Point(218, 246);
+            this.defenderDisruptingRayChbx.Name = "defenderDisruptingRayChbx";
+            this.defenderDisruptingRayChbx.Size = new System.Drawing.Size(66, 17);
+            this.defenderDisruptingRayChbx.TabIndex = 64;
+            this.defenderDisruptingRayChbx.Text = "Dis. Ray";
+            this.defenderDisruptingRayChbx.UseVisualStyleBackColor = true;
             // 
-            // defenderHeroDefenseUpDn
+            // defenderAirShieldChbx
             // 
-            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(59, 101);
-            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
-            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroDefenseUpDn.TabIndex = 23;
+            this.defenderAirShieldChbx.AutoSize = true;
+            this.defenderAirShieldChbx.Location = new System.Drawing.Point(95, 246);
+            this.defenderAirShieldChbx.Name = "defenderAirShieldChbx";
+            this.defenderAirShieldChbx.Size = new System.Drawing.Size(70, 17);
+            this.defenderAirShieldChbx.TabIndex = 63;
+            this.defenderAirShieldChbx.Text = "Air Shield";
+            this.defenderAirShieldChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderShieldChbx
+            // 
+            this.defenderShieldChbx.AutoSize = true;
+            this.defenderShieldChbx.Location = new System.Drawing.Point(6, 223);
+            this.defenderShieldChbx.Name = "defenderShieldChbx";
+            this.defenderShieldChbx.Size = new System.Drawing.Size(55, 17);
+            this.defenderShieldChbx.TabIndex = 62;
+            this.defenderShieldChbx.Text = "Shield";
+            this.defenderShieldChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderPrayerChbx
+            // 
+            this.defenderPrayerChbx.AutoSize = true;
+            this.defenderPrayerChbx.Location = new System.Drawing.Point(95, 223);
+            this.defenderPrayerChbx.Name = "defenderPrayerChbx";
+            this.defenderPrayerChbx.Size = new System.Drawing.Size(56, 17);
+            this.defenderPrayerChbx.TabIndex = 61;
+            this.defenderPrayerChbx.Text = "Prayer";
+            this.defenderPrayerChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderStoneSkinChbx
+            // 
+            this.defenderStoneSkinChbx.AutoSize = true;
+            this.defenderStoneSkinChbx.Location = new System.Drawing.Point(6, 246);
+            this.defenderStoneSkinChbx.Name = "defenderStoneSkinChbx";
+            this.defenderStoneSkinChbx.Size = new System.Drawing.Size(78, 17);
+            this.defenderStoneSkinChbx.TabIndex = 60;
+            this.defenderStoneSkinChbx.Text = "Stone Skin";
+            this.defenderStoneSkinChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderFrenzyChbx
+            // 
+            this.defenderFrenzyChbx.AutoSize = true;
+            this.defenderFrenzyChbx.Location = new System.Drawing.Point(218, 223);
+            this.defenderFrenzyChbx.Name = "defenderFrenzyChbx";
+            this.defenderFrenzyChbx.Size = new System.Drawing.Size(57, 17);
+            this.defenderFrenzyChbx.TabIndex = 59;
+            this.defenderFrenzyChbx.Text = "Frenzy";
+            this.defenderFrenzyChbx.UseVisualStyleBackColor = true;
             // 
             // defenderHeroLevelLbl
             // 
@@ -512,8 +491,10 @@
             // 
             // defenderHeroComboBox
             // 
+            this.defenderHeroComboBox.DropDownHeight = 500;
             this.defenderHeroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.defenderHeroComboBox.FormattingEnabled = true;
+            this.defenderHeroComboBox.IntegralHeight = false;
             this.defenderHeroComboBox.Location = new System.Drawing.Point(6, 60);
             this.defenderHeroComboBox.Name = "defenderHeroComboBox";
             this.defenderHeroComboBox.Size = new System.Drawing.Size(130, 21);
@@ -594,7 +575,7 @@
             // defenderHeroArmorerLbl
             // 
             this.defenderHeroArmorerLbl.AutoSize = true;
-            this.defenderHeroArmorerLbl.Location = new System.Drawing.Point(6, 130);
+            this.defenderHeroArmorerLbl.Location = new System.Drawing.Point(3, 130);
             this.defenderHeroArmorerLbl.Name = "defenderHeroArmorerLbl";
             this.defenderHeroArmorerLbl.Size = new System.Drawing.Size(43, 13);
             this.defenderHeroArmorerLbl.TabIndex = 24;
@@ -610,7 +591,6 @@
             this.terrainComboBox.Name = "terrainComboBox";
             this.terrainComboBox.Size = new System.Drawing.Size(195, 21);
             this.terrainComboBox.TabIndex = 13;
-            this.terrainComboBox.SelectedIndexChanged += new System.EventHandler(this.terrainComboBox_SelectedIndexChanged);
             // 
             // terrainGroupBox
             // 
@@ -672,65 +652,85 @@
             this.notesLbl.TabIndex = 12;
             this.notesLbl.Text = "blabla";
             // 
-            // defenderAirShieldChbx
+            // defenderHeroLevelUpDn
             // 
-            this.defenderAirShieldChbx.AutoSize = true;
-            this.defenderAirShieldChbx.Location = new System.Drawing.Point(95, 246);
-            this.defenderAirShieldChbx.Name = "defenderAirShieldChbx";
-            this.defenderAirShieldChbx.Size = new System.Drawing.Size(70, 17);
-            this.defenderAirShieldChbx.TabIndex = 63;
-            this.defenderAirShieldChbx.Text = "Air Shield";
-            this.defenderAirShieldChbx.UseVisualStyleBackColor = true;
+            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
+            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroLevelUpDn.TabIndex = 25;
+            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // defenderShieldChbx
+            // defenderHeroDefenseUpDn
             // 
-            this.defenderShieldChbx.AutoSize = true;
-            this.defenderShieldChbx.Location = new System.Drawing.Point(6, 223);
-            this.defenderShieldChbx.Name = "defenderShieldChbx";
-            this.defenderShieldChbx.Size = new System.Drawing.Size(55, 17);
-            this.defenderShieldChbx.TabIndex = 62;
-            this.defenderShieldChbx.Text = "Shield";
-            this.defenderShieldChbx.UseVisualStyleBackColor = true;
+            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(59, 101);
+            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
+            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroDefenseUpDn.TabIndex = 23;
             // 
-            // defenderPrayerChbx
+            // attackerHeroLevelUpDn
             // 
-            this.defenderPrayerChbx.AutoSize = true;
-            this.defenderPrayerChbx.Location = new System.Drawing.Point(95, 223);
-            this.defenderPrayerChbx.Name = "defenderPrayerChbx";
-            this.defenderPrayerChbx.Size = new System.Drawing.Size(56, 17);
-            this.defenderPrayerChbx.TabIndex = 61;
-            this.defenderPrayerChbx.Text = "Prayer";
-            this.defenderPrayerChbx.UseVisualStyleBackColor = true;
+            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
+            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroLevelUpDn.TabIndex = 40;
+            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // defenderStoneSkinChbx
+            // attackerHeroAttackUpDn
             // 
-            this.defenderStoneSkinChbx.AutoSize = true;
-            this.defenderStoneSkinChbx.Location = new System.Drawing.Point(6, 246);
-            this.defenderStoneSkinChbx.Name = "defenderStoneSkinChbx";
-            this.defenderStoneSkinChbx.Size = new System.Drawing.Size(78, 17);
-            this.defenderStoneSkinChbx.TabIndex = 60;
-            this.defenderStoneSkinChbx.Text = "Stone Skin";
-            this.defenderStoneSkinChbx.UseVisualStyleBackColor = true;
+            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(59, 101);
+            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
+            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroAttackUpDn.TabIndex = 36;
             // 
-            // defenderFrenzyChbx
+            // attackerCountUpDn
             // 
-            this.defenderFrenzyChbx.AutoSize = true;
-            this.defenderFrenzyChbx.Location = new System.Drawing.Point(218, 223);
-            this.defenderFrenzyChbx.Name = "defenderFrenzyChbx";
-            this.defenderFrenzyChbx.Size = new System.Drawing.Size(57, 17);
-            this.defenderFrenzyChbx.TabIndex = 59;
-            this.defenderFrenzyChbx.Text = "Frenzy";
-            this.defenderFrenzyChbx.UseVisualStyleBackColor = true;
-            // 
-            // defenderDisruptingRayChbx
-            // 
-            this.defenderDisruptingRayChbx.AutoSize = true;
-            this.defenderDisruptingRayChbx.Location = new System.Drawing.Point(218, 246);
-            this.defenderDisruptingRayChbx.Name = "defenderDisruptingRayChbx";
-            this.defenderDisruptingRayChbx.Size = new System.Drawing.Size(66, 17);
-            this.defenderDisruptingRayChbx.TabIndex = 64;
-            this.defenderDisruptingRayChbx.Text = "Dis. Ray";
-            this.defenderDisruptingRayChbx.UseVisualStyleBackColor = true;
+            this.attackerCountUpDn.Location = new System.Drawing.Point(12, 32);
+            this.attackerCountUpDn.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.attackerCountUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.attackerCountUpDn.Name = "attackerCountUpDn";
+            this.attackerCountUpDn.Size = new System.Drawing.Size(50, 20);
+            this.attackerCountUpDn.TabIndex = 0;
+            this.attackerCountUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -753,14 +753,14 @@
             this.Text = "Heroes III Damage Calculator";
             this.attackerGroupBox.ResumeLayout(false);
             this.attackerGroupBox.PerformLayout();
+            this.defenderGroupBox.ResumeLayout(false);
+            this.defenderGroupBox.PerformLayout();
+            this.terrainGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).EndInit();
-            this.defenderGroupBox.ResumeLayout(false);
-            this.defenderGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
-            this.terrainGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
