@@ -39,6 +39,7 @@ namespace H3Calc
 
             var heroComboBoxItems = new List<KeyValuePair<string, Hero>>();
             heroComboBoxItems.Add(new KeyValuePair<string, Hero>("No hero", null));
+            heroComboBoxItems.Add(new KeyValuePair<string, Hero>("Generic hero", new Hero()));
             foreach (Hero hero in heroes)
             {
                 heroComboBoxItems.Add(new KeyValuePair<string, Hero>(hero.Name, hero));
@@ -224,7 +225,12 @@ namespace H3Calc
             }
 
             inputData.AttackerCount = (int)attackerCountUpDn.Value;
+
             inputData.Terrain = (Terrain)terrainComboBox.SelectedValue;
+            if (inputData.Terrain.Id == -1)
+            {
+                inputData.Terrain = null;
+            }
 
             inputData.AttackerHero = (Hero)attackerHeroComboBox.SelectedValue;
             if (inputData.AttackerHero != null)

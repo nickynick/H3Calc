@@ -1678,8 +1678,7 @@
         <MinDamage>1</MinDamage>
         <MaxDamage>1</MaxDamage>
         <Health>1</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>127</Id>
@@ -1692,8 +1691,7 @@
         <MaxDamage>3</MaxDamage>
         <Health>4</Health>
     </InitialStats>
-    <IsRanged>true</IsRanged>
-    <NativeTerrainId>0</NativeTerrainId>
+    <IsRanged>true</IsRanged>    
   </Unit>
   <Unit>
     <Id>128</Id>
@@ -1705,8 +1703,7 @@
         <MinDamage>2</MinDamage>
         <MaxDamage>3</MaxDamage>
         <Health>15</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>129</Id>
@@ -1718,8 +1715,7 @@
         <MinDamage>2</MinDamage>
         <MaxDamage>4</MaxDamage>
         <Health>10</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>130</Id>
@@ -1731,8 +1727,7 @@
         <MinDamage>2</MinDamage>
         <MaxDamage>6</MaxDamage>
         <Health>30</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>131</Id>
@@ -1744,8 +1739,7 @@
         <MinDamage>3</MinDamage>
         <MaxDamage>5</MaxDamage>
         <Health>30</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>132</Id>
@@ -1758,8 +1752,7 @@
         <MaxDamage>10</MaxDamage>
         <Health>15</Health>
     </InitialStats>
-    <IsRanged>true</IsRanged>
-    <NativeTerrainId>0</NativeTerrainId>
+    <IsRanged>true</IsRanged>    
   </Unit>
   <Unit>
     <Id>133</Id>
@@ -1771,8 +1764,7 @@
         <MinDamage>8</MinDamage>
         <MaxDamage>10</MaxDamage>
         <Health>50</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>134</Id>
@@ -1784,8 +1776,7 @@
         <MinDamage>10</MinDamage>
         <MaxDamage>15</MaxDamage>
         <Health>40</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>135</Id>
@@ -1797,8 +1788,7 @@
         <MinDamage>10</MinDamage>
         <MaxDamage>14</MaxDamage>
         <Health>60</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>136</Id>
@@ -1811,8 +1801,7 @@
         <MaxDamage>14</MaxDamage>
         <Health>30</Health>
     </InitialStats>
-    <IsRanged>true</IsRanged>
-    <NativeTerrainId>0</NativeTerrainId>
+    <IsRanged>true</IsRanged>    
   </Unit>
   <Unit>
     <Id>137</Id>
@@ -1824,8 +1813,7 @@
         <MinDamage>20</MinDamage>
         <MaxDamage>30</MaxDamage>
         <Health>500</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>138</Id>
@@ -1837,8 +1825,7 @@
         <MinDamage>50</MinDamage>
         <MaxDamage>50</MaxDamage>
         <Health>750</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>139</Id>
@@ -1850,8 +1837,7 @@
         <MinDamage>60</MinDamage>
         <MaxDamage>75</MaxDamage>
         <Health>800</Health>
-    </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
+    </InitialStats>    
   </Unit>
   <Unit>
     <Id>140</Id>
@@ -1864,6 +1850,5 @@
         <MaxDamage>80</MaxDamage>
         <Health>1000</Health>
     </InitialStats>
-    <NativeTerrainId>0</NativeTerrainId>
   </Unit>
 </Units>

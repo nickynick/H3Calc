@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace H3Calc.Engine
 {
@@ -70,7 +70,7 @@ namespace H3Calc.Engine
         public Hero()
         {
             SpecializedSecondarySkill = null;
-            SpecializedSpell = null;            
+            SpecializedSpell = null;
             SpecializedUnitId = -1;
         }
     }
@@ -106,7 +106,7 @@ namespace H3Calc.Engine
 
         public void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
         {
-            foreach (SecondarySkill skill in SecondarySkills) 
+            foreach (SecondarySkill skill in SecondarySkills)
             {
                 skill.ApplyOnAttack(attackData, damageModifier);
             }
@@ -118,78 +118,6 @@ namespace H3Calc.Engine
             {
                 skill.ApplyOnDefense(attackData, damageModifier);
             }
-        }
-    }
-
-    public class Terrain : IUnitStatsModifier
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
-        {
-            if (unit.NativeTerrainId == Id)
-            {
-                modifiedStats.Attack += 1;
-                modifiedStats.Defense += 1;
-            }
-        }
-
-        public void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
-        public void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats) { }
-    }
-
-    [XmlRoot("Terrains")]
-    public class TerrainsList : List<Terrain>
-    {
-    }
-
-    public class SecondarySkillLevel
-    {
-        public static readonly SecondarySkillLevel None = new SecondarySkillLevel(0, "None");
-        public static readonly SecondarySkillLevel Basic = new SecondarySkillLevel(1, "Basic");
-        public static readonly SecondarySkillLevel Advanced = new SecondarySkillLevel(2, "Advanced");
-        public static readonly SecondarySkillLevel Expert = new SecondarySkillLevel(3, "Expert");
-
-        public readonly int Value;
-        public readonly string Name;
-
-        private SecondarySkillLevel() { }
-        private SecondarySkillLevel(int value, string name) 
-        {
-            Value = value;
-            Name = name;
-        }
-
-        public override bool Equals(object obj)
-        {
-            SecondarySkillLevel otherObj = (SecondarySkillLevel)obj;
-            return (Value == otherObj.Value);
-        }
-
-        public override int GetHashCode()
-        {
-            return 31 * Value;
-        }
-
-        public static bool operator <(SecondarySkillLevel left, SecondarySkillLevel right)
-        {
-            return (left.Value < right.Value);
-        }
-
-        public static bool operator <=(SecondarySkillLevel left, SecondarySkillLevel right)
-        {
-            return (left.Value <= right.Value);
-        }
-
-        public static bool operator >(SecondarySkillLevel left, SecondarySkillLevel right)
-        {
-            return (left.Value > right.Value);
-        }
-
-        public static bool operator >=(SecondarySkillLevel left, SecondarySkillLevel right)
-        {
-            return (left.Value >= right.Value);
         }
     }
 }

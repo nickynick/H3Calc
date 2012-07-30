@@ -17,6 +17,7 @@ namespace H3Calc.Engine
 
         public UnitStats InitialStats { get; set; }
 
+        [DefaultValue(-1)]
         public int NativeTerrainId { get; set; }
 
         [DefaultValue(false)]
@@ -27,8 +28,9 @@ namespace H3Calc.Engine
 
         public Unit()
         {
+            NativeTerrainId = -1;
             IsRanged = false;
-            NumberOfHits = 1;
+            NumberOfHits = 1;            
         }
     }
 
@@ -64,5 +66,76 @@ namespace H3Calc.Engine
         void ApplyPermanently(Unit unit, UnitStats modifiedStats);
         void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats);
         void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats);
+    }
+
+    public class UnitUniqueTraitManager : IUnitStatsModifier, IDamageModifierProvider
+    {
+        public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
+        {
+        }
+
+        public void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats)
+        {
+        }
+
+        public void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats)
+        {
+            if (attackData.Attacker.Id == 110) // Behemoth
+            {
+                modifiedStats.Defense = (int)(modifiedStats.Defense * 0.6);
+            }
+
+            if (attackData.Attacker.Id == 111) // Ancient Behemoth
+            {
+                modifiedStats.Defense = (int)(modifiedStats.Defense * 0.2);
+            }
+        }
+
+        public void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        {
+            int attackerId = attackData.Attacker.Id;
+            int defenderId = attackData.Defender.Id;
+
+            int minUnitId = Math.Min(attackerId, defenderId);
+            int maxUnitId = Math.Max(attackerId, defenderId);
+
+            // Opposite elementals
+
+            bool isOppositeElementalPair = false;
+
+            isOppositeElementalPair |= (minUnitId == 114 || minUnitId == 115) && (maxUnitId == 120 || maxUnitId == 121); // air / earth
+            isOppositeElementalPair |= (minUnitId == 116 || minUnitId == 117) && (maxUnitId == 118 || maxUnitId == 119); // water / fire
+
+            if (isOppositeElementalPair)
+            {
+                damageModifier.DamageBonuses.Add(1.0);
+            }
+
+            // Hate pairs
+
+            bool isHatePair = false;
+            isHatePair |= (minUnitId == 12 || minUnitId == 13) && (maxUnitId == 82 || maxUnitId == 83); // angels / devils
+            isHatePair |= (minUnitId == 36 || minUnitId == 37) && (maxUnitId == 80 || maxUnitId == 81); // genies / efreets
+            isHatePair |= (minUnitId == 41) && (maxUnitId == 69); // titans / black dragons
+
+            if (isHatePair)
+            {
+                damageModifier.DamageReductions.Add(0.5);
+            }
+
+            // TODO: 
+            // Attacker is Psychic Elemental, defender is immune to Mind spells 
+
+            // Magic Elemental vs Magic Elemental or Black Dragon
+
+            if ((attackerId == 123) && (defenderId == 123 || defenderId == 69))
+            {
+                damageModifier.DamageReductions.Add(0.5);
+            }
+        }
+
+        public void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        {
+        }
     }
 }

@@ -212,10 +212,14 @@ namespace H3Calc.Engine
             {
                 modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MaxDamage + 1;
             }
+        }
 
+        public override void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        {
             if (IsSpecialized)
             {
-                // TODO
+                double bonus = 0.03 * (Caster.Stats.Level / attackData.Attacker.Level);
+                damageModifier.DamageBonuses.Add(bonus);
             }
         }
     }

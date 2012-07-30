@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 
 namespace H3Calc.Engine
-{  
+{
+    // http://mightandmagic.wikia.com/wiki/Damage_(Heroes)
+
     public class DamageCalculator
     {
-        // http://mightandmagic.wikia.com/wiki/Damage_(Heroes)
+        private UnitUniqueTraitManager unitManager;
+
+        public DamageCalculator()
+        {
+            unitManager = new UnitUniqueTraitManager();
+        }
 
         public void CalculateDamage(DamageCalculatorInputData data, out int minDamage, out int maxDamage, out string notes)
         {
@@ -41,6 +48,11 @@ namespace H3Calc.Engine
             attackerDamageModifierProviders.AddRange(data.AttackerSpells);
             defenderStatsModifiers.AddRange(data.DefenderSpells);
             defenderDamageModifierProviders.AddRange(data.DefenderSpells);
+
+            attackerStatsModifiers.Add(unitManager);
+            defenderStatsModifiers.Add(unitManager);
+            attackerDamageModifierProviders.Add(unitManager);
+            defenderDamageModifierProviders.Add(unitManager);
 
             /////////////////////////
 
@@ -173,5 +185,5 @@ namespace H3Calc.Engine
     {
         void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier);
         void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier);
-    }
+    }    
 }
