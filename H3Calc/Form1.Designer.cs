@@ -226,7 +226,7 @@
             // attackerHeroArcheryLbl
             // 
             this.attackerHeroArcheryLbl.AutoSize = true;
-            this.attackerHeroArcheryLbl.Location = new System.Drawing.Point(3, 157);
+            this.attackerHeroArcheryLbl.Location = new System.Drawing.Point(6, 157);
             this.attackerHeroArcheryLbl.Name = "attackerHeroArcheryLbl";
             this.attackerHeroArcheryLbl.Size = new System.Drawing.Size(43, 13);
             this.attackerHeroArcheryLbl.TabIndex = 50;
@@ -255,7 +255,7 @@
             // attackerHeroLevelLbl
             // 
             this.attackerHeroLevelLbl.AutoSize = true;
-            this.attackerHeroLevelLbl.Location = new System.Drawing.Point(176, 63);
+            this.attackerHeroLevelLbl.Location = new System.Drawing.Point(6, 103);
             this.attackerHeroLevelLbl.Name = "attackerHeroLevelLbl";
             this.attackerHeroLevelLbl.Size = new System.Drawing.Size(33, 13);
             this.attackerHeroLevelLbl.TabIndex = 37;
@@ -284,7 +284,7 @@
             // attackerHeroAttackLbl
             // 
             this.attackerHeroAttackLbl.AutoSize = true;
-            this.attackerHeroAttackLbl.Location = new System.Drawing.Point(3, 103);
+            this.attackerHeroAttackLbl.Location = new System.Drawing.Point(174, 64);
             this.attackerHeroAttackLbl.Name = "attackerHeroAttackLbl";
             this.attackerHeroAttackLbl.Size = new System.Drawing.Size(38, 13);
             this.attackerHeroAttackLbl.TabIndex = 33;
@@ -293,7 +293,7 @@
             // attackerHeroOffenseLbl
             // 
             this.attackerHeroOffenseLbl.AutoSize = true;
-            this.attackerHeroOffenseLbl.Location = new System.Drawing.Point(3, 130);
+            this.attackerHeroOffenseLbl.Location = new System.Drawing.Point(6, 130);
             this.attackerHeroOffenseLbl.Name = "attackerHeroOffenseLbl";
             this.attackerHeroOffenseLbl.Size = new System.Drawing.Size(44, 13);
             this.attackerHeroOffenseLbl.TabIndex = 38;
@@ -374,7 +374,7 @@
             // defenderHeroDefenseLbl
             // 
             this.defenderHeroDefenseLbl.AutoSize = true;
-            this.defenderHeroDefenseLbl.Location = new System.Drawing.Point(3, 103);
+            this.defenderHeroDefenseLbl.Location = new System.Drawing.Point(165, 63);
             this.defenderHeroDefenseLbl.Name = "defenderHeroDefenseLbl";
             this.defenderHeroDefenseLbl.Size = new System.Drawing.Size(47, 13);
             this.defenderHeroDefenseLbl.TabIndex = 5;
@@ -474,7 +474,7 @@
             // defenderHeroLevelLbl
             // 
             this.defenderHeroLevelLbl.AutoSize = true;
-            this.defenderHeroLevelLbl.Location = new System.Drawing.Point(176, 63);
+            this.defenderHeroLevelLbl.Location = new System.Drawing.Point(6, 103);
             this.defenderHeroLevelLbl.Name = "defenderHeroLevelLbl";
             this.defenderHeroLevelLbl.Size = new System.Drawing.Size(33, 13);
             this.defenderHeroLevelLbl.TabIndex = 24;
@@ -575,7 +575,7 @@
             // defenderHeroArmorerLbl
             // 
             this.defenderHeroArmorerLbl.AutoSize = true;
-            this.defenderHeroArmorerLbl.Location = new System.Drawing.Point(3, 130);
+            this.defenderHeroArmorerLbl.Location = new System.Drawing.Point(6, 130);
             this.defenderHeroArmorerLbl.Name = "defenderHeroArmorerLbl";
             this.defenderHeroArmorerLbl.Size = new System.Drawing.Size(43, 13);
             this.defenderHeroArmorerLbl.TabIndex = 24;
@@ -654,7 +654,7 @@
             // 
             // defenderHeroLevelUpDn
             // 
-            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
             this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
             108,
             0,
@@ -676,14 +676,14 @@
             // 
             // defenderHeroDefenseUpDn
             // 
-            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(59, 101);
+            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(218, 61);
             this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
             this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
             this.defenderHeroDefenseUpDn.TabIndex = 23;
             // 
             // attackerHeroLevelUpDn
             // 
-            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(218, 61);
+            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
             this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
             108,
             0,
@@ -705,7 +705,7 @@
             // 
             // attackerHeroAttackUpDn
             // 
-            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(59, 101);
+            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(218, 61);
             this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
             this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
             this.attackerHeroAttackUpDn.TabIndex = 36;
