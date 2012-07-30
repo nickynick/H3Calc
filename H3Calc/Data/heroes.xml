@@ -40,10 +40,12 @@
   <Hero>
     <Id>9</Id>
     <Name>Адель</Name>
+    <SpecializedSpell>Bless</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>10</Id>
     <Name>Катберт</Name>
+    <SpecializedSpell>Weakness</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>11</Id>
@@ -60,6 +62,7 @@
   <Hero>
     <Id>14</Id>
     <Name>Лоинс</Name>
+    <SpecializedSpell>Prayer</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>15</Id>
@@ -101,6 +104,7 @@
   <Hero>
     <Id>24</Id>
     <Name>Корониус</Name>
+    <SpecializedSpell>Slayer</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>25</Id>
@@ -242,6 +246,7 @@
   <Hero>
     <Id>59</Id>
     <Name>Олема</Name>
+    <SpecializedSpell>Weakness</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>60</Id>
@@ -250,6 +255,7 @@
   <Hero>
     <Id>61</Id>
     <Name>Аш</Name>
+    <SpecializedSpell>Bloodlust</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>62</Id>
@@ -314,6 +320,7 @@
   <Hero>
     <Id>77</Id>
     <Name>Кси</Name>
+    <SpecializedSpell>StoneSkin</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>78</Id>
@@ -386,6 +393,7 @@
   <Hero>
     <Id>95</Id>
     <Name>Дарксторн</Name>
+    <SpecializedSpell>StoneSkin</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>96</Id>
@@ -439,6 +447,7 @@
   <Hero>
     <Id>108</Id>
     <Name>Зубин</Name>
+    <SpecializedSpell>Precision</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>109</Id>
@@ -489,6 +498,7 @@
   <Hero>
     <Id>120</Id>
     <Name>Мирланда</Name>
+    <SpecializedSpell>Weakness</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>121</Id>
@@ -505,6 +515,7 @@
   <Hero>
     <Id>124</Id>
     <Name>Мерист</Name>
+    <SpecializedSpell>StoneSkin</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>125</Id>
@@ -565,14 +576,17 @@
   <Hero>
     <Id>139</Id>
     <Name>Лабета</Name>
+    <SpecializedSpell>StoneSkin</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>140</Id>
     <Name>Интеус</Name>
+    <SpecializedSpell>Bloodlust</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>141</Id>
     <Name>Аэнаин</Name>
+    <SpecializedSpell>DisruptingRay</SpecializedSpell>
   </Hero>
   <Hero>
     <Id>142</Id>

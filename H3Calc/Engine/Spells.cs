@@ -39,6 +39,19 @@ namespace H3Calc.Engine
             }
         }
 
+        public bool IsSpecialized         
+        {
+            get
+            {
+                if (Caster == null)
+                {
+                    return false;
+                }
+
+                return (Caster.SpecializedSpell == GetType());
+            }
+        }
+
         public virtual void ApplyPermanently(Unit unit, UnitStats modifiedStats) { }
         public virtual void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
         public virtual void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats) { }
@@ -53,14 +66,28 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats) 
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            
+            if (IsSpecialized)
             {
-                modifiedStats.Attack += 3;
+                switch (unit.Level)
+                {
+                    case 1:
+                    case 2:
+                        bonus += 3;
+                        break;
+                    case 3:
+                    case 4:
+                        bonus += 2;
+                        break;
+                    case 5:
+                    case 6:
+                        bonus += 1;
+                        break;
+                }
             }
-            else
-            {
-                modifiedStats.Attack += 6;
-            }            
+
+            modifiedStats.Attack += bonus;
         }
     }
 
@@ -113,7 +140,7 @@ namespace H3Calc.Engine
             List<int> affectedUnitIds = new List<int>();
 
             affectedUnitIds.Add(26); // Green Dragon
-            affectedUnitIds.Add(27); // Golden Dragon
+            affectedUnitIds.Add(27); // Gold Dragon
             affectedUnitIds.Add(54); // Bone Dragon
             affectedUnitIds.Add(55); // Ghost Dragon
             affectedUnitIds.Add(68); // Red Dragon
@@ -145,7 +172,28 @@ namespace H3Calc.Engine
 
             if (affectedUnitIds.Contains(attackData.Defender.Id))
             {
-                modifiedStats.Attack += 8;
+                int bonus = 8;
+
+                if (IsSpecialized)
+                {
+                    switch (attackData.Attacker.Level)
+                    {
+                        case 1:
+                            bonus += 4;
+                            break;
+                        case 2:
+                            bonus += 3;
+                            break;
+                        case 3:
+                            bonus += 2;
+                            break;
+                        case 4:
+                            bonus += 1;
+                            break;
+                    }
+                }
+
+                modifiedStats.Attack += bonus;
             }
         }
     }
@@ -164,6 +212,11 @@ namespace H3Calc.Engine
             {
                 modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MaxDamage + 1;
             }
+
+            if (IsSpecialized)
+            {
+                // TODO
+            }
         }
     }
 
@@ -173,14 +226,28 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            int reduction = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            
+            if (IsSpecialized)
             {
-                modifiedStats.Attack -= 3;
+                switch (unit.Level)
+                {
+                    case 1:
+                    case 2:
+                        reduction += 3;
+                        break;
+                    case 3:
+                    case 4:
+                        reduction += 2;
+                        break;
+                    case 5:
+                    case 6:
+                        reduction += 1;
+                        break;
+                }
             }
-            else
-            {
-                modifiedStats.Attack -= 6;
-            }
+
+            modifiedStats.Attack -= reduction;
         }
     }
 
@@ -190,16 +257,29 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 2 : 4;
+
+            if (IsSpecialized)
             {
-                modifiedStats.Attack += 2;
-                modifiedStats.Defense += 2;
+                switch (unit.Level)
+                {
+                    case 1:
+                    case 2:
+                        bonus += 3;
+                        break;
+                    case 3:
+                    case 4:
+                        bonus += 2;
+                        break;
+                    case 5:
+                    case 6:
+                        bonus += 1;
+                        break;
+                }
             }
-            else
-            {
-                modifiedStats.Attack += 4;
-                modifiedStats.Defense += 4;
-            }
+
+            modifiedStats.Attack += bonus;
+            modifiedStats.Defense += bonus;
         }
     }
 
@@ -231,14 +311,28 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
-            {                
-                modifiedStats.Defense += 3;
+            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+
+            if (IsSpecialized)
+            {
+                switch (unit.Level)
+                {
+                    case 1:
+                    case 2:
+                        bonus += 3;
+                        break;
+                    case 3:
+                    case 4:
+                        bonus += 2;
+                        break;
+                    case 5:
+                    case 6:
+                        bonus += 1;
+                        break;
+                }
             }
-            else
-            {                
-                modifiedStats.Defense += 6;
-            }
+
+            modifiedStats.Defense += bonus;
         }
     }
 
@@ -248,19 +342,27 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
+            int reduction;
+
             if (SkillLevel <= SecondarySkillLevel.Basic)
-            {                
-                modifiedStats.Defense -= 3;
+            {
+                reduction = 3;
             }
             else if (SkillLevel <= SecondarySkillLevel.Advanced)
-            {                
-                modifiedStats.Defense -= 4;
+            {
+                reduction = 4;
             }
             else
             {
-                modifiedStats.Defense -= 5;
+                reduction = 5;
             }
 
+            if (IsSpecialized)
+            {
+                reduction += 2;
+            }
+
+            modifiedStats.Defense -= reduction;
             modifiedStats.Defense = Math.Max(modifiedStats.Defense, 0);
         }
     }
@@ -276,14 +378,28 @@ namespace H3Calc.Engine
                 return;
             }
 
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+
+            if (IsSpecialized)
             {
-                modifiedStats.Attack += 3;
+                switch (unit.Level)
+                {
+                    case 1:
+                    case 2:
+                        bonus += 3;
+                        break;
+                    case 3:
+                    case 4:
+                        bonus += 2;
+                        break;
+                    case 5:
+                    case 6:
+                        bonus += 1;
+                        break;
+                }
             }
-            else
-            {
-                modifiedStats.Attack += 6;
-            }
+
+            modifiedStats.Attack += bonus;
         }
     }
 

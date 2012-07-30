@@ -33,12 +33,34 @@ namespace H3Calc.Engine
             }
             set
             {
-                SpecializedSecondarySkillString = value.Name;
+                SpecializedSecondarySkillString = (value != null) ? value.Name : null;
             }
         }
 
-        [DefaultValue(-1)]
-        public int SpecializedSpellId { get; set; }
+        [DefaultValue(null)]
+        [XmlElement("SpecializedSpell")]
+        public string SpecializedSpellString;
+
+        [XmlIgnore]
+        public Type SpecializedSpell
+        {
+            get
+            {
+                if (SpecializedSpellString == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    string fullName = typeof(Spell).Namespace + "." + SpecializedSpellString;
+                    return Type.GetType(fullName);
+                }
+            }
+            set
+            {
+                SpecializedSpellString = (value != null) ? value.Name : null;
+            }
+        }
 
         [DefaultValue(-1)]
         public int SpecializedUnitId { get; set; }
@@ -47,8 +69,8 @@ namespace H3Calc.Engine
 
         public Hero()
         {
-            SpecializedSecondarySkillString = null;
-            SpecializedSpellId = -1;
+            SpecializedSecondarySkill = null;
+            SpecializedSpell = null;            
             SpecializedUnitId = -1;
         }
     }

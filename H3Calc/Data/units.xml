@@ -3,6 +3,7 @@
   <Unit>
     <Id>0</Id>
     <Name>Копейщик</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>5</Defense>
@@ -15,6 +16,7 @@
   <Unit>
     <Id>1</Id>
     <Name>Алебардщик</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>5</Defense>
@@ -27,6 +29,7 @@
   <Unit>
     <Id>2</Id>
     <Name>Лучник</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>3</Defense>
@@ -40,6 +43,7 @@
   <Unit>
     <Id>3</Id>
     <Name>Стрелок</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>3</Defense>
@@ -54,6 +58,7 @@
   <Unit>
     <Id>4</Id>
     <Name>Грифон</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>8</Defense>
@@ -66,6 +71,7 @@
   <Unit>
     <Id>5</Id>
     <Name>Королевский грифон</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>9</Defense>
@@ -78,6 +84,7 @@
   <Unit>
     <Id>6</Id>
     <Name>Рыцарь</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>12</Defense>
@@ -90,6 +97,7 @@
   <Unit>
     <Id>7</Id>
     <Name>Крестоносец</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>12</Defense>
@@ -103,6 +111,7 @@
   <Unit>
     <Id>8</Id>
     <Name>Монах</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>7</Defense>
@@ -116,6 +125,7 @@
   <Unit>
     <Id>9</Id>
     <Name>Фанатик</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>10</Defense>
@@ -129,6 +139,7 @@
   <Unit>
     <Id>10</Id>
     <Name>Кавалерист</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>15</Defense>
@@ -141,6 +152,7 @@
   <Unit>
     <Id>11</Id>
     <Name>Чемпион</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>16</Defense>
@@ -153,6 +165,7 @@
   <Unit>
     <Id>12</Id>
     <Name>Ангел</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>20</Attack>
         <Defense>20</Defense>
@@ -165,6 +178,7 @@
   <Unit>
     <Id>13</Id>
     <Name>Архангел</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>30</Attack>
         <Defense>30</Defense>
@@ -177,6 +191,7 @@
   <Unit>
     <Id>14</Id>
     <Name>Кентавр</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>3</Defense>
@@ -189,6 +204,7 @@
   <Unit>
     <Id>15</Id>
     <Name>Командир кентавров</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>3</Defense>
@@ -201,6 +217,7 @@
   <Unit>
     <Id>16</Id>
     <Name>Гном</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>7</Defense>
@@ -213,6 +230,7 @@
   <Unit>
     <Id>17</Id>
     <Name>Боевой гном</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>7</Defense>
@@ -225,6 +243,7 @@
   <Unit>
     <Id>18</Id>
     <Name>Эльф</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>5</Defense>
@@ -238,6 +257,7 @@
   <Unit>
     <Id>19</Id>
     <Name>Великий эльф</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>5</Defense>
@@ -252,6 +272,7 @@
   <Unit>
     <Id>20</Id>
     <Name>Пегас</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>8</Defense>
@@ -264,6 +285,7 @@
   <Unit>
     <Id>21</Id>
     <Name>Серебряный пегас</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>10</Defense>
@@ -276,6 +298,7 @@
   <Unit>
     <Id>22</Id>
     <Name>Страж - дендроид</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>12</Defense>
@@ -288,6 +311,7 @@
   <Unit>
     <Id>23</Id>
     <Name>Дендроид - солдат</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>12</Defense>
@@ -300,6 +324,7 @@
   <Unit>
     <Id>24</Id>
     <Name>Единорог</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>14</Defense>
@@ -312,6 +337,7 @@
   <Unit>
     <Id>25</Id>
     <Name>Боевой единорог</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>14</Defense>
@@ -324,6 +350,7 @@
   <Unit>
     <Id>26</Id>
     <Name>Зеленый дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>18</Attack>
         <Defense>18</Defense>
@@ -336,6 +363,7 @@
   <Unit>
     <Id>27</Id>
     <Name>Золотой дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>27</Attack>
         <Defense>27</Defense>
@@ -348,6 +376,7 @@
   <Unit>
     <Id>28</Id>
     <Name>Гремлин</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>3</Attack>
         <Defense>3</Defense>
@@ -360,6 +389,7 @@
   <Unit>
     <Id>29</Id>
     <Name>Гремлин - вожак</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>4</Defense>
@@ -373,6 +403,7 @@
   <Unit>
     <Id>30</Id>
     <Name>Каменная гаргулия</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>6</Defense>
@@ -385,6 +416,7 @@
   <Unit>
     <Id>31</Id>
     <Name>Обсидиановая гаргулия</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>7</Defense>
@@ -397,6 +429,7 @@
   <Unit>
     <Id>32</Id>
     <Name>Каменный голем</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>10</Defense>
@@ -409,6 +442,7 @@
   <Unit>
     <Id>33</Id>
     <Name>Железный голем</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>10</Defense>
@@ -421,6 +455,7 @@
   <Unit>
     <Id>34</Id>
     <Name>Маг</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>11</Attack>
         <Defense>8</Defense>
@@ -434,6 +469,7 @@
   <Unit>
     <Id>35</Id>
     <Name>Архи-маг</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>9</Defense>
@@ -447,6 +483,7 @@
   <Unit>
     <Id>36</Id>
     <Name>Джин</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>12</Defense>
@@ -459,6 +496,7 @@
   <Unit>
     <Id>37</Id>
     <Name>Мастер джин</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>12</Defense>
@@ -471,6 +509,7 @@
   <Unit>
     <Id>38</Id>
     <Name>Нага</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>13</Defense>
@@ -483,6 +522,7 @@
   <Unit>
     <Id>39</Id>
     <Name>Нага-королева</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>13</Defense>
@@ -495,6 +535,7 @@
   <Unit>
     <Id>40</Id>
     <Name>Гигант</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>19</Attack>
         <Defense>16</Defense>
@@ -507,6 +548,7 @@
   <Unit>
     <Id>41</Id>
     <Name>Титан</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>24</Attack>
         <Defense>24</Defense>
@@ -520,6 +562,7 @@
   <Unit>
     <Id>42</Id>
     <Name>Скелет</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>4</Defense>
@@ -532,6 +575,7 @@
   <Unit>
     <Id>43</Id>
     <Name>Скелет - воин</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>6</Defense>
@@ -544,6 +588,7 @@
   <Unit>
     <Id>44</Id>
     <Name>Живой мертвец</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>5</Defense>
@@ -556,6 +601,7 @@
   <Unit>
     <Id>45</Id>
     <Name>Зомби</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>5</Defense>
@@ -568,6 +614,7 @@
   <Unit>
     <Id>46</Id>
     <Name>Страж</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>7</Defense>
@@ -580,6 +627,7 @@
   <Unit>
     <Id>47</Id>
     <Name>Привидение</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>7</Defense>
@@ -592,6 +640,7 @@
   <Unit>
     <Id>48</Id>
     <Name>Вампир</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>9</Defense>
@@ -604,6 +653,7 @@
   <Unit>
     <Id>49</Id>
     <Name>Вампир - лорд</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>10</Defense>
@@ -616,6 +666,7 @@
   <Unit>
     <Id>50</Id>
     <Name>Лич</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>10</Defense>
@@ -629,6 +680,7 @@
   <Unit>
     <Id>51</Id>
     <Name>Могущественный лич</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>10</Defense>
@@ -642,6 +694,7 @@
   <Unit>
     <Id>52</Id>
     <Name>Черный рыцарь</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>16</Defense>
@@ -654,6 +707,7 @@
   <Unit>
     <Id>53</Id>
     <Name>Рыцарь смерти</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>18</Attack>
         <Defense>18</Defense>
@@ -666,6 +720,7 @@
   <Unit>
     <Id>54</Id>
     <Name>Костяной дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>17</Attack>
         <Defense>15</Defense>
@@ -678,6 +733,7 @@
   <Unit>
     <Id>55</Id>
     <Name>Дракон - привидение</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>19</Attack>
         <Defense>17</Defense>
@@ -690,6 +746,7 @@
   <Unit>
     <Id>56</Id>
     <Name>Троглодит</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>3</Defense>
@@ -702,6 +759,7 @@
   <Unit>
     <Id>57</Id>
     <Name>Адский троглодит</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>4</Defense>
@@ -714,6 +772,7 @@
   <Unit>
     <Id>58</Id>
     <Name>Гарпия</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>5</Defense>
@@ -726,6 +785,7 @@
   <Unit>
     <Id>59</Id>
     <Name>Гарпия - ведьма</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>6</Defense>
@@ -738,6 +798,7 @@
   <Unit>
     <Id>60</Id>
     <Name>Созерцатель </Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>7</Defense>
@@ -751,6 +812,7 @@
   <Unit>
     <Id>61</Id>
     <Name>Злые глаза</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>8</Defense>
@@ -764,6 +826,7 @@
   <Unit>
     <Id>62</Id>
     <Name>Медуза</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>9</Defense>
@@ -777,6 +840,7 @@
   <Unit>
     <Id>63</Id>
     <Name>Королева медуза</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>10</Defense>
@@ -790,6 +854,7 @@
   <Unit>
     <Id>64</Id>
     <Name>Минотавр</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>14</Attack>
         <Defense>12</Defense>
@@ -802,6 +867,7 @@
   <Unit>
     <Id>65</Id>
     <Name>Король - минотавр</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>15</Defense>
@@ -814,6 +880,7 @@
   <Unit>
     <Id>66</Id>
     <Name>Мантикора</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>13</Defense>
@@ -826,6 +893,7 @@
   <Unit>
     <Id>67</Id>
     <Name>Скорпикора</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>14</Defense>
@@ -838,6 +906,7 @@
   <Unit>
     <Id>68</Id>
     <Name>Красный дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>19</Attack>
         <Defense>19</Defense>
@@ -850,6 +919,7 @@
   <Unit>
     <Id>69</Id>
     <Name>Черный дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>25</Attack>
         <Defense>25</Defense>
@@ -862,6 +932,7 @@
   <Unit>
     <Id>70</Id>
     <Name>Бес</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>2</Attack>
         <Defense>3</Defense>
@@ -873,7 +944,8 @@
   </Unit>
   <Unit>
     <Id>71</Id>
-    <Name>Черти / Знакомые</Name>
+    <Name>Фамильяр</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>4</Defense>
@@ -886,6 +958,7 @@
   <Unit>
     <Id>72</Id>
     <Name>Гог</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>4</Defense>
@@ -899,6 +972,7 @@
   <Unit>
     <Id>73</Id>
     <Name>Магог</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>4</Defense>
@@ -912,6 +986,7 @@
   <Unit>
     <Id>74</Id>
     <Name>Адская гончая</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>6</Defense>
@@ -924,6 +999,7 @@
   <Unit>
     <Id>75</Id>
     <Name>Цербер</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>8</Defense>
@@ -936,6 +1012,7 @@
   <Unit>
     <Id>76</Id>
     <Name>Демон</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>10</Defense>
@@ -948,6 +1025,7 @@
   <Unit>
     <Id>77</Id>
     <Name>Рогатый демон</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>10</Defense>
@@ -960,6 +1038,7 @@
   <Unit>
     <Id>78</Id>
     <Name>Порождение зла</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>13</Defense>
@@ -972,6 +1051,7 @@
   <Unit>
     <Id>79</Id>
     <Name>Адское отродье</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>13</Defense>
@@ -984,6 +1064,7 @@
   <Unit>
     <Id>80</Id>
     <Name>Эфрит</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>12</Defense>
@@ -996,6 +1077,7 @@
   <Unit>
     <Id>81</Id>
     <Name>Султан - эфрит</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>14</Defense>
@@ -1008,6 +1090,7 @@
   <Unit>
     <Id>82</Id>
     <Name>Дьявол</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>19</Attack>
         <Defense>21</Defense>
@@ -1020,6 +1103,7 @@
   <Unit>
     <Id>83</Id>
     <Name>Архидьявол</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>26</Attack>
         <Defense>28</Defense>
@@ -1032,6 +1116,7 @@
   <Unit>
     <Id>84</Id>
     <Name>Гнолл</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>3</Attack>
         <Defense>5</Defense>
@@ -1044,6 +1129,7 @@
   <Unit>
     <Id>85</Id>
     <Name>Гнолл - мародер</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>6</Defense>
@@ -1056,6 +1142,7 @@
   <Unit>
     <Id>86</Id>
     <Name>Ящер</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>6</Defense>
@@ -1069,6 +1156,7 @@
   <Unit>
     <Id>87</Id>
     <Name>Ящер - воин</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>8</Defense>
@@ -1082,6 +1170,7 @@
   <Unit>
     <Id>88</Id>
     <Name>Змий</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>9</Defense>
@@ -1094,6 +1183,7 @@
   <Unit>
     <Id>89</Id>
     <Name>Стрекоза</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>10</Defense>
@@ -1106,6 +1196,7 @@
   <Unit>
     <Id>90</Id>
     <Name>Василиск</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>11</Attack>
         <Defense>11</Defense>
@@ -1118,6 +1209,7 @@
   <Unit>
     <Id>91</Id>
     <Name>Великий василиск</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>12</Defense>
@@ -1130,6 +1222,7 @@
   <Unit>
     <Id>92</Id>
     <Name>Горгона</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>14</Defense>
@@ -1142,6 +1235,7 @@
   <Unit>
     <Id>93</Id>
     <Name>Могучая горгона</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>11</Attack>
         <Defense>16</Defense>
@@ -1154,6 +1248,7 @@
   <Unit>
     <Id>94</Id>
     <Name>Виверна</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>14</Attack>
         <Defense>14</Defense>
@@ -1166,6 +1261,7 @@
   <Unit>
     <Id>95</Id>
     <Name>Виверна - монарх</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>14</Attack>
         <Defense>14</Defense>
@@ -1178,6 +1274,7 @@
   <Unit>
     <Id>96</Id>
     <Name>Гидра</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>16</Attack>
         <Defense>18</Defense>
@@ -1190,6 +1287,7 @@
   <Unit>
     <Id>97</Id>
     <Name>Гидра хаоса</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>18</Attack>
         <Defense>20</Defense>
@@ -1202,6 +1300,7 @@
   <Unit>
     <Id>98</Id>
     <Name>Гоблин</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>2</Defense>
@@ -1214,6 +1313,7 @@
   <Unit>
     <Id>99</Id>
     <Name>Хобгоблин</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>5</Attack>
         <Defense>3</Defense>
@@ -1226,6 +1326,7 @@
   <Unit>
     <Id>100</Id>
     <Name>Наездник на волках</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>5</Defense>
@@ -1238,6 +1339,7 @@
   <Unit>
     <Id>101</Id>
     <Name>Налетчик</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>5</Defense>
@@ -1251,6 +1353,7 @@
   <Unit>
     <Id>102</Id>
     <Name>Орк</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>4</Defense>
@@ -1264,6 +1367,7 @@
   <Unit>
     <Id>103</Id>
     <Name>Орк - вождь</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>4</Defense>
@@ -1277,6 +1381,7 @@
   <Unit>
     <Id>104</Id>
     <Name>Людоед</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>7</Defense>
@@ -1289,6 +1394,7 @@
   <Unit>
     <Id>105</Id>
     <Name>Людоед - маг</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>7</Defense>
@@ -1301,6 +1407,7 @@
   <Unit>
     <Id>106</Id>
     <Name>Птица рух</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>11</Defense>
@@ -1313,6 +1420,7 @@
   <Unit>
     <Id>107</Id>
     <Name>Птица грома</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>11</Defense>
@@ -1325,6 +1433,7 @@
   <Unit>
     <Id>108</Id>
     <Name>Циклоп</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>12</Defense>
@@ -1338,6 +1447,7 @@
   <Unit>
     <Id>109</Id>
     <Name>Король циклопов</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>17</Attack>
         <Defense>13</Defense>
@@ -1351,6 +1461,7 @@
   <Unit>
     <Id>110</Id>
     <Name>Чудище</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>17</Attack>
         <Defense>17</Defense>
@@ -1363,6 +1474,7 @@
   <Unit>
     <Id>111</Id>
     <Name>Древнее чудище</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>19</Attack>
         <Defense>19</Defense>
@@ -1375,6 +1487,7 @@
   <Unit>
     <Id>112</Id>
     <Name>Маленькая фея</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>2</Attack>
         <Defense>2</Defense>
@@ -1387,6 +1500,7 @@
   <Unit>
     <Id>113</Id>
     <Name>Фея</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>2</Attack>
         <Defense>2</Defense>
@@ -1399,6 +1513,7 @@
   <Unit>
     <Id>114</Id>
     <Name>Воздушный элементаль</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>9</Defense>
@@ -1411,6 +1526,7 @@
   <Unit>
     <Id>115</Id>
     <Name>Элементаль шторма</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>9</Defense>
@@ -1424,6 +1540,7 @@
   <Unit>
     <Id>116</Id>
     <Name>Элементаль воды</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>10</Defense>
@@ -1436,6 +1553,7 @@
   <Unit>
     <Id>117</Id>
     <Name>Ледяной элементаль</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>10</Defense>
@@ -1449,6 +1567,7 @@
   <Unit>
     <Id>118</Id>
     <Name>Огненный элементаль</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>8</Defense>
@@ -1461,6 +1580,7 @@
   <Unit>
     <Id>119</Id>
     <Name>Энергетич.элементаль</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>8</Defense>
@@ -1473,6 +1593,7 @@
   <Unit>
     <Id>120</Id>
     <Name>Элементаль земли</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>10</Attack>
         <Defense>10</Defense>
@@ -1485,6 +1606,7 @@
   <Unit>
     <Id>121</Id>
     <Name>Элементаль магмы</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>11</Attack>
         <Defense>11</Defense>
@@ -1497,6 +1619,7 @@
   <Unit>
     <Id>122</Id>
     <Name>Психический элементаль</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>13</Defense>
@@ -1509,6 +1632,7 @@
   <Unit>
     <Id>123</Id>
     <Name>Магический элементаль</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>15</Attack>
         <Defense>13</Defense>
@@ -1521,6 +1645,7 @@
   <Unit>
     <Id>124</Id>
     <Name>Огненная птица</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>18</Attack>
         <Defense>18</Defense>
@@ -1533,6 +1658,7 @@
   <Unit>
     <Id>125</Id>
     <Name>Феникс</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>21</Attack>
         <Defense>18</Defense>
@@ -1545,6 +1671,7 @@
   <Unit>
     <Id>126</Id>
     <Name>Крестьянин</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>1</Attack>
         <Defense>1</Defense>
@@ -1557,6 +1684,7 @@
   <Unit>
     <Id>127</Id>
     <Name>Хоббит</Name>
+    <Level>1</Level>
     <InitialStats>
         <Attack>4</Attack>
         <Defense>2</Defense>
@@ -1570,6 +1698,7 @@
   <Unit>
     <Id>128</Id>
     <Name>Кабан</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>6</Attack>
         <Defense>5</Defense>
@@ -1582,6 +1711,7 @@
   <Unit>
     <Id>129</Id>
     <Name>Вор</Name>
+    <Level>2</Level>
     <InitialStats>
         <Attack>8</Attack>
         <Defense>3</Defense>
@@ -1594,6 +1724,7 @@
   <Unit>
     <Id>130</Id>
     <Name>Кочевник</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>9</Attack>
         <Defense>8</Defense>
@@ -1606,6 +1737,7 @@
   <Unit>
     <Id>131</Id>
     <Name>Мумия</Name>
+    <Level>3</Level>
     <InitialStats>
         <Attack>7</Attack>
         <Defense>7</Defense>
@@ -1618,6 +1750,7 @@
   <Unit>
     <Id>132</Id>
     <Name>Снайпер</Name>
+    <Level>4</Level>
     <InitialStats>
         <Attack>12</Attack>
         <Defense>10</Defense>
@@ -1631,6 +1764,7 @@
   <Unit>
     <Id>133</Id>
     <Name>Золотой голем</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>11</Attack>
         <Defense>12</Defense>
@@ -1643,6 +1777,7 @@
   <Unit>
     <Id>134</Id>
     <Name>Тролль</Name>
+    <Level>5</Level>
     <InitialStats>
         <Attack>14</Attack>
         <Defense>7</Defense>
@@ -1655,6 +1790,7 @@
   <Unit>
     <Id>135</Id>
     <Name>Алмазный голем</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>13</Attack>
         <Defense>12</Defense>
@@ -1667,6 +1803,7 @@
   <Unit>
     <Id>136</Id>
     <Name>Чародей</Name>
+    <Level>6</Level>
     <InitialStats>
         <Attack>17</Attack>
         <Defense>12</Defense>
@@ -1680,6 +1817,7 @@
   <Unit>
     <Id>137</Id>
     <Name>Сказочный дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>20</Attack>
         <Defense>20</Defense>
@@ -1692,6 +1830,7 @@
   <Unit>
     <Id>138</Id>
     <Name>Ржавый дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>30</Attack>
         <Defense>30</Defense>
@@ -1704,6 +1843,7 @@
   <Unit>
     <Id>139</Id>
     <Name>Кристальный дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>40</Attack>
         <Defense>40</Defense>
@@ -1716,6 +1856,7 @@
   <Unit>
     <Id>140</Id>
     <Name>Лазурный дракон</Name>
+    <Level>7</Level>
     <InitialStats>
         <Attack>50</Attack>
         <Defense>50</Defense>

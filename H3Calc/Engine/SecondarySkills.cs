@@ -10,14 +10,17 @@ namespace H3Calc.Engine
         public SecondarySkillLevel SkillLevel { get; set; }
         public Hero Hero { get; set; }
 
-        public bool IsSpecialized()
+        public bool IsSpecialized
         {
-            if (Hero == null)
+            get
             {
-                return false;
-            }
+                if (Hero == null)
+                {
+                    return false;
+                }
 
-            return (Hero.SpecializedSecondarySkill == GetType());
+                return (Hero.SpecializedSecondarySkill == GetType());
+            }
         }
 
         public virtual void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier) { }
@@ -48,7 +51,7 @@ namespace H3Calc.Engine
                 bonus = 0.3;
             }
 
-            if (IsSpecialized())
+            if (IsSpecialized)
             {
                 bonus *= (1.0 + 0.05 * Hero.Stats.Level);
             }
@@ -81,7 +84,7 @@ namespace H3Calc.Engine
                 bonus = 0.5;
             }
 
-            if (IsSpecialized())
+            if (IsSpecialized)
             {
                 bonus *= (1.0 + 0.05 * Hero.Stats.Level);
             }
@@ -114,7 +117,7 @@ namespace H3Calc.Engine
                 reduction = 0.15;
             }
 
-            if (IsSpecialized())
+            if (IsSpecialized)
             {
                 reduction *= (1.0 + 0.05 * Hero.Stats.Level);
             }

@@ -13,6 +13,7 @@ namespace H3Calc.Engine
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int Level { get; set; }
 
         public UnitStats InitialStats { get; set; }
 
