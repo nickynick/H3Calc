@@ -123,8 +123,20 @@ namespace H3Calc.Engine
                 damageModifier.DamageReductions.Add(0.5);
             }
 
-            // TODO: 
             // Attacker is Psychic Elemental, defender is immune to Mind spells 
+
+            if ((attackerId == 122) &&
+                (
+                 (defenderId >= 42 && defenderId <= 55) || // Necropolis creatures
+                 (defenderId == 131) || // Mummy
+                 (defenderId == 32 || defenderId == 33 || defenderId == 133 || defenderId == 135) || // Golems
+                 (defenderId == 40 || defenderId == 41) || // Giant / Titan
+                 (defenderId == 69) || // Black Dragon
+                 (defenderId >= 114 && defenderId <= 123) // Elementals
+                ))
+            {
+                damageModifier.DamageReductions.Add(0.5);
+            }
 
             // Magic Elemental vs Magic Elemental or Black Dragon
 
