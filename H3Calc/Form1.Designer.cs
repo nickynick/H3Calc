@@ -42,6 +42,8 @@
             this.attackerSlayerChbx = new System.Windows.Forms.CheckBox();
             this.attackerHeroArcheryLbl = new System.Windows.Forms.Label();
             this.attackerHeroArcheryComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerComboBox = new System.Windows.Forms.ComboBox();
             this.attackerHeroLevelLbl = new System.Windows.Forms.Label();
             this.attackerHeroComboBox = new System.Windows.Forms.ComboBox();
@@ -64,6 +66,8 @@
             this.defenderPrayerChbx = new System.Windows.Forms.CheckBox();
             this.defenderStoneSkinChbx = new System.Windows.Forms.CheckBox();
             this.defenderFrenzyChbx = new System.Windows.Forms.CheckBox();
+            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
             this.defenderHeroLevelLbl = new System.Windows.Forms.Label();
             this.defenderHeroWaterComboBox = new System.Windows.Forms.ComboBox();
             this.defenderHeroComboBox = new System.Windows.Forms.ComboBox();
@@ -89,19 +93,17 @@
             this.menuItemMode2 = new System.Windows.Forms.MenuItem();
             this.menuItemMode3 = new System.Windows.Forms.MenuItem();
             this.resultPanel = new System.Windows.Forms.Panel();
-            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHasHeroChbx = new System.Windows.Forms.CheckBox();
+            this.defenderHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.attackerGroupBox.SuspendLayout();
-            this.defenderGroupBox.SuspendLayout();
-            this.terrainGroupBox.SuspendLayout();
-            this.resultPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).BeginInit();
+            this.defenderGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
+            this.terrainGroupBox.SuspendLayout();
+            this.resultPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +120,7 @@
             // 
             // attackerGroupBox
             // 
+            this.attackerGroupBox.Controls.Add(this.attackerHasHeroChbx);
             this.attackerGroupBox.Controls.Add(this.attackerPrecisionChbx);
             this.attackerGroupBox.Controls.Add(this.attackerFrenzyChbx);
             this.attackerGroupBox.Controls.Add(this.attackerWeaknessChbx);
@@ -249,6 +252,35 @@
             this.attackerHeroArcheryComboBox.Size = new System.Drawing.Size(77, 21);
             this.attackerHeroArcheryComboBox.TabIndex = 49;
             // 
+            // attackerHeroLevelUpDn
+            // 
+            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
+            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
+            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroLevelUpDn.TabIndex = 40;
+            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // attackerHeroAttackUpDn
+            // 
+            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(218, 61);
+            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
+            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroAttackUpDn.TabIndex = 36;
+            // 
             // attackerComboBox
             // 
             this.attackerComboBox.DropDownHeight = 500;
@@ -292,7 +324,7 @@
             // attackerHeroAttackLbl
             // 
             this.attackerHeroAttackLbl.AutoSize = true;
-            this.attackerHeroAttackLbl.Location = new System.Drawing.Point(174, 64);
+            this.attackerHeroAttackLbl.Location = new System.Drawing.Point(174, 63);
             this.attackerHeroAttackLbl.Name = "attackerHeroAttackLbl";
             this.attackerHeroAttackLbl.Size = new System.Drawing.Size(38, 13);
             this.attackerHeroAttackLbl.TabIndex = 33;
@@ -390,6 +422,7 @@
             // 
             // defenderGroupBox
             // 
+            this.defenderGroupBox.Controls.Add(this.defenderHasHeroChbx);
             this.defenderGroupBox.Controls.Add(this.defenderDisruptingRayChbx);
             this.defenderGroupBox.Controls.Add(this.defenderAirShieldChbx);
             this.defenderGroupBox.Controls.Add(this.defenderShieldChbx);
@@ -478,6 +511,35 @@
             this.defenderFrenzyChbx.TabIndex = 59;
             this.defenderFrenzyChbx.Text = "Frenzy";
             this.defenderFrenzyChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderHeroLevelUpDn
+            // 
+            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
+            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
+            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroLevelUpDn.TabIndex = 25;
+            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // defenderHeroDefenseUpDn
+            // 
+            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(218, 61);
+            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
+            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroDefenseUpDn.TabIndex = 23;
             // 
             // defenderHeroLevelLbl
             // 
@@ -614,7 +676,7 @@
             // 
             this.calculatedDamageLbl.AutoSize = true;
             this.calculatedDamageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.calculatedDamageLbl.Location = new System.Drawing.Point(7, 35);
+            this.calculatedDamageLbl.Location = new System.Drawing.Point(7, 33);
             this.calculatedDamageLbl.Name = "calculatedDamageLbl";
             this.calculatedDamageLbl.Size = new System.Drawing.Size(25, 13);
             this.calculatedDamageLbl.TabIndex = 8;
@@ -624,7 +686,7 @@
             // 
             this.damageLbl.AutoSize = true;
             this.damageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.damageLbl.Location = new System.Drawing.Point(7, 12);
+            this.damageLbl.Location = new System.Drawing.Point(7, 10);
             this.damageLbl.Name = "damageLbl";
             this.damageLbl.Size = new System.Drawing.Size(57, 13);
             this.damageLbl.TabIndex = 9;
@@ -634,7 +696,7 @@
             // 
             this.killsLbl.AutoSize = true;
             this.killsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.killsLbl.Location = new System.Drawing.Point(103, 12);
+            this.killsLbl.Location = new System.Drawing.Point(103, 10);
             this.killsLbl.Name = "killsLbl";
             this.killsLbl.Size = new System.Drawing.Size(34, 13);
             this.killsLbl.TabIndex = 10;
@@ -644,7 +706,7 @@
             // 
             this.calculatedKillsLbl.AutoSize = true;
             this.calculatedKillsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.calculatedKillsLbl.Location = new System.Drawing.Point(103, 35);
+            this.calculatedKillsLbl.Location = new System.Drawing.Point(103, 33);
             this.calculatedKillsLbl.Name = "calculatedKillsLbl";
             this.calculatedKillsLbl.Size = new System.Drawing.Size(25, 13);
             this.calculatedKillsLbl.TabIndex = 11;
@@ -654,7 +716,7 @@
             // 
             this.notesLbl.AutoSize = true;
             this.notesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.notesLbl.Location = new System.Drawing.Point(189, 35);
+            this.notesLbl.Location = new System.Drawing.Point(189, 33);
             this.notesLbl.Name = "notesLbl";
             this.notesLbl.Size = new System.Drawing.Size(35, 13);
             this.notesLbl.TabIndex = 12;
@@ -704,66 +766,8 @@
             this.resultPanel.Controls.Add(this.calculatedKillsLbl);
             this.resultPanel.Location = new System.Drawing.Point(68, 310);
             this.resultPanel.Name = "resultPanel";
-            this.resultPanel.Size = new System.Drawing.Size(401, 60);
+            this.resultPanel.Size = new System.Drawing.Size(401, 55);
             this.resultPanel.TabIndex = 15;
-            // 
-            // defenderHeroLevelUpDn
-            // 
-            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
-            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
-            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroLevelUpDn.TabIndex = 25;
-            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // defenderHeroDefenseUpDn
-            // 
-            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(218, 61);
-            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
-            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroDefenseUpDn.TabIndex = 23;
-            // 
-            // attackerHeroLevelUpDn
-            // 
-            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
-            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
-            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroLevelUpDn.TabIndex = 40;
-            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // attackerHeroAttackUpDn
-            // 
-            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(218, 61);
-            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
-            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroAttackUpDn.TabIndex = 36;
             // 
             // attackerCountUpDn
             // 
@@ -787,6 +791,26 @@
             0,
             0});
             // 
+            // attackerHasHeroChbx
+            // 
+            this.attackerHasHeroChbx.AutoSize = true;
+            this.attackerHasHeroChbx.Location = new System.Drawing.Point(6, 62);
+            this.attackerHasHeroChbx.Name = "attackerHasHeroChbx";
+            this.attackerHasHeroChbx.Size = new System.Drawing.Size(69, 17);
+            this.attackerHasHeroChbx.TabIndex = 59;
+            this.attackerHasHeroChbx.Text = "Has hero";
+            this.attackerHasHeroChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderHasHeroChbx
+            // 
+            this.defenderHasHeroChbx.AutoSize = true;
+            this.defenderHasHeroChbx.Location = new System.Drawing.Point(6, 62);
+            this.defenderHasHeroChbx.Name = "defenderHasHeroChbx";
+            this.defenderHasHeroChbx.Size = new System.Drawing.Size(69, 17);
+            this.defenderHasHeroChbx.TabIndex = 60;
+            this.defenderHasHeroChbx.Text = "Has hero";
+            this.defenderHasHeroChbx.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,21 +824,20 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Menu = this.mainMenu1;
             this.Name = "Form1";
             this.Text = "Heroes III Damage Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.attackerGroupBox.ResumeLayout(false);
             this.attackerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             this.defenderGroupBox.ResumeLayout(false);
             this.defenderGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
             this.terrainGroupBox.ResumeLayout(false);
             this.resultPanel.ResumeLayout(false);
             this.resultPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).EndInit();
             this.ResumeLayout(false);
 
@@ -886,6 +909,8 @@
         private System.Windows.Forms.MenuItem menuItemMode2;
         private System.Windows.Forms.MenuItem menuItemMode3;
         private System.Windows.Forms.Panel resultPanel;
+        private System.Windows.Forms.CheckBox attackerHasHeroChbx;
+        private System.Windows.Forms.CheckBox defenderHasHeroChbx;
 
     }
 }

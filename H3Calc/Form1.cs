@@ -17,6 +17,7 @@ namespace H3Calc
         protected UnitsList units;
         protected TerrainsList terrains;
         protected List<Hero> heroes;
+        protected Hero genericHero;
 
         protected ApplicationSettings settings;
         protected ApplicationSettingsManager settingsManager;
@@ -32,11 +33,15 @@ namespace H3Calc
         {
             InitializeComponent();
 
+            // Removed this line from designer file to workaround against weird VS designer bug :<
+            this.Menu = this.mainMenu1; 
+
             BuildControlGroups();
 
             ReadUnitData();
             ReadTerrainData();
             ReadHeroData();
+            genericHero = new Hero();
 
             settingsManager = new ApplicationSettingsManager();
             settings = settingsManager.LoadSettings();
@@ -52,7 +57,7 @@ namespace H3Calc
 
             var heroComboBoxItems = new List<KeyValuePair<string, Hero>>();
             heroComboBoxItems.Add(new KeyValuePair<string, Hero>("No hero", null));
-            heroComboBoxItems.Add(new KeyValuePair<string, Hero>("Generic hero", new Hero()));
+            heroComboBoxItems.Add(new KeyValuePair<string, Hero>("Generic hero", genericHero));
             foreach (Hero hero in heroes)
             {
                 heroComboBoxItems.Add(new KeyValuePair<string, Hero>(hero.Name, hero));
@@ -84,6 +89,8 @@ namespace H3Calc
 
             attackerCountUpDn.ValueChanged += ControlValueChanged;
             attackerComboBox.SelectedValueChanged += ControlValueChanged;
+            attackerHasHeroChbx.CheckedChanged += ControlValueChanged;
+            attackerHasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
             attackerHeroComboBox.SelectedValueChanged += ControlValueChanged;
             attackerHeroComboBox.SelectedValueChanged += HeroComboBoxValueChanged;
             attackerHeroLevelUpDn.ValueChanged += ControlValueChanged;
@@ -104,6 +111,8 @@ namespace H3Calc
             attackerWeaknessChbx.CheckedChanged += ControlValueChanged;
 
             defenderComboBox.SelectedValueChanged += ControlValueChanged;
+            defenderHasHeroChbx.CheckedChanged += ControlValueChanged;
+            defenderHasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
             defenderHeroComboBox.SelectedValueChanged += ControlValueChanged;
             defenderHeroComboBox.SelectedValueChanged += HeroComboBoxValueChanged;
             defenderHeroLevelUpDn.ValueChanged += ControlValueChanged;
@@ -186,6 +195,7 @@ namespace H3Calc
 
             StandardModeControls = new Control[]
             {
+                attackerHeroComboBox,
                 attackerHeroLevelLbl,
                 attackerHeroLevelUpDn,
                 attackerHeroOffenseLbl,
@@ -193,6 +203,7 @@ namespace H3Calc
                 attackerHeroArcheryLbl,
                 attackerHeroArcheryComboBox,
                 
+                defenderHeroComboBox,
                 defenderHeroLevelLbl,
                 defenderHeroLevelUpDn,
                 defenderHeroArmorerLbl,
@@ -284,15 +295,39 @@ namespace H3Calc
             comboBox.SelectedIndex = 0;
         }
 
+        private Hero SelectedAttackerHero()
+        {
+            if (settings.Mode == ApplicationMode.Simple)
+            {
+                return (attackerHasHeroChbx.Checked) ? genericHero : null;                
+            }
+            else
+            {
+                return (Hero)attackerHeroComboBox.SelectedValue;
+            }
+        }
+
+        private Hero SelectedDefenderHero()
+        {
+            if (settings.Mode == ApplicationMode.Simple)
+            {
+                return (defenderHasHeroChbx.Checked) ? genericHero : null;
+            }
+            else
+            {
+                return (Hero)defenderHeroComboBox.SelectedValue;
+            }
+        }
+
         private void UpdateControlsOnHeroChange()
-        {            
-            bool enabled = (attackerHeroComboBox.SelectedValue != null);
+        {
+            bool enabled = (SelectedAttackerHero() != null);
             foreach (Control control in AttackerHeroControls)
             {
                 control.Enabled = enabled;
             }
-                        
-            enabled = (defenderHeroComboBox.SelectedValue != null);
+
+            enabled = (SelectedDefenderHero() != null);
             foreach (Control control in DefenderHeroControls)
             {
                 control.Enabled = enabled;
@@ -301,7 +336,43 @@ namespace H3Calc
 
         private void UpdateControlsOnModeChange()
         {
-            bool visible = (settings.Mode == ApplicationMode.Standard || settings.Mode == ApplicationMode.Scientific);
+            if (settings.Mode == ApplicationMode.Simple)
+            {
+                attackerHasHeroChbx.Checked = (attackerHeroComboBox.SelectedValue != null);
+                defenderHasHeroChbx.Checked = (defenderHeroComboBox.SelectedValue != null);
+            }
+            else
+            {
+                if (attackerHasHeroChbx.Checked)
+                {
+                    if (attackerHeroComboBox.SelectedValue == null)
+                    {
+                        attackerHeroComboBox.SelectedValue = genericHero;
+                    }                    
+                }
+                else
+                {
+                    attackerHeroComboBox.SelectedIndex = 0;
+                }
+
+                if (defenderHasHeroChbx.Checked)
+                {
+                    if (defenderHeroComboBox.SelectedValue == null)
+                    {
+                        defenderHeroComboBox.SelectedValue = genericHero;
+                    }
+                }
+                else
+                {
+                    defenderHeroComboBox.SelectedIndex = 0;
+                }
+            }
+
+            bool visible = (settings.Mode == ApplicationMode.Simple);
+            attackerHasHeroChbx.Visible = visible;
+            defenderHasHeroChbx.Visible = visible;
+
+            visible = (settings.Mode == ApplicationMode.Standard || settings.Mode == ApplicationMode.Scientific);
             foreach (Control control in StandardModeControls)
             {
                 control.Visible = visible;
@@ -319,7 +390,7 @@ namespace H3Calc
                     attackerGroupBox.Height = defenderGroupBox.Height = 95;
                     break;
                 case ApplicationMode.Standard:
-                    attackerGroupBox.Height = defenderGroupBox.Height = 181;
+                    attackerGroupBox.Height = defenderGroupBox.Height = 184;
                     break;
                 case ApplicationMode.Scientific:
                     attackerGroupBox.Height = defenderGroupBox.Height = 292;
@@ -371,57 +442,73 @@ namespace H3Calc
                 inputData.Terrain = null;
             }
 
-            inputData.AttackerHero = (Hero)attackerHeroComboBox.SelectedValue;
+            inputData.AttackerHero = SelectedAttackerHero();
             if (inputData.AttackerHero != null)
             {
                 HeroStats stats = new HeroStats();
                 inputData.AttackerHero.Stats = stats;
-
-                stats.Level = (int)attackerHeroLevelUpDn.Value;
+                
                 stats.Attack = (int)attackerHeroAttackUpDn.Value;
 
-                CheckSecondarySkillComboBox(attackerHeroOffenseComboBox, typeof(Offense), stats.SecondarySkills, inputData.AttackerHero);
-                CheckSecondarySkillComboBox(attackerHeroArcheryComboBox, typeof(Archery), stats.SecondarySkills, inputData.AttackerHero);
-                CheckSecondarySkillComboBox(attackerHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.AttackerHero);
-                CheckSecondarySkillComboBox(attackerHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.AttackerHero);
-                CheckSecondarySkillComboBox(attackerHeroEarthComboBox, typeof(EarthMagic), stats.SecondarySkills, inputData.AttackerHero);
-                CheckSecondarySkillComboBox(attackerHeroWaterComboBox, typeof(WaterMagic), stats.SecondarySkills, inputData.AttackerHero);
+                if (settings.Mode != ApplicationMode.Simple)
+                {
+                    stats.Level = (int)attackerHeroLevelUpDn.Value;
+
+                    CheckSecondarySkillComboBox(attackerHeroOffenseComboBox, typeof(Offense), stats.SecondarySkills, inputData.AttackerHero);
+                    CheckSecondarySkillComboBox(attackerHeroArcheryComboBox, typeof(Archery), stats.SecondarySkills, inputData.AttackerHero);
+
+                    if (settings.Mode == ApplicationMode.Scientific)
+                    {
+                        CheckSecondarySkillComboBox(attackerHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.AttackerHero);
+                        CheckSecondarySkillComboBox(attackerHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.AttackerHero);
+                        CheckSecondarySkillComboBox(attackerHeroEarthComboBox, typeof(EarthMagic), stats.SecondarySkills, inputData.AttackerHero);
+                        CheckSecondarySkillComboBox(attackerHeroWaterComboBox, typeof(WaterMagic), stats.SecondarySkills, inputData.AttackerHero);
 
 
-                CheckSpellCheckbox(attackerBlessChbx, typeof(Bless), inputData.AttackerSpells, inputData.AttackerHero);
-                CheckSpellCheckbox(attackerBloodlustChbx, typeof(Bloodlust), inputData.AttackerSpells, inputData.AttackerHero);
-                CheckSpellCheckbox(attackerPrecisionChbx, typeof(Precision), inputData.AttackerSpells, inputData.AttackerHero);
-                CheckSpellCheckbox(attackerPrayerChbx, typeof(Prayer), inputData.AttackerSpells, inputData.AttackerHero);
-                CheckSpellCheckbox(attackerFrenzyChbx, typeof(Frenzy), inputData.AttackerSpells, inputData.AttackerHero);
-                CheckSpellCheckbox(attackerSlayerChbx, typeof(Slayer), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerBlessChbx, typeof(Bless), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerBloodlustChbx, typeof(Bloodlust), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerPrecisionChbx, typeof(Precision), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerPrayerChbx, typeof(Prayer), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerFrenzyChbx, typeof(Frenzy), inputData.AttackerSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(attackerSlayerChbx, typeof(Slayer), inputData.AttackerSpells, inputData.AttackerHero);
 
-                CheckSpellCheckbox(defenderDisruptingRayChbx, typeof(DisruptingRay), inputData.DefenderSpells, inputData.AttackerHero);
+                        CheckSpellCheckbox(defenderDisruptingRayChbx, typeof(DisruptingRay), inputData.DefenderSpells, inputData.AttackerHero);
+                    }
+                }
             }
 
-            inputData.DefenderHero = (Hero)defenderHeroComboBox.SelectedValue;
+            inputData.DefenderHero = SelectedDefenderHero();
             if (inputData.DefenderHero != null)
             {
                 HeroStats stats = new HeroStats();
                 inputData.DefenderHero.Stats = stats;
 
-                stats.Level = (int)defenderHeroLevelUpDn.Value;
                 stats.Defense = (int)defenderHeroDefenseUpDn.Value;
 
-                CheckSecondarySkillComboBox(defenderHeroArmorerComboBox, typeof(Armorer), stats.SecondarySkills, inputData.DefenderHero);
-                CheckSecondarySkillComboBox(defenderHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.DefenderHero);
-                CheckSecondarySkillComboBox(defenderHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.DefenderHero);
-                CheckSecondarySkillComboBox(defenderHeroEarthComboBox, typeof(EarthMagic), stats.SecondarySkills, inputData.DefenderHero);
-                CheckSecondarySkillComboBox(defenderHeroWaterComboBox, typeof(WaterMagic), stats.SecondarySkills, inputData.DefenderHero);
+                if (settings.Mode != ApplicationMode.Simple)
+                {
+                    stats.Level = (int)defenderHeroLevelUpDn.Value;
+
+                    CheckSecondarySkillComboBox(defenderHeroArmorerComboBox, typeof(Armorer), stats.SecondarySkills, inputData.DefenderHero);
+
+                    if (settings.Mode == ApplicationMode.Scientific)
+                    {
+                        CheckSecondarySkillComboBox(defenderHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.DefenderHero);
+                        CheckSecondarySkillComboBox(defenderHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.DefenderHero);
+                        CheckSecondarySkillComboBox(defenderHeroEarthComboBox, typeof(EarthMagic), stats.SecondarySkills, inputData.DefenderHero);
+                        CheckSecondarySkillComboBox(defenderHeroWaterComboBox, typeof(WaterMagic), stats.SecondarySkills, inputData.DefenderHero);
 
 
-                CheckSpellCheckbox(defenderShieldChbx, typeof(Shield), inputData.DefenderSpells, inputData.DefenderHero);
-                CheckSpellCheckbox(defenderStoneSkinChbx, typeof(StoneSkin), inputData.DefenderSpells, inputData.DefenderHero);
-                CheckSpellCheckbox(defenderPrayerChbx, typeof(Prayer), inputData.DefenderSpells, inputData.DefenderHero);
-                CheckSpellCheckbox(defenderAirShieldChbx, typeof(AirShield), inputData.DefenderSpells, inputData.DefenderHero);
-                CheckSpellCheckbox(defenderFrenzyChbx, typeof(Frenzy), inputData.DefenderSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(defenderShieldChbx, typeof(Shield), inputData.DefenderSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(defenderStoneSkinChbx, typeof(StoneSkin), inputData.DefenderSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(defenderPrayerChbx, typeof(Prayer), inputData.DefenderSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(defenderAirShieldChbx, typeof(AirShield), inputData.DefenderSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(defenderFrenzyChbx, typeof(Frenzy), inputData.DefenderSpells, inputData.DefenderHero);
 
-                CheckSpellCheckbox(attackerCurseChbx, typeof(Curse), inputData.AttackerSpells, inputData.DefenderHero);
-                CheckSpellCheckbox(attackerWeaknessChbx, typeof(Weakness), inputData.AttackerSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(attackerCurseChbx, typeof(Curse), inputData.AttackerSpells, inputData.DefenderHero);
+                        CheckSpellCheckbox(attackerWeaknessChbx, typeof(Weakness), inputData.AttackerSpells, inputData.DefenderHero);
+                    }
+                }
             }
 
             int minDamage, maxDamage;
