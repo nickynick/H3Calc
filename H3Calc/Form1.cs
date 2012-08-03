@@ -18,15 +18,28 @@ namespace H3Calc
         protected TerrainsList terrains;
         protected List<Hero> heroes;
 
+        protected ApplicationSettings settings;
+        protected ApplicationSettingsManager settingsManager;
+
         protected DamageCalculator calculator;
+
+        protected Control[] AttackerHeroControls;
+        protected Control[] DefenderHeroControls;
+        protected Control[] StandardModeControls;
+        protected Control[] ScientificModeControls;
 
         public Form1()
         {
             InitializeComponent();
 
+            BuildControlGroups();
+
             ReadUnitData();
             ReadTerrainData();
             ReadHeroData();
+
+            settingsManager = new ApplicationSettingsManager();
+            settings = settingsManager.LoadSettings();
             
             calculator = new DamageCalculator();
 
@@ -108,9 +121,121 @@ namespace H3Calc
             defenderDisruptingRayChbx.CheckedChanged += ControlValueChanged;
 
             terrainComboBox.SelectedValueChanged += ControlValueChanged;
+        }
 
-            UpdateControls();
-            UpdateCalculatedDamage();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UpdateControlsOnHeroChange();
+            UpdateControlsOnModeChange();
+            UpdateMenu(); 
+            UpdateCalculatedDamage();            
+        }
+
+        private void BuildControlGroups()
+        {
+            AttackerHeroControls = new Control[] 
+            { 
+                attackerHeroLevelUpDn,
+                attackerHeroAttackLbl,
+                attackerHeroAttackUpDn,
+                attackerHeroOffenseLbl,
+                attackerHeroOffenseComboBox,
+                attackerHeroArcheryLbl,
+                attackerHeroArcheryComboBox,
+                attackerHeroAirLbl,
+                attackerHeroAirComboBox,
+                attackerHeroFireLbl,
+                attackerHeroFireComboBox,
+                attackerHeroEarthLbl,
+                attackerHeroEarthComboBox,
+                attackerHeroWaterLbl,
+                attackerHeroWaterComboBox,
+                attackerBlessChbx,
+                attackerBloodlustChbx,
+                attackerPrecisionChbx,
+                attackerPrayerChbx,
+                attackerFrenzyChbx,
+                attackerSlayerChbx,
+                defenderDisruptingRayChbx
+            };
+
+            DefenderHeroControls = new Control[]
+            {
+                defenderHeroLevelLbl,
+                defenderHeroLevelUpDn,
+                defenderHeroDefenseLbl,
+                defenderHeroDefenseUpDn,
+                defenderHeroArmorerLbl,
+                defenderHeroArmorerComboBox,
+                defenderHeroAirLbl,
+                defenderHeroAirComboBox,
+                defenderHeroFireLbl,
+                defenderHeroFireComboBox,
+                defenderHeroEarthLbl,
+                defenderHeroEarthComboBox,
+                defenderHeroWaterLbl,
+                defenderHeroWaterComboBox,
+                defenderShieldChbx,
+                defenderStoneSkinChbx,
+                defenderPrayerChbx,
+                defenderAirShieldChbx,
+                defenderFrenzyChbx,
+                attackerCurseChbx,
+                attackerWeaknessChbx
+            };
+
+            StandardModeControls = new Control[]
+            {
+                attackerHeroLevelLbl,
+                attackerHeroLevelUpDn,
+                attackerHeroOffenseLbl,
+                attackerHeroOffenseComboBox,
+                attackerHeroArcheryLbl,
+                attackerHeroArcheryComboBox,
+                
+                defenderHeroLevelLbl,
+                defenderHeroLevelUpDn,
+                defenderHeroArmorerLbl,
+                defenderHeroArmorerComboBox,
+                
+            };
+
+            ScientificModeControls = new Control[]
+            {
+                attackerHeroAirLbl,
+                attackerHeroAirComboBox,
+                attackerHeroFireLbl,
+                attackerHeroFireComboBox,
+                attackerHeroEarthLbl,
+                attackerHeroEarthComboBox,
+                attackerHeroWaterLbl,
+                attackerHeroWaterComboBox,
+
+                defenderHeroAirLbl,
+                defenderHeroAirComboBox,
+                defenderHeroFireLbl,
+                defenderHeroFireComboBox,
+                defenderHeroEarthLbl,
+                defenderHeroEarthComboBox,
+                defenderHeroWaterLbl,
+                defenderHeroWaterComboBox,
+
+                attackerBlessChbx,
+                attackerBloodlustChbx,
+                attackerPrecisionChbx,
+                attackerPrayerChbx,
+                attackerFrenzyChbx,
+                attackerSlayerChbx,
+                defenderDisruptingRayChbx,
+
+                defenderShieldChbx,
+                defenderStoneSkinChbx,
+                defenderPrayerChbx,
+                defenderAirShieldChbx,
+                defenderFrenzyChbx,
+                attackerCurseChbx,
+                attackerWeaknessChbx
+            };
         }
 
         private void ReadUnitData()
@@ -159,57 +284,71 @@ namespace H3Calc
             comboBox.SelectedIndex = 0;
         }
 
-        private void UpdateControls()
+        private void UpdateControlsOnHeroChange()
         {            
-            bool enabled;
-            
-            enabled = (attackerHeroComboBox.SelectedValue != null);
-            attackerHeroLevelLbl.Enabled = enabled;
-            attackerHeroLevelUpDn.Enabled = enabled;
-            attackerHeroAttackLbl.Enabled = enabled;
-            attackerHeroAttackUpDn.Enabled = enabled;
-            attackerHeroOffenseLbl.Enabled = enabled;
-            attackerHeroOffenseComboBox.Enabled = enabled;
-            attackerHeroArcheryLbl.Enabled = enabled;
-            attackerHeroArcheryComboBox.Enabled = enabled;
-            attackerHeroAirLbl.Enabled = enabled;
-            attackerHeroAirComboBox.Enabled = enabled;
-            attackerHeroFireLbl.Enabled = enabled;
-            attackerHeroFireComboBox.Enabled = enabled;
-            attackerHeroEarthLbl.Enabled = enabled;
-            attackerHeroEarthComboBox.Enabled = enabled;
-            attackerHeroWaterLbl.Enabled = enabled;
-            attackerHeroWaterComboBox.Enabled = enabled;
-            attackerBlessChbx.Enabled = enabled;
-            attackerBloodlustChbx.Enabled = enabled;
-            attackerPrecisionChbx.Enabled = enabled;
-            attackerPrayerChbx.Enabled = enabled;
-            attackerFrenzyChbx.Enabled = enabled;
-            attackerSlayerChbx.Enabled = enabled;
-            defenderDisruptingRayChbx.Enabled = enabled;
-
+            bool enabled = (attackerHeroComboBox.SelectedValue != null);
+            foreach (Control control in AttackerHeroControls)
+            {
+                control.Enabled = enabled;
+            }
+                        
             enabled = (defenderHeroComboBox.SelectedValue != null);
-            defenderHeroLevelLbl.Enabled = enabled;
-            defenderHeroLevelUpDn.Enabled = enabled;
-            defenderHeroDefenseLbl.Enabled = enabled;
-            defenderHeroDefenseUpDn.Enabled = enabled;
-            defenderHeroArmorerLbl.Enabled = enabled;
-            defenderHeroArmorerComboBox.Enabled = enabled;
-            defenderHeroAirLbl.Enabled = enabled;
-            defenderHeroAirComboBox.Enabled = enabled;
-            defenderHeroFireLbl.Enabled = enabled;
-            defenderHeroFireComboBox.Enabled = enabled;
-            defenderHeroEarthLbl.Enabled = enabled;
-            defenderHeroEarthComboBox.Enabled = enabled;
-            defenderHeroWaterLbl.Enabled = enabled;
-            defenderHeroWaterComboBox.Enabled = enabled;
-            defenderShieldChbx.Enabled = enabled;
-            defenderStoneSkinChbx.Enabled = enabled;
-            defenderPrayerChbx.Enabled = enabled;
-            defenderAirShieldChbx.Enabled = enabled;
-            defenderFrenzyChbx.Enabled = enabled;
-            attackerCurseChbx.Enabled = enabled;
-            attackerWeaknessChbx.Enabled = enabled;
+            foreach (Control control in DefenderHeroControls)
+            {
+                control.Enabled = enabled;
+            }
+        }
+
+        private void UpdateControlsOnModeChange()
+        {
+            bool visible = (settings.Mode == ApplicationMode.Standard || settings.Mode == ApplicationMode.Scientific);
+            foreach (Control control in StandardModeControls)
+            {
+                control.Visible = visible;
+            }
+ 
+            visible = (settings.Mode == ApplicationMode.Scientific);
+            foreach (Control control in ScientificModeControls)
+            {
+                control.Visible = visible;
+            }            
+
+            switch (settings.Mode)
+            {
+                case ApplicationMode.Simple:
+                    attackerGroupBox.Height = defenderGroupBox.Height = 95;
+                    break;
+                case ApplicationMode.Standard:
+                    attackerGroupBox.Height = defenderGroupBox.Height = 181;
+                    break;
+                case ApplicationMode.Scientific:
+                    attackerGroupBox.Height = defenderGroupBox.Height = 292;
+                    break;
+            }
+
+            resultPanel.Top = terrainGroupBox.Top = attackerGroupBox.Top + attackerGroupBox.Height + 6;
+
+            this.Height = terrainGroupBox.Top + terrainGroupBox.Height + 64;
+        }
+
+        private void UpdateMenu()
+        {
+            foreach (MenuItem menuItem in menuItemMode.MenuItems) {
+                menuItem.Checked = false;
+            }
+
+            switch (settings.Mode)
+            {
+                case ApplicationMode.Simple:
+                    menuItemMode1.Checked = true;
+                    break;
+                case ApplicationMode.Standard:
+                    menuItemMode2.Checked = true;
+                    break;
+                case ApplicationMode.Scientific:
+                    menuItemMode3.Checked = true;
+                    break;
+            }
         }
 
         private void UpdateCalculatedDamage()
@@ -335,11 +474,33 @@ namespace H3Calc
 
         private void HeroComboBoxValueChanged(object sender, EventArgs e)
         {
-            UpdateControls();
+            UpdateControlsOnHeroChange();
         }
 
         private void ControlValueChanged(object sender, EventArgs e)
         {            
+            UpdateCalculatedDamage();
+        }
+
+        private void menuItemMode_Click(object sender, EventArgs e)
+        {
+            if (sender == menuItemMode1)
+            {
+                settings.Mode = ApplicationMode.Simple;
+            }
+            else if (sender == menuItemMode2)
+            {
+                settings.Mode = ApplicationMode.Standard;
+            }
+            else if (sender == menuItemMode3)
+            {
+                settings.Mode = ApplicationMode.Scientific;
+            }
+
+            settingsManager.UpdateSettings(settings);
+            
+            UpdateMenu();
+            UpdateControlsOnModeChange();
             UpdateCalculatedDamage();
         }
     }

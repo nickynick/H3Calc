@@ -179,6 +179,13 @@ namespace H3Calc.Engine
         }
     }
 
+    public interface IUnitStatsModifier
+    {
+        void ApplyPermanently(Unit unit, UnitStats modifiedStats);
+        void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats);
+        void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats);
+    }
+
     public interface IDamageModifierProvider
     {
         void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier);

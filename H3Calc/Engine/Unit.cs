@@ -61,13 +61,6 @@ namespace H3Calc.Engine
         public Unit Defender { get; set; }
     }
 
-    public interface IUnitStatsModifier
-    {
-        void ApplyPermanently(Unit unit, UnitStats modifiedStats);
-        void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats);
-        void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats);
-    }
-
     public class UnitUniqueTraitManager : IUnitStatsModifier, IDamageModifierProvider
     {
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
