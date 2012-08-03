@@ -34,14 +34,14 @@ namespace H3Calc.Engine
 
             if (data.AttackerHero != null)
             {
-                attackerStatsModifiers.Add(data.AttackerHero.Stats);
-                attackerDamageModifierProviders.Add(data.AttackerHero.Stats);
+                attackerStatsModifiers.Add(data.AttackerHero);
+                attackerDamageModifierProviders.Add(data.AttackerHero);
             }
 
             if (data.DefenderHero != null)
             {
-                defenderStatsModifiers.Add(data.DefenderHero.Stats);
-                defenderDamageModifierProviders.Add(data.DefenderHero.Stats);
+                defenderStatsModifiers.Add(data.DefenderHero);
+                defenderDamageModifierProviders.Add(data.DefenderHero);
             }
 
             attackerStatsModifiers.AddRange(data.AttackerSpells);
@@ -95,9 +95,7 @@ namespace H3Calc.Engine
             foreach (IDamageModifierProvider provider in defenderDamageModifierProviders)
             {
                 provider.ApplyOnDefense(attackData, damageModifier);
-            }
-            
-            // TODO: special units (behemoths, double hits, etc.)
+            }            
 
             int minBaseDamage = data.AttackerCount * modifiedAttackerStats.MinDamage;
             int maxBaseDamage = data.AttackerCount * modifiedAttackerStats.MaxDamage;

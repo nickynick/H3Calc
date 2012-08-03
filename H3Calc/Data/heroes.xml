@@ -8,10 +8,12 @@
   <Hero>
     <Id>1</Id>
     <Name>Валеска</Name>
+    <SpecializedUnitId>2</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>2</Id>
     <Name>Эдрик</Name>
+    <SpecializedUnitId>4</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>3</Id>
@@ -24,6 +26,7 @@
   <Hero>
     <Id>5</Id>
     <Name>Сорша</Name>
+    <SpecializedUnitId>6</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>6</Id>
@@ -32,6 +35,7 @@
   <Hero>
     <Id>7</Id>
     <Name>Турис</Name>
+    <SpecializedUnitId>10</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>8</Id>
@@ -54,6 +58,7 @@
   <Hero>
     <Id>12</Id>
     <Name>Инхам</Name>
+    <SpecializedUnitId>8</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>13</Id>
@@ -76,6 +81,7 @@
   <Hero>
     <Id>17</Id>
     <Name>Уфретин</Name>
+    <SpecializedUnitId>16</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>18</Id>
@@ -84,6 +90,7 @@
   <Hero>
     <Id>19</Id>
     <Name>Риланд</Name>
+    <SpecializedUnitId>22</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>20</Id>
@@ -92,10 +99,12 @@
   <Hero>
     <Id>21</Id>
     <Name>Ивор</Name>
+    <SpecializedUnitId>18</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>22</Id>
     <Name>Кланси</Name>
+    <SpecializedUnitId>24</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>23</Id>
@@ -133,18 +142,22 @@
   <Hero>
     <Id>31</Id>
     <Name>Аерис</Name>
+    <SpecializedUnitId>20</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>32</Id>
     <Name>Пигедрам</Name>
+    <SpecializedUnitId>30</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>33</Id>
     <Name>Тан</Name>
+    <SpecializedUnitId>36</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>34</Id>
     <Name>Жосефина</Name>
+    <SpecializedUnitId>32</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>35</Id>
@@ -158,6 +171,7 @@
   <Hero>
     <Id>37</Id>
     <Name>Фафнер</Name>
+    <SpecializedUnitId>38</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>38</Id>
@@ -166,6 +180,7 @@
   <Hero>
     <Id>39</Id>
     <Name>Иона</Name>
+    <SpecializedUnitId>36</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>40</Id>
@@ -186,6 +201,7 @@
   <Hero>
     <Id>44</Id>
     <Name>Теодор</Name>
+    <SpecializedUnitId>34</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>45</Id>
@@ -202,18 +218,22 @@
   <Hero>
     <Id>48</Id>
     <Name>Фиона</Name>
+    <SpecializedUnitId>74</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>49</Id>
     <Name>Рашка</Name>
+    <SpecializedUnitId>80</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>50</Id>
     <Name>Мариус</Name>
+    <SpecializedUnitId>76</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>51</Id>
     <Name>Игнат</Name>
+    <SpecializedUnitId>70</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>52</Id>
@@ -222,6 +242,7 @@
   <Hero>
     <Id>53</Id>
     <Name>Калх</Name>
+    <SpecializedUnitId>72</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>54</Id>
@@ -230,6 +251,7 @@
   <Hero>
     <Id>55</Id>
     <Name>Нимус</Name>
+    <SpecializedUnitId>78</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>56</Id>
@@ -268,22 +290,27 @@
   <Hero>
     <Id>64</Id>
     <Name>Стракер</Name>
+    <SpecializedUnitId>44</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>65</Id>
     <Name>Вокиал</Name>
+    <SpecializedUnitId>48</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>66</Id>
     <Name>Моандор</Name>
+    <SpecializedUnitId>50</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>67</Id>
     <Name>Чарна</Name>
+    <SpecializedUnitId>46</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>68</Id>
     <Name>Тамика</Name>
+    <SpecializedUnitId>52</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>69</Id>
@@ -296,6 +323,7 @@
   <Hero>
     <Id>71</Id>
     <Name>Галтран</Name>
+    <SpecializedUnitId>42</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>72</Id>
@@ -333,6 +361,7 @@
   <Hero>
     <Id>80</Id>
     <Name>Лорелей</Name>
+    <SpecializedUnitId>58</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>81</Id>
@@ -341,10 +370,12 @@
   <Hero>
     <Id>82</Id>
     <Name>Дас</Name>
+    <SpecializedUnitId>64</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>83</Id>
     <Name>Аджит</Name>
+    <SpecializedUnitId>60</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>84</Id>
@@ -357,10 +388,12 @@
   <Hero>
     <Id>86</Id>
     <Name>Синка</Name>
+    <SpecializedUnitId>66</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>87</Id>
     <Name>Шакти</Name>
+    <SpecializedUnitId>56</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>88</Id>
@@ -398,6 +431,7 @@
   <Hero>
     <Id>96</Id>
     <Name>Йог</Name>
+    <SpecializedUnitId>108</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>97</Id>
@@ -406,18 +440,22 @@
   <Hero>
     <Id>98</Id>
     <Name>Жабаркас</Name>
+    <SpecializedUnitId>102</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>99</Id>
     <Name>Шива</Name>
+    <SpecializedUnitId>106</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>100</Id>
     <Name>Гретчин</Name>
+    <SpecializedUnitId>98</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>101</Id>
     <Name>Креллион</Name>
+    <SpecializedUnitId>104</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>102</Id>
@@ -427,6 +465,7 @@
   <Hero>
     <Id>103</Id>
     <Name>Тираксор</Name>
+    <SpecializedUnitId>100</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>104</Id>
@@ -435,6 +474,7 @@
   <Hero>
     <Id>105</Id>
     <Name>Вей</Name>
+    <SpecializedUnitId>104</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>106</Id>
@@ -465,14 +505,17 @@
   <Hero>
     <Id>112</Id>
     <Name>Брон</Name>
+    <SpecializedUnitId>90</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>113</Id>
     <Name>Дракон</Name>
+    <SpecializedUnitId>84</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>114</Id>
     <Name>Вистан</Name>
+    <SpecializedUnitId>86</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>115</Id>
@@ -482,10 +525,12 @@
   <Hero>
     <Id>116</Id>
     <Name>Алкин</Name>
+    <SpecializedUnitId>92</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>117</Id>
     <Name>Корбак</Name>
+    <SpecializedUnitId>88</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>118</Id>
@@ -494,6 +539,7 @@
   <Hero>
     <Id>119</Id>
     <Name>Брохильд</Name>
+    <SpecializedUnitId>94</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>120</Id>
@@ -532,34 +578,42 @@
   <Hero>
     <Id>128</Id>
     <Name>Пасис</Name>
+    <SpecializedUnitId>122</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>129</Id>
     <Name>Тунар</Name>
+    <SpecializedUnitId>120</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>130</Id>
     <Name>Игнисса</Name>
+    <SpecializedUnitId>118</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>131</Id>
     <Name>Лакус</Name>
+    <SpecializedUnitId>116</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>132</Id>
     <Name>Монер</Name>
+    <SpecializedUnitId>122</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>133</Id>
     <Name>Эрдамон</Name>
+    <SpecializedUnitId>120</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>134</Id>
     <Name>Фьюр</Name>
+    <SpecializedUnitId>118</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>135</Id>
     <Name>Кальт</Name>
+    <SpecializedUnitId>116</SpecializedUnitId>
   </Hero>
   <Hero>
     <Id>136</Id>
