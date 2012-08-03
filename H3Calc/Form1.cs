@@ -319,24 +319,9 @@ namespace H3Calc
             }
         }
 
-        private void UpdateControlsOnHeroChange()
+        private void SynchronizeHeroControls(ApplicationMode sourceMode)
         {
-            bool enabled = (SelectedAttackerHero() != null);
-            foreach (Control control in AttackerHeroControls)
-            {
-                control.Enabled = enabled;
-            }
-
-            enabled = (SelectedDefenderHero() != null);
-            foreach (Control control in DefenderHeroControls)
-            {
-                control.Enabled = enabled;
-            }
-        }
-
-        private void UpdateControlsOnModeChange()
-        {
-            if (settings.Mode == ApplicationMode.Simple)
+            if (sourceMode != ApplicationMode.Simple)
             {
                 attackerHasHeroChbx.Checked = (attackerHeroComboBox.SelectedValue != null);
                 defenderHasHeroChbx.Checked = (defenderHeroComboBox.SelectedValue != null);
@@ -348,7 +333,7 @@ namespace H3Calc
                     if (attackerHeroComboBox.SelectedValue == null)
                     {
                         attackerHeroComboBox.SelectedValue = genericHero;
-                    }                    
+                    }
                 }
                 else
                 {
@@ -367,7 +352,27 @@ namespace H3Calc
                     defenderHeroComboBox.SelectedIndex = 0;
                 }
             }
+        }
 
+        private void UpdateControlsOnHeroChange()
+        {
+            SynchronizeHeroControls(settings.Mode);
+
+            bool enabled = (SelectedAttackerHero() != null);
+            foreach (Control control in AttackerHeroControls)
+            {
+                control.Enabled = enabled;
+            }
+
+            enabled = (SelectedDefenderHero() != null);
+            foreach (Control control in DefenderHeroControls)
+            {
+                control.Enabled = enabled;
+            }
+        }
+
+        private void UpdateControlsOnModeChange()
+        {
             bool visible = (settings.Mode == ApplicationMode.Simple);
             attackerHasHeroChbx.Visible = visible;
             defenderHasHeroChbx.Visible = visible;
@@ -571,6 +576,8 @@ namespace H3Calc
 
         private void menuItemMode_Click(object sender, EventArgs e)
         {
+            SynchronizeHeroControls(settings.Mode);
+
             if (sender == menuItemMode1)
             {
                 settings.Mode = ApplicationMode.Simple;
