@@ -47,13 +47,9 @@ namespace H3Calc
             settings = settingsManager.LoadSettings();
             
             calculator = new DamageCalculator();
-
-            attackerComboBox.DataSource = units;
+            
             attackerComboBox.DisplayMember = "Name";
-
-            defenderComboBox.DataSource = units;
-            defenderComboBox.DisplayMember = "Name";
-            defenderComboBox.BindingContext = new BindingContext();
+            defenderComboBox.DisplayMember = "Name";            
 
             var heroComboBoxItems = new List<KeyValuePair<string, Hero>>();
             heroComboBoxItems.Add(new KeyValuePair<string, Hero>("No hero", null));
@@ -136,7 +132,7 @@ namespace H3Calc
         {
             UpdateControlsOnHeroChange();
             UpdateControlsOnModeChange();
-            UpdateMenu(); 
+            UpdateControlsOnUnitSortingChange(); 
             UpdateCalculatedDamage();            
         }
 
@@ -278,6 +274,35 @@ namespace H3Calc
             heroes = unsortedHeroes.OrderBy(x => x.Name).ToList();
         }
 
+        private void FillUnitComboBoxes()
+        {
+            Object selectedAttacker = attackerComboBox.SelectedItem;
+            Object selectedDefender = defenderComboBox.SelectedItem;            
+
+            List<Unit> dataSource;
+            if (settings.UnitSorting == Sorting.Alphabetically)
+            {
+                dataSource = units.OrderBy(x => x.Name).ToList();
+            }
+            else
+            {
+                dataSource = units;
+            }
+
+            attackerComboBox.DataSource = dataSource;
+            defenderComboBox.DataSource = dataSource;
+            defenderComboBox.BindingContext = new BindingContext();
+
+            if (selectedAttacker != null)
+            {
+                attackerComboBox.SelectedItem = selectedAttacker;
+            }
+            if (selectedDefender != null)
+            {
+                defenderComboBox.SelectedItem = selectedDefender;
+            }
+        }
+
         private void GenerateSecondarySkillComboBoxItems(ComboBox comboBox)
         {
             comboBox.Items.Clear();
@@ -373,6 +398,24 @@ namespace H3Calc
 
         private void UpdateControlsOnModeChange()
         {
+            foreach (MenuItem menuItem in menuItemMode.MenuItems)
+            {
+                menuItem.Checked = false;
+            }
+
+            switch (settings.Mode)
+            {
+                case ApplicationMode.Simple:
+                    menuItemMode1.Checked = true;
+                    break;
+                case ApplicationMode.Standard:
+                    menuItemMode2.Checked = true;
+                    break;
+                case ApplicationMode.Scientific:
+                    menuItemMode3.Checked = true;
+                    break;
+            }
+
             bool visible = (settings.Mode == ApplicationMode.Simple);
             attackerHasHeroChbx.Visible = visible;
             defenderHasHeroChbx.Visible = visible;
@@ -392,7 +435,7 @@ namespace H3Calc
             switch (settings.Mode)
             {
                 case ApplicationMode.Simple:
-                    attackerGroupBox.Height = defenderGroupBox.Height = 95;
+                    attackerGroupBox.Height = defenderGroupBox.Height = 90;
                     break;
                 case ApplicationMode.Standard:
                     attackerGroupBox.Height = defenderGroupBox.Height = 184;
@@ -407,24 +450,24 @@ namespace H3Calc
             this.Height = terrainGroupBox.Top + terrainGroupBox.Height + 64;
         }
 
-        private void UpdateMenu()
+        private void UpdateControlsOnUnitSortingChange()
         {
-            foreach (MenuItem menuItem in menuItemMode.MenuItems) {
+            foreach (MenuItem menuItem in menuItemUnitSort.MenuItems)
+            {
                 menuItem.Checked = false;
             }
 
-            switch (settings.Mode)
+            switch (settings.UnitSorting)
             {
-                case ApplicationMode.Simple:
-                    menuItemMode1.Checked = true;
+                case Sorting.Alphabetically:
+                    menuItemUnitSortAlpha.Checked = true;
                     break;
-                case ApplicationMode.Standard:
-                    menuItemMode2.Checked = true;
-                    break;
-                case ApplicationMode.Scientific:
-                    menuItemMode3.Checked = true;
+                case Sorting.ById:
+                    menuItemUnitSortId.Checked = true;
                     break;
             }
+
+            FillUnitComboBoxes();
         }
 
         private void UpdateCalculatedDamage()
@@ -592,10 +635,31 @@ namespace H3Calc
             }
 
             settingsManager.UpdateSettings(settings);
-            
-            UpdateMenu();
+                        
             UpdateControlsOnModeChange();
             UpdateCalculatedDamage();
+        }
+        
+        private void menuItemUnitSort_Click(object sender, EventArgs e)
+        {
+            if (sender == menuItemUnitSortAlpha)
+            {
+                settings.UnitSorting = Sorting.Alphabetically;
+            }
+            else if (sender == menuItemUnitSortId)
+            {
+                settings.UnitSorting = Sorting.ById;
+            }
+
+            settingsManager.UpdateSettings(settings);
+
+            UpdateControlsOnUnitSortingChange();
+        }
+
+        private void aboutMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
         }
     }
 }

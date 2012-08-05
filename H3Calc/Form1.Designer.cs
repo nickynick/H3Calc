@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.defenderComboBox = new System.Windows.Forms.ComboBox();
             this.attackerGroupBox = new System.Windows.Forms.GroupBox();
+            this.attackerHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.attackerPrecisionChbx = new System.Windows.Forms.CheckBox();
             this.attackerFrenzyChbx = new System.Windows.Forms.CheckBox();
             this.attackerWeaknessChbx = new System.Windows.Forms.CheckBox();
@@ -60,6 +61,7 @@
             this.attackerHeroWaterLbl = new System.Windows.Forms.Label();
             this.defenderHeroDefenseLbl = new System.Windows.Forms.Label();
             this.defenderGroupBox = new System.Windows.Forms.GroupBox();
+            this.defenderHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.defenderDisruptingRayChbx = new System.Windows.Forms.CheckBox();
             this.defenderAirShieldChbx = new System.Windows.Forms.CheckBox();
             this.defenderShieldChbx = new System.Windows.Forms.CheckBox();
@@ -88,14 +90,17 @@
             this.calculatedKillsLbl = new System.Windows.Forms.Label();
             this.notesLbl = new System.Windows.Forms.Label();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.menuItemView = new System.Windows.Forms.MenuItem();
             this.menuItemMode = new System.Windows.Forms.MenuItem();
             this.menuItemMode1 = new System.Windows.Forms.MenuItem();
             this.menuItemMode2 = new System.Windows.Forms.MenuItem();
             this.menuItemMode3 = new System.Windows.Forms.MenuItem();
+            this.menuItemUnitSort = new System.Windows.Forms.MenuItem();
+            this.menuItemUnitSortAlpha = new System.Windows.Forms.MenuItem();
+            this.menuItemUnitSortId = new System.Windows.Forms.MenuItem();
+            this.aboutMenuItem = new System.Windows.Forms.MenuItem();
             this.resultPanel = new System.Windows.Forms.Panel();
             this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHasHeroChbx = new System.Windows.Forms.CheckBox();
-            this.defenderHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.attackerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).BeginInit();
@@ -153,6 +158,16 @@
             this.attackerGroupBox.TabIndex = 5;
             this.attackerGroupBox.TabStop = false;
             this.attackerGroupBox.Text = "Attacker";
+            // 
+            // attackerHasHeroChbx
+            // 
+            this.attackerHasHeroChbx.AutoSize = true;
+            this.attackerHasHeroChbx.Location = new System.Drawing.Point(6, 62);
+            this.attackerHasHeroChbx.Name = "attackerHasHeroChbx";
+            this.attackerHasHeroChbx.Size = new System.Drawing.Size(69, 17);
+            this.attackerHasHeroChbx.TabIndex = 59;
+            this.attackerHasHeroChbx.Text = "Has hero";
+            this.attackerHasHeroChbx.UseVisualStyleBackColor = true;
             // 
             // attackerPrecisionChbx
             // 
@@ -452,6 +467,16 @@
             this.defenderGroupBox.TabStop = false;
             this.defenderGroupBox.Text = "Defender";
             // 
+            // defenderHasHeroChbx
+            // 
+            this.defenderHasHeroChbx.AutoSize = true;
+            this.defenderHasHeroChbx.Location = new System.Drawing.Point(6, 62);
+            this.defenderHasHeroChbx.Name = "defenderHasHeroChbx";
+            this.defenderHasHeroChbx.Size = new System.Drawing.Size(69, 17);
+            this.defenderHasHeroChbx.TabIndex = 60;
+            this.defenderHasHeroChbx.Text = "Has hero";
+            this.defenderHasHeroChbx.UseVisualStyleBackColor = true;
+            // 
             // defenderDisruptingRayChbx
             // 
             this.defenderDisruptingRayChbx.AutoSize = true;
@@ -725,7 +750,16 @@
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemMode});
+            this.menuItemView,
+            this.aboutMenuItem});
+            // 
+            // menuItemView
+            // 
+            this.menuItemView.Index = 0;
+            this.menuItemView.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemMode,
+            this.menuItemUnitSort});
+            this.menuItemView.Text = "View";
             // 
             // menuItemMode
             // 
@@ -756,6 +790,34 @@
             this.menuItemMode3.RadioCheck = true;
             this.menuItemMode3.Text = "Scientific";
             this.menuItemMode3.Click += new System.EventHandler(this.menuItemMode_Click);
+            // 
+            // menuItemUnitSort
+            // 
+            this.menuItemUnitSort.Index = 1;
+            this.menuItemUnitSort.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemUnitSortAlpha,
+            this.menuItemUnitSortId});
+            this.menuItemUnitSort.Text = "Sort units";
+            // 
+            // menuItemUnitSortAlpha
+            // 
+            this.menuItemUnitSortAlpha.Index = 0;
+            this.menuItemUnitSortAlpha.RadioCheck = true;
+            this.menuItemUnitSortAlpha.Text = "Alphabetically";
+            this.menuItemUnitSortAlpha.Click += new System.EventHandler(this.menuItemUnitSort_Click);
+            // 
+            // menuItemUnitSortId
+            // 
+            this.menuItemUnitSortId.Index = 1;
+            this.menuItemUnitSortId.RadioCheck = true;
+            this.menuItemUnitSortId.Text = "By factions";
+            this.menuItemUnitSortId.Click += new System.EventHandler(this.menuItemUnitSort_Click);
+            // 
+            // aboutMenuItem
+            // 
+            this.aboutMenuItem.Index = 1;
+            this.aboutMenuItem.Text = "About";
+            this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
             // 
             // resultPanel
             // 
@@ -790,26 +852,6 @@
             0,
             0,
             0});
-            // 
-            // attackerHasHeroChbx
-            // 
-            this.attackerHasHeroChbx.AutoSize = true;
-            this.attackerHasHeroChbx.Location = new System.Drawing.Point(6, 62);
-            this.attackerHasHeroChbx.Name = "attackerHasHeroChbx";
-            this.attackerHasHeroChbx.Size = new System.Drawing.Size(69, 17);
-            this.attackerHasHeroChbx.TabIndex = 59;
-            this.attackerHasHeroChbx.Text = "Has hero";
-            this.attackerHasHeroChbx.UseVisualStyleBackColor = true;
-            // 
-            // defenderHasHeroChbx
-            // 
-            this.defenderHasHeroChbx.AutoSize = true;
-            this.defenderHasHeroChbx.Location = new System.Drawing.Point(6, 62);
-            this.defenderHasHeroChbx.Name = "defenderHasHeroChbx";
-            this.defenderHasHeroChbx.Size = new System.Drawing.Size(69, 17);
-            this.defenderHasHeroChbx.TabIndex = 60;
-            this.defenderHasHeroChbx.Text = "Has hero";
-            this.defenderHasHeroChbx.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -904,13 +946,18 @@
         private System.Windows.Forms.CheckBox defenderStoneSkinChbx;
         private System.Windows.Forms.CheckBox defenderFrenzyChbx;
         private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItemMode;
+        private System.Windows.Forms.MenuItem menuItemView;
         private System.Windows.Forms.MenuItem menuItemMode1;
         private System.Windows.Forms.MenuItem menuItemMode2;
         private System.Windows.Forms.MenuItem menuItemMode3;
         private System.Windows.Forms.Panel resultPanel;
         private System.Windows.Forms.CheckBox attackerHasHeroChbx;
         private System.Windows.Forms.CheckBox defenderHasHeroChbx;
+        private System.Windows.Forms.MenuItem aboutMenuItem;
+        private System.Windows.Forms.MenuItem menuItemUnitSort;
+        private System.Windows.Forms.MenuItem menuItemMode;
+        private System.Windows.Forms.MenuItem menuItemUnitSortAlpha;
+        private System.Windows.Forms.MenuItem menuItemUnitSortId;
 
     }
 }

@@ -8,11 +8,13 @@ using System.IO;
 namespace H3Calc
 {
     public enum ApplicationMode { Simple, Standard, Scientific };
+    public enum Sorting { Alphabetically, ById };
 
     [XmlRoot("Settings")]
     public class ApplicationSettings
     {
         public ApplicationMode Mode { get; set; }
+        public Sorting UnitSorting { get; set; }
     }
 
     public class ApplicationSettingsManager
