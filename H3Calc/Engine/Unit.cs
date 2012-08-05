@@ -113,7 +113,7 @@ namespace H3Calc.Engine
 
             if (isHatePair)
             {
-                damageModifier.DamageReductions.Add(0.5);
+                damageModifier.DamageBonuses.Add(0.5);
             }
 
             // Attacker is Psychic Elemental, defender is immune to Mind spells 
