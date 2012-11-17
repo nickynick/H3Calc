@@ -13,21 +13,60 @@ using H3Calc.Engine;
 namespace H3Calc
 {
     public partial class Form1 : Form
-    {
-        protected UnitsList units;
+    {        
         protected TerrainsList terrains;
         protected List<Hero> heroes;
         protected Hero genericHero;
 
-        protected ApplicationSettings settings;
-        protected ApplicationSettingsManager settingsManager;
-
+        protected Unit attacker;
+        protected Unit defender;
         protected DamageCalculator calculator;
 
         protected Control[] AttackerHeroControls;
         protected Control[] DefenderHeroControls;
         protected Control[] StandardModeControls;
-        protected Control[] ScientificModeControls;
+        protected Control[] ScientificModeControls;        
+
+        protected Unit Attacker
+        {
+            get
+            {
+                return attacker;
+            }
+            set
+            {                
+                attacker = value;
+                attackerBtn.Text = value.Name;
+                UpdateCalculatedDamage();
+            }
+        }
+
+        protected Unit Defender
+        {
+            get
+            {
+                return defender;
+            }
+            set
+            {
+                defender = value;
+                defenderBtn.Text = value.Name;
+                UpdateCalculatedDamage();
+            }
+        }
+
+        protected ApplicationMode Mode
+        {
+            get
+            {
+                return (ApplicationMode)Properties.Settings.Default.Mode;
+            }
+            set
+            {
+                Properties.Settings.Default.Mode = (int)value;
+                Properties.Settings.Default.Save();
+            }
+        }
 
         public Form1()
         {
@@ -37,20 +76,13 @@ namespace H3Calc
             this.Menu = this.mainMenu1; 
 
             BuildControlGroups();
-
-            ReadUnitData();
+            
             ReadTerrainData();
             ReadHeroData();
             genericHero = new Hero();
-
-            settingsManager = new ApplicationSettingsManager();
-            settings = settingsManager.LoadSettings();
             
             calculator = new DamageCalculator();
-            
-            attackerComboBox.DisplayMember = "Name";
-            defenderComboBox.DisplayMember = "Name";            
-
+                        
             var heroComboBoxItems = new List<KeyValuePair<string, Hero>>();
             heroComboBoxItems.Add(new KeyValuePair<string, Hero>("No hero", null));
             heroComboBoxItems.Add(new KeyValuePair<string, Hero>("Generic hero", genericHero));
@@ -83,8 +115,7 @@ namespace H3Calc
             GenerateSecondarySkillComboBoxItems(defenderHeroEarthComboBox);
             GenerateSecondarySkillComboBoxItems(defenderHeroWaterComboBox);
 
-            attackerCountUpDn.ValueChanged += ControlValueChanged;
-            attackerComboBox.SelectedValueChanged += ControlValueChanged;
+            attackerCountUpDn.ValueChanged += ControlValueChanged;            
             attackerHasHeroChbx.CheckedChanged += ControlValueChanged;
             attackerHasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
             attackerHeroComboBox.SelectedValueChanged += ControlValueChanged;
@@ -105,8 +136,7 @@ namespace H3Calc
             attackerSlayerChbx.CheckedChanged += ControlValueChanged;
             attackerCurseChbx.CheckedChanged += ControlValueChanged;
             attackerWeaknessChbx.CheckedChanged += ControlValueChanged;
-
-            defenderComboBox.SelectedValueChanged += ControlValueChanged;
+            
             defenderHasHeroChbx.CheckedChanged += ControlValueChanged;
             defenderHasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
             defenderHeroComboBox.SelectedValueChanged += ControlValueChanged;
@@ -131,8 +161,7 @@ namespace H3Calc
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateControlsOnHeroChange();
-            UpdateControlsOnModeChange();
-            UpdateControlsOnUnitSortingChange(); 
+            UpdateControlsOnModeChange();            
             UpdateCalculatedDamage();            
         }
 
@@ -243,20 +272,12 @@ namespace H3Calc
                 attackerCurseChbx,
                 attackerWeaknessChbx
             };
-        }
-
-        private void ReadUnitData()
-        {
-            XmlSerializer deserializer = new XmlSerializer(typeof(UnitsList));
-            TextReader reader = new StreamReader("units.xml");
-            units = (UnitsList)deserializer.Deserialize(reader);
-            reader.Close();
-        }
+        }        
 
         private void ReadTerrainData()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(TerrainsList));
-            TextReader reader = new StreamReader("terrains.xml");
+            XmlSerializer deserializer = new XmlSerializer(typeof(TerrainsList));            
+            TextReader reader = new StringReader(Properties.Resources.terrains);
             terrains = (TerrainsList)deserializer.Deserialize(reader);
             reader.Close();
 
@@ -267,41 +288,12 @@ namespace H3Calc
         private void ReadHeroData()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(HeroesList));
-            TextReader reader = new StreamReader("heroes.xml");
+            TextReader reader = new StringReader(Properties.Resources.heroes);
             HeroesList unsortedHeroes = (HeroesList)deserializer.Deserialize(reader);
             reader.Close();
 
             heroes = unsortedHeroes.OrderBy(x => x.Name).ToList();
-        }
-
-        private void FillUnitComboBoxes()
-        {
-            Object selectedAttacker = attackerComboBox.SelectedItem;
-            Object selectedDefender = defenderComboBox.SelectedItem;            
-
-            List<Unit> dataSource;
-            if (settings.UnitSorting == Sorting.Alphabetically)
-            {
-                dataSource = units.OrderBy(x => x.Name).ToList();
-            }
-            else
-            {
-                dataSource = units;
-            }
-
-            attackerComboBox.DataSource = dataSource;
-            defenderComboBox.DataSource = dataSource;
-            defenderComboBox.BindingContext = new BindingContext();
-
-            if (selectedAttacker != null)
-            {
-                attackerComboBox.SelectedItem = selectedAttacker;
-            }
-            if (selectedDefender != null)
-            {
-                defenderComboBox.SelectedItem = selectedDefender;
-            }
-        }
+        }        
 
         private void GenerateSecondarySkillComboBoxItems(ComboBox comboBox)
         {
@@ -321,8 +313,8 @@ namespace H3Calc
         }
 
         private Hero SelectedAttackerHero()
-        {
-            if (settings.Mode == ApplicationMode.Simple)
+        {            
+            if (Mode == ApplicationMode.Simple)
             {
                 return (attackerHasHeroChbx.Checked) ? genericHero : null;                
             }
@@ -334,7 +326,7 @@ namespace H3Calc
 
         private Hero SelectedDefenderHero()
         {
-            if (settings.Mode == ApplicationMode.Simple)
+            if (Mode == ApplicationMode.Simple)
             {
                 return (defenderHasHeroChbx.Checked) ? genericHero : null;
             }
@@ -381,7 +373,7 @@ namespace H3Calc
 
         private void UpdateControlsOnHeroChange()
         {
-            SynchronizeHeroControls(settings.Mode);
+            SynchronizeHeroControls(Mode);
 
             bool enabled = (SelectedAttackerHero() != null);
             foreach (Control control in AttackerHeroControls)
@@ -403,7 +395,7 @@ namespace H3Calc
                 menuItem.Checked = false;
             }
 
-            switch (settings.Mode)
+            switch (Mode)
             {
                 case ApplicationMode.Simple:
                     menuItemMode1.Checked = true;
@@ -416,23 +408,23 @@ namespace H3Calc
                     break;
             }
 
-            bool visible = (settings.Mode == ApplicationMode.Simple);
+            bool visible = (Mode == ApplicationMode.Simple);
             attackerHasHeroChbx.Visible = visible;
             defenderHasHeroChbx.Visible = visible;
 
-            visible = (settings.Mode == ApplicationMode.Standard || settings.Mode == ApplicationMode.Scientific);
+            visible = (Mode == ApplicationMode.Standard || Mode == ApplicationMode.Scientific);
             foreach (Control control in StandardModeControls)
             {
                 control.Visible = visible;
             }
  
-            visible = (settings.Mode == ApplicationMode.Scientific);
+            visible = (Mode == ApplicationMode.Scientific);
             foreach (Control control in ScientificModeControls)
             {
                 control.Visible = visible;
             }            
 
-            switch (settings.Mode)
+            switch (Mode)
             {
                 case ApplicationMode.Simple:
                     attackerGroupBox.Height = defenderGroupBox.Height = 90;
@@ -449,35 +441,19 @@ namespace H3Calc
 
             this.Height = terrainGroupBox.Top + terrainGroupBox.Height + 64;
         }
-
-        private void UpdateControlsOnUnitSortingChange()
-        {
-            foreach (MenuItem menuItem in menuItemUnitSort.MenuItems)
-            {
-                menuItem.Checked = false;
-            }
-
-            switch (settings.UnitSorting)
-            {
-                case Sorting.Alphabetically:
-                    menuItemUnitSortAlpha.Checked = true;
-                    break;
-                case Sorting.ById:
-                    menuItemUnitSortId.Checked = true;
-                    break;
-            }
-
-            FillUnitComboBoxes();
-        }
-
+        
         private void UpdateCalculatedDamage()
         {
             DamageCalculatorInputData inputData = new DamageCalculatorInputData();
-            
-            inputData.Attacker = (Unit)attackerComboBox.SelectedValue;
-            inputData.Defender = (Unit)defenderComboBox.SelectedValue;
 
-            if ((inputData.Attacker == null) || (inputData.Defender == null))
+            inputData.Attacker = Attacker;
+            inputData.Defender = Defender;
+
+            bool haveInputData = ((inputData.Attacker != null) && (inputData.Defender != null));
+
+            resultPanel.Visible = haveInputData;            
+
+            if (!haveInputData)
             {
                 return;
             }
@@ -498,14 +474,14 @@ namespace H3Calc
                 
                 stats.Attack = (int)attackerHeroAttackUpDn.Value;
 
-                if (settings.Mode != ApplicationMode.Simple)
+                if (Mode != ApplicationMode.Simple)
                 {
                     stats.Level = (int)attackerHeroLevelUpDn.Value;
 
                     CheckSecondarySkillComboBox(attackerHeroOffenseComboBox, typeof(Offense), stats.SecondarySkills, inputData.AttackerHero);
                     CheckSecondarySkillComboBox(attackerHeroArcheryComboBox, typeof(Archery), stats.SecondarySkills, inputData.AttackerHero);
 
-                    if (settings.Mode == ApplicationMode.Scientific)
+                    if (Mode == ApplicationMode.Scientific)
                     {
                         CheckSecondarySkillComboBox(attackerHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.AttackerHero);
                         CheckSecondarySkillComboBox(attackerHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.AttackerHero);
@@ -533,13 +509,13 @@ namespace H3Calc
 
                 stats.Defense = (int)defenderHeroDefenseUpDn.Value;
 
-                if (settings.Mode != ApplicationMode.Simple)
+                if (Mode != ApplicationMode.Simple)
                 {
                     stats.Level = (int)defenderHeroLevelUpDn.Value;
 
                     CheckSecondarySkillComboBox(defenderHeroArmorerComboBox, typeof(Armorer), stats.SecondarySkills, inputData.DefenderHero);
 
-                    if (settings.Mode == ApplicationMode.Scientific)
+                    if (Mode == ApplicationMode.Scientific)
                     {
                         CheckSecondarySkillComboBox(defenderHeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, inputData.DefenderHero);
                         CheckSecondarySkillComboBox(defenderHeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, inputData.DefenderHero);
@@ -619,47 +595,61 @@ namespace H3Calc
 
         private void menuItemMode_Click(object sender, EventArgs e)
         {
-            SynchronizeHeroControls(settings.Mode);
+            SynchronizeHeroControls(Mode);
 
             if (sender == menuItemMode1)
             {
-                settings.Mode = ApplicationMode.Simple;
+                Mode = ApplicationMode.Simple;
             }
             else if (sender == menuItemMode2)
             {
-                settings.Mode = ApplicationMode.Standard;
+                Mode = ApplicationMode.Standard;
             }
             else if (sender == menuItemMode3)
             {
-                settings.Mode = ApplicationMode.Scientific;
+                Mode = ApplicationMode.Scientific;
             }
-
-            settingsManager.UpdateSettings(settings);
                         
             UpdateControlsOnModeChange();
             UpdateCalculatedDamage();
-        }
-        
-        private void menuItemUnitSort_Click(object sender, EventArgs e)
-        {
-            if (sender == menuItemUnitSortAlpha)
-            {
-                settings.UnitSorting = Sorting.Alphabetically;
-            }
-            else if (sender == menuItemUnitSortId)
-            {
-                settings.UnitSorting = Sorting.ById;
-            }
-
-            settingsManager.UpdateSettings(settings);
-
-            UpdateControlsOnUnitSortingChange();
         }
 
         private void aboutMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
+        }
+
+        private void attackerBtn_Click(object sender, EventArgs e)
+        {
+            UnitPicker unitPicker = new UnitPicker();
+            unitPicker.UnitPicked += unitPicker_AttackerUnitPicked;
+            unitPicker.StartPosition = FormStartPosition.CenterParent;            
+            unitPicker.ShowDialog();
+        }
+
+        private void defenderBtn_Click(object sender, EventArgs e)
+        {
+            UnitPicker unitPicker = new UnitPicker();
+            unitPicker.UnitPicked += unitPicker_DefenderUnitPicked;
+            unitPicker.StartPosition = FormStartPosition.CenterParent;
+            unitPicker.ShowDialog();
+        }
+
+        void unitPicker_AttackerUnitPicked(object sender, UnitEventArgs e)
+        {
+            Attacker = e.Unit;
+
+            UnitPicker unitPicker = (UnitPicker)sender;
+            unitPicker.Close();            
+        }
+
+        void unitPicker_DefenderUnitPicked(object sender, UnitEventArgs e)
+        {
+            Defender = e.Unit;
+
+            UnitPicker unitPicker = (UnitPicker)sender;
+            unitPicker.Close();
         }
     }
 }

@@ -1756,18 +1756,6 @@
   </Unit>
   <Unit>
     <Id>133</Id>
-    <Name>Золотой голем</Name>
-    <Level>5</Level>
-    <InitialStats>
-        <Attack>11</Attack>
-        <Defense>12</Defense>
-        <MinDamage>8</MinDamage>
-        <MaxDamage>10</MaxDamage>
-        <Health>50</Health>
-    </InitialStats>    
-  </Unit>
-  <Unit>
-    <Id>134</Id>
     <Name>Тролль</Name>
     <Level>5</Level>
     <InitialStats>
@@ -1776,6 +1764,18 @@
         <MinDamage>10</MinDamage>
         <MaxDamage>15</MaxDamage>
         <Health>40</Health>
+    </InitialStats>    
+  </Unit>
+  <Unit>
+    <Id>134</Id>
+    <Name>Золотой голем</Name>
+    <Level>5</Level>
+    <InitialStats>
+        <Attack>11</Attack>
+        <Defense>12</Defense>
+        <MinDamage>8</MinDamage>
+        <MaxDamage>10</MaxDamage>
+        <Health>50</Health>
     </InitialStats>    
   </Unit>
   <Unit>

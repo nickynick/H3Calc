@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.defenderComboBox = new System.Windows.Forms.ComboBox();
             this.attackerGroupBox = new System.Windows.Forms.GroupBox();
+            this.attackerBtn = new System.Windows.Forms.Button();
             this.attackerHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.attackerPrecisionChbx = new System.Windows.Forms.CheckBox();
             this.attackerFrenzyChbx = new System.Windows.Forms.CheckBox();
@@ -43,7 +43,8 @@
             this.attackerSlayerChbx = new System.Windows.Forms.CheckBox();
             this.attackerHeroArcheryLbl = new System.Windows.Forms.Label();
             this.attackerHeroArcheryComboBox = new System.Windows.Forms.ComboBox();
-            this.attackerComboBox = new System.Windows.Forms.ComboBox();
+            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerHeroLevelLbl = new System.Windows.Forms.Label();
             this.attackerHeroComboBox = new System.Windows.Forms.ComboBox();
             this.attackerHeroWaterComboBox = new System.Windows.Forms.ComboBox();
@@ -59,6 +60,7 @@
             this.attackerHeroWaterLbl = new System.Windows.Forms.Label();
             this.defenderHeroDefenseLbl = new System.Windows.Forms.Label();
             this.defenderGroupBox = new System.Windows.Forms.GroupBox();
+            this.defenderBtn = new System.Windows.Forms.Button();
             this.defenderHasHeroChbx = new System.Windows.Forms.CheckBox();
             this.defenderDisruptingRayChbx = new System.Windows.Forms.CheckBox();
             this.defenderAirShieldChbx = new System.Windows.Forms.CheckBox();
@@ -66,6 +68,8 @@
             this.defenderPrayerChbx = new System.Windows.Forms.CheckBox();
             this.defenderStoneSkinChbx = new System.Windows.Forms.CheckBox();
             this.defenderFrenzyChbx = new System.Windows.Forms.CheckBox();
+            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
             this.defenderHeroLevelLbl = new System.Windows.Forms.Label();
             this.defenderHeroWaterComboBox = new System.Windows.Forms.ComboBox();
             this.defenderHeroComboBox = new System.Windows.Forms.ComboBox();
@@ -86,45 +90,27 @@
             this.calculatedKillsLbl = new System.Windows.Forms.Label();
             this.notesLbl = new System.Windows.Forms.Label();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItemView = new System.Windows.Forms.MenuItem();
             this.menuItemMode = new System.Windows.Forms.MenuItem();
             this.menuItemMode1 = new System.Windows.Forms.MenuItem();
             this.menuItemMode2 = new System.Windows.Forms.MenuItem();
             this.menuItemMode3 = new System.Windows.Forms.MenuItem();
-            this.menuItemUnitSort = new System.Windows.Forms.MenuItem();
-            this.menuItemUnitSortAlpha = new System.Windows.Forms.MenuItem();
-            this.menuItemUnitSortId = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
             this.resultPanel = new System.Windows.Forms.Panel();
-            this.defenderHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.defenderHeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
-            this.attackerHeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerGroupBox.SuspendLayout();
-            this.defenderGroupBox.SuspendLayout();
-            this.terrainGroupBox.SuspendLayout();
-            this.resultPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).BeginInit();
+            this.defenderGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).BeginInit();
+            this.terrainGroupBox.SuspendLayout();
+            this.resultPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).BeginInit();
             this.SuspendLayout();
             // 
-            // defenderComboBox
-            // 
-            this.defenderComboBox.DropDownHeight = 500;
-            this.defenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.defenderComboBox.FormattingEnabled = true;
-            this.defenderComboBox.IntegralHeight = false;
-            this.defenderComboBox.Location = new System.Drawing.Point(6, 19);
-            this.defenderComboBox.Name = "defenderComboBox";
-            this.defenderComboBox.Size = new System.Drawing.Size(289, 21);
-            this.defenderComboBox.TabIndex = 20;
-            // 
             // attackerGroupBox
             // 
+            this.attackerGroupBox.Controls.Add(this.attackerBtn);
             this.attackerGroupBox.Controls.Add(this.attackerHasHeroChbx);
             this.attackerGroupBox.Controls.Add(this.attackerPrecisionChbx);
             this.attackerGroupBox.Controls.Add(this.attackerFrenzyChbx);
@@ -138,7 +124,6 @@
             this.attackerGroupBox.Controls.Add(this.attackerHeroArcheryComboBox);
             this.attackerGroupBox.Controls.Add(this.attackerHeroLevelUpDn);
             this.attackerGroupBox.Controls.Add(this.attackerHeroAttackUpDn);
-            this.attackerGroupBox.Controls.Add(this.attackerComboBox);
             this.attackerGroupBox.Controls.Add(this.attackerHeroLevelLbl);
             this.attackerGroupBox.Controls.Add(this.attackerHeroComboBox);
             this.attackerGroupBox.Controls.Add(this.attackerHeroWaterComboBox);
@@ -158,6 +143,17 @@
             this.attackerGroupBox.TabIndex = 5;
             this.attackerGroupBox.TabStop = false;
             this.attackerGroupBox.Text = "Attacker";
+            // 
+            // attackerBtn
+            // 
+            this.attackerBtn.Location = new System.Drawing.Point(6, 17);
+            this.attackerBtn.Name = "attackerBtn";
+            this.attackerBtn.Size = new System.Drawing.Size(289, 23);
+            this.attackerBtn.TabIndex = 51;
+            this.attackerBtn.Text = "Pick";
+            this.attackerBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.attackerBtn.UseVisualStyleBackColor = true;
+            this.attackerBtn.Click += new System.EventHandler(this.attackerBtn_Click);
             // 
             // attackerHasHeroChbx
             // 
@@ -267,16 +263,34 @@
             this.attackerHeroArcheryComboBox.Size = new System.Drawing.Size(77, 21);
             this.attackerHeroArcheryComboBox.TabIndex = 7;
             // 
-            // attackerComboBox
+            // attackerHeroLevelUpDn
             // 
-            this.attackerComboBox.DropDownHeight = 500;
-            this.attackerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.attackerComboBox.FormattingEnabled = true;
-            this.attackerComboBox.IntegralHeight = false;
-            this.attackerComboBox.Location = new System.Drawing.Point(6, 19);
-            this.attackerComboBox.Name = "attackerComboBox";
-            this.attackerComboBox.Size = new System.Drawing.Size(289, 21);
-            this.attackerComboBox.TabIndex = 1;
+            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
+            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
+            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroLevelUpDn.TabIndex = 5;
+            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // attackerHeroAttackUpDn
+            // 
+            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(218, 61);
+            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
+            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
+            this.attackerHeroAttackUpDn.TabIndex = 4;
             // 
             // attackerHeroLevelLbl
             // 
@@ -408,6 +422,7 @@
             // 
             // defenderGroupBox
             // 
+            this.defenderGroupBox.Controls.Add(this.defenderBtn);
             this.defenderGroupBox.Controls.Add(this.defenderHasHeroChbx);
             this.defenderGroupBox.Controls.Add(this.defenderDisruptingRayChbx);
             this.defenderGroupBox.Controls.Add(this.defenderAirShieldChbx);
@@ -425,7 +440,6 @@
             this.defenderGroupBox.Controls.Add(this.defenderHeroFireLbl);
             this.defenderGroupBox.Controls.Add(this.defenderHeroFireComboBox);
             this.defenderGroupBox.Controls.Add(this.defenderHeroWaterLbl);
-            this.defenderGroupBox.Controls.Add(this.defenderComboBox);
             this.defenderGroupBox.Controls.Add(this.defenderHeroAirComboBox);
             this.defenderGroupBox.Controls.Add(this.defenderHeroAirLbl);
             this.defenderGroupBox.Controls.Add(this.defenderHeroArmorerComboBox);
@@ -437,6 +451,17 @@
             this.defenderGroupBox.TabIndex = 6;
             this.defenderGroupBox.TabStop = false;
             this.defenderGroupBox.Text = "Defender";
+            // 
+            // defenderBtn
+            // 
+            this.defenderBtn.Location = new System.Drawing.Point(6, 17);
+            this.defenderBtn.Name = "defenderBtn";
+            this.defenderBtn.Size = new System.Drawing.Size(289, 23);
+            this.defenderBtn.TabIndex = 52;
+            this.defenderBtn.Text = "Pick";
+            this.defenderBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.defenderBtn.UseVisualStyleBackColor = true;
+            this.defenderBtn.Click += new System.EventHandler(this.defenderBtn_Click);
             // 
             // defenderHasHeroChbx
             // 
@@ -507,6 +532,35 @@
             this.defenderFrenzyChbx.TabIndex = 34;
             this.defenderFrenzyChbx.Text = "Frenzy";
             this.defenderFrenzyChbx.UseVisualStyleBackColor = true;
+            // 
+            // defenderHeroLevelUpDn
+            // 
+            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
+            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
+            108,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
+            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroLevelUpDn.TabIndex = 24;
+            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // defenderHeroDefenseUpDn
+            // 
+            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(218, 61);
+            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
+            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
+            this.defenderHeroDefenseUpDn.TabIndex = 23;
             // 
             // defenderHeroLevelLbl
             // 
@@ -692,16 +746,8 @@
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemView,
-            this.aboutMenuItem});
-            // 
-            // menuItemView
-            // 
-            this.menuItemView.Index = 0;
-            this.menuItemView.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemMode,
-            this.menuItemUnitSort});
-            this.menuItemView.Text = "View";
+            this.aboutMenuItem});
             // 
             // menuItemMode
             // 
@@ -733,28 +779,6 @@
             this.menuItemMode3.Text = "Scientific";
             this.menuItemMode3.Click += new System.EventHandler(this.menuItemMode_Click);
             // 
-            // menuItemUnitSort
-            // 
-            this.menuItemUnitSort.Index = 1;
-            this.menuItemUnitSort.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemUnitSortAlpha,
-            this.menuItemUnitSortId});
-            this.menuItemUnitSort.Text = "Sort units";
-            // 
-            // menuItemUnitSortAlpha
-            // 
-            this.menuItemUnitSortAlpha.Index = 0;
-            this.menuItemUnitSortAlpha.RadioCheck = true;
-            this.menuItemUnitSortAlpha.Text = "Alphabetically";
-            this.menuItemUnitSortAlpha.Click += new System.EventHandler(this.menuItemUnitSort_Click);
-            // 
-            // menuItemUnitSortId
-            // 
-            this.menuItemUnitSortId.Index = 1;
-            this.menuItemUnitSortId.RadioCheck = true;
-            this.menuItemUnitSortId.Text = "By factions";
-            this.menuItemUnitSortId.Click += new System.EventHandler(this.menuItemUnitSort_Click);
-            // 
             // aboutMenuItem
             // 
             this.aboutMenuItem.Index = 1;
@@ -772,64 +796,6 @@
             this.resultPanel.Name = "resultPanel";
             this.resultPanel.Size = new System.Drawing.Size(401, 55);
             this.resultPanel.TabIndex = 15;
-            // 
-            // defenderHeroLevelUpDn
-            // 
-            this.defenderHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
-            this.defenderHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.defenderHeroLevelUpDn.Name = "defenderHeroLevelUpDn";
-            this.defenderHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroLevelUpDn.TabIndex = 24;
-            this.defenderHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // defenderHeroDefenseUpDn
-            // 
-            this.defenderHeroDefenseUpDn.Location = new System.Drawing.Point(218, 61);
-            this.defenderHeroDefenseUpDn.Name = "defenderHeroDefenseUpDn";
-            this.defenderHeroDefenseUpDn.Size = new System.Drawing.Size(42, 20);
-            this.defenderHeroDefenseUpDn.TabIndex = 23;
-            // 
-            // attackerHeroLevelUpDn
-            // 
-            this.attackerHeroLevelUpDn.Location = new System.Drawing.Point(59, 101);
-            this.attackerHeroLevelUpDn.Maximum = new decimal(new int[] {
-            108,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.attackerHeroLevelUpDn.Name = "attackerHeroLevelUpDn";
-            this.attackerHeroLevelUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroLevelUpDn.TabIndex = 5;
-            this.attackerHeroLevelUpDn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // attackerHeroAttackUpDn
-            // 
-            this.attackerHeroAttackUpDn.Location = new System.Drawing.Point(218, 61);
-            this.attackerHeroAttackUpDn.Name = "attackerHeroAttackUpDn";
-            this.attackerHeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
-            this.attackerHeroAttackUpDn.TabIndex = 4;
             // 
             // attackerCountUpDn
             // 
@@ -857,7 +823,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 373);
+            this.ClientSize = new System.Drawing.Size(698, 376);
             this.Controls.Add(this.resultPanel);
             this.Controls.Add(this.terrainGroupBox);
             this.Controls.Add(this.defenderGroupBox);
@@ -865,21 +831,21 @@
             this.Controls.Add(this.attackerCountUpDn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+            this.MaximizeBox = false;            
             this.Name = "Form1";
             this.Text = "Heroes III Damage Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.attackerGroupBox.ResumeLayout(false);
             this.attackerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             this.defenderGroupBox.ResumeLayout(false);
             this.defenderGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
             this.terrainGroupBox.ResumeLayout(false);
             this.resultPanel.ResumeLayout(false);
             this.resultPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroLevelUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defenderHeroDefenseUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroLevelUpDn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attackerHeroAttackUpDn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackerCountUpDn)).EndInit();
             this.ResumeLayout(false);
 
@@ -887,7 +853,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox defenderComboBox;
         private System.Windows.Forms.GroupBox attackerGroupBox;
         private System.Windows.Forms.GroupBox defenderGroupBox;
         private System.Windows.Forms.Label defenderHeroDefenseLbl;
@@ -913,7 +878,6 @@
         private System.Windows.Forms.Label defenderHeroAirLbl;
         private System.Windows.Forms.ComboBox defenderHeroArmorerComboBox;
         private System.Windows.Forms.Label defenderHeroArmorerLbl;
-        private System.Windows.Forms.ComboBox attackerComboBox;
         private ImmediateNumericUpDown attackerHeroLevelUpDn;
         private ImmediateNumericUpDown attackerHeroAttackUpDn;
         private System.Windows.Forms.Label attackerHeroLevelLbl;
@@ -946,7 +910,6 @@
         private System.Windows.Forms.CheckBox defenderStoneSkinChbx;
         private System.Windows.Forms.CheckBox defenderFrenzyChbx;
         private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItemView;
         private System.Windows.Forms.MenuItem menuItemMode1;
         private System.Windows.Forms.MenuItem menuItemMode2;
         private System.Windows.Forms.MenuItem menuItemMode3;
@@ -954,10 +917,9 @@
         private System.Windows.Forms.CheckBox attackerHasHeroChbx;
         private System.Windows.Forms.CheckBox defenderHasHeroChbx;
         private System.Windows.Forms.MenuItem aboutMenuItem;
-        private System.Windows.Forms.MenuItem menuItemUnitSort;
         private System.Windows.Forms.MenuItem menuItemMode;
-        private System.Windows.Forms.MenuItem menuItemUnitSortAlpha;
-        private System.Windows.Forms.MenuItem menuItemUnitSortId;
+        private System.Windows.Forms.Button attackerBtn;
+        private System.Windows.Forms.Button defenderBtn;
 
     }
 }

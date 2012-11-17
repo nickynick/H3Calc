@@ -122,7 +122,7 @@ namespace H3Calc.Engine
                 (
                  (defenderId >= 42 && defenderId <= 55) || // Necropolis creatures
                  (defenderId == 131) || // Mummy
-                 (defenderId == 32 || defenderId == 33 || defenderId == 133 || defenderId == 135) || // Golems
+                 (defenderId == 32 || defenderId == 33 || defenderId == 134 || defenderId == 135) || // Golems
                  (defenderId == 40 || defenderId == 41) || // Giant / Titan
                  (defenderId == 69) || // Black Dragon
                  (defenderId >= 114 && defenderId <= 123) // Elementals

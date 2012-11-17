@@ -104,6 +104,11 @@ namespace H3Calc
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/nickynick/H3Calc");
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("mailto:solid.cyrus@gmail.com");            
         }    
     }
 }
