@@ -87,6 +87,20 @@ namespace H3Calc.Properties {
             }
         }
         
+        internal static System.Drawing.Icon Peka {
+            get {
+                object obj = ResourceManager.GetObject("Peka", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap swap_icon {
+            get {
+                object obj = ResourceManager.GetObject("swap_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;Terrains xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;

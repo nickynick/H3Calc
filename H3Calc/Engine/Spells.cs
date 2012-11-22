@@ -10,7 +10,7 @@ namespace H3Calc.Engine
         public readonly string Name;
         public readonly Type SecondarySkillType;
 
-        public Hero Caster { get; set; }        
+        public HeroStats CasterStats { get; set; }        
 
         protected Spell(string name, Type secondarySkillType)
         {
@@ -22,12 +22,12 @@ namespace H3Calc.Engine
         {
             get
             {
-                if ((Caster == null) || (Caster.Stats == null))
+                if (CasterStats == null)
                 {
                     return SecondarySkillLevel.None;                    
                 }
 
-                foreach (SecondarySkill skill in Caster.Stats.SecondarySkills)
+                foreach (SecondarySkill skill in CasterStats.SecondarySkills)
                 {
                     if (skill.GetType() == SecondarySkillType)
                     {
@@ -43,12 +43,12 @@ namespace H3Calc.Engine
         {
             get
             {
-                if (Caster == null)
+                if (CasterStats == null)
                 {
                     return false;
                 }
 
-                return (Caster.SpecializedSpell == GetType());
+                return (CasterStats.Hero.SpecializedSpell == GetType());
             }
         }
 
@@ -218,7 +218,7 @@ namespace H3Calc.Engine
         {
             if (IsSpecialized)
             {
-                double bonus = 0.03 * (Caster.Stats.Level / attackData.Attacker.Level);
+                double bonus = 0.03 * (CasterStats.Level / attackData.Attacker.Level);
                 damageModifier.DamageBonuses.Add(bonus);
             }
         }

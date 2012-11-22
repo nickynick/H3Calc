@@ -8,18 +8,18 @@ namespace H3Calc.Engine
     public abstract class SecondarySkill : IDamageModifierProvider
     {
         public SecondarySkillLevel SkillLevel { get; set; }
-        public Hero Hero { get; set; }
+        public HeroStats HeroStats { get; set; }
 
         public bool IsSpecialized
         {
             get
             {
-                if (Hero == null)
+                if (HeroStats == null)
                 {
                     return false;
                 }
 
-                return (Hero.SpecializedSecondarySkill == GetType());
+                return (HeroStats.Hero.SpecializedSecondarySkill == GetType());
             }
         }
 
@@ -53,7 +53,7 @@ namespace H3Calc.Engine
 
             if (IsSpecialized)
             {
-                bonus *= (1.0 + 0.05 * Hero.Stats.Level);
+                bonus *= (1.0 + 0.05 * HeroStats.Level);
             }
 
             damageModifier.DamageBonuses.Add(bonus);
@@ -86,7 +86,7 @@ namespace H3Calc.Engine
 
             if (IsSpecialized)
             {
-                bonus *= (1.0 + 0.05 * Hero.Stats.Level);
+                bonus *= (1.0 + 0.05 * HeroStats.Level);
             }
 
             damageModifier.DamageBonuses.Add(bonus);
@@ -119,7 +119,7 @@ namespace H3Calc.Engine
 
             if (IsSpecialized)
             {
-                reduction *= (1.0 + 0.05 * Hero.Stats.Level);
+                reduction *= (1.0 + 0.05 * HeroStats.Level);
             }
 
             damageModifier.DamageReductions.Add(reduction);

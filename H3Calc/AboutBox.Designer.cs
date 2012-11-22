@@ -42,9 +42,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(29, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 13);
+            this.label1.Size = new System.Drawing.Size(178, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Heroes III SOD Damage Calculator";
+            this.label1.Text = "Heroes III (SOD) Damage Calculator";
             // 
             // label2
             // 

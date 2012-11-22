@@ -18,6 +18,14 @@ namespace H3Calc.Engine
 
         public void CalculateDamage(DamageCalculatorInputData data, out int minDamage, out int maxDamage, out string notes)
         {
+            if (data.AttackerCount == 0)
+            {
+                minDamage = 0;
+                maxDamage = 0;
+                notes = null;
+                return;
+            }
+
             DamageModifier damageModifier = new DamageModifier();
             AttackData attackData = new AttackData { Attacker = data.Attacker, Defender = data.Defender };
 
@@ -32,22 +40,29 @@ namespace H3Calc.Engine
                 defenderStatsModifiers.Add(data.Terrain);
             }
 
-            if (data.AttackerHero != null)
+            if (data.AttackerHeroStats != null)
             {
-                attackerStatsModifiers.Add(data.AttackerHero);
-                attackerDamageModifierProviders.Add(data.AttackerHero);
+                attackerStatsModifiers.Add(data.AttackerHeroStats);
+                attackerDamageModifierProviders.Add(data.AttackerHeroStats);
             }
 
-            if (data.DefenderHero != null)
+            if (data.DefenderHeroStats != null)
             {
-                defenderStatsModifiers.Add(data.DefenderHero);
-                defenderDamageModifierProviders.Add(data.DefenderHero);
+                defenderStatsModifiers.Add(data.DefenderHeroStats);
+                defenderDamageModifierProviders.Add(data.DefenderHeroStats);
             }
 
-            attackerStatsModifiers.AddRange(data.AttackerSpells);
-            attackerDamageModifierProviders.AddRange(data.AttackerSpells);
-            defenderStatsModifiers.AddRange(data.DefenderSpells);
-            defenderDamageModifierProviders.AddRange(data.DefenderSpells);
+            if (data.AttackerSpells != null)
+            {
+                attackerStatsModifiers.AddRange(data.AttackerSpells);
+                attackerDamageModifierProviders.AddRange(data.AttackerSpells);
+            }
+
+            if (data.DefenderSpells != null)
+            {
+                defenderStatsModifiers.AddRange(data.DefenderSpells);
+                defenderDamageModifierProviders.AddRange(data.DefenderSpells);
+            }
 
             attackerStatsModifiers.Add(unitManager);
             defenderStatsModifiers.Add(unitManager);
@@ -150,10 +165,10 @@ namespace H3Calc.Engine
         public Unit Attacker { get; set; }
         public Unit Defender { get; set; }
 
-        public int AttackerCount { get; set; }
+        public int AttackerCount { get; set; }        
 
-        public Hero AttackerHero { get; set; }
-        public Hero DefenderHero { get; set; }        
+        public HeroStats AttackerHeroStats { get; set; }
+        public HeroStats DefenderHeroStats { get; set; }        
 
         public List<Spell> AttackerSpells { get; set; }
         public List<Spell> DefenderSpells { get; set; }
@@ -164,7 +179,7 @@ namespace H3Calc.Engine
         {
             AttackerSpells = new List<Spell>();
             DefenderSpells = new List<Spell>();
-        }
+        }        
     }
 
     public class DamageModifier

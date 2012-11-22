@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace H3Calc.Engine
 {
-    public class Hero : IUnitStatsModifier, IDamageModifierProvider
+    public class Hero
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -63,9 +63,7 @@ namespace H3Calc.Engine
         }
 
         [DefaultValue(-1)]
-        public int SpecializedUnitId { get; set; }
-
-        public HeroStats Stats { get; set; }
+        public int SpecializedUnitId { get; set; }        
 
         public Hero()
         {
@@ -73,13 +71,38 @@ namespace H3Calc.Engine
             SpecializedSpell = null;
             SpecializedUnitId = -1;
         }
+    }
+
+    [XmlRoot("Heroes")]
+    public class HeroesList : List<Hero>
+    {
+    }
+
+    public class HeroStats : IUnitStatsModifier, IDamageModifierProvider
+    {
+        public Hero Hero { get; set; }
+
+        public int Level { get; set; }
+
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+
+        public List<SecondarySkill> SecondarySkills { get; set; }
+
+        public HeroStats(Hero hero)
+        {
+            Hero = hero;
+
+            Level = 1;
+            SecondarySkills = new List<SecondarySkill>();
+        }
 
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            modifiedStats.Attack += Stats.Attack;
-            modifiedStats.Defense += Stats.Defense;
+            modifiedStats.Attack += Attack;
+            modifiedStats.Defense += Defense;
 
-            if (SpecializedUnitId >= 0)
+            if (Hero.SpecializedUnitId >= 0)
             {
                 ApplyUnitSpecialization(unit, modifiedStats);
             }
@@ -88,7 +111,7 @@ namespace H3Calc.Engine
         private void ApplyUnitSpecialization(Unit unit, UnitStats modifiedStats)
         {
             // TODO: this is dirty, should handle upgraded units in a better way.
-            if ((unit.Id != SpecializedUnitId) && (unit.Id != SpecializedUnitId + 1))
+            if ((unit.Id != Hero.SpecializedUnitId) && (unit.Id != Hero.SpecializedUnitId + 1))
             {
                 return;
             }
@@ -126,12 +149,12 @@ namespace H3Calc.Engine
             if ((unit.Id == 122) || (unit.Id == 123))
             {
                 modifiedStats.Attack += 3;
-                modifiedStats.Defense += 3;                
+                modifiedStats.Defense += 3;
                 return;
             }
 
             // Default formula
-            int levelCoefficient = Stats.Level / unit.Level;
+            int levelCoefficient = Level / unit.Level;
 
             double attackBonus = unit.InitialStats.Attack * (0.05 * levelCoefficient);
             double defenseBonus = unit.InitialStats.Defense * (0.05 * levelCoefficient);
@@ -145,7 +168,7 @@ namespace H3Calc.Engine
 
         public void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
         {
-            foreach (SecondarySkill skill in Stats.SecondarySkills)
+            foreach (SecondarySkill skill in SecondarySkills)
             {
                 skill.ApplyOnAttack(attackData, damageModifier);
             }
@@ -153,31 +176,10 @@ namespace H3Calc.Engine
 
         public void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
         {
-            foreach (SecondarySkill skill in Stats.SecondarySkills)
+            foreach (SecondarySkill skill in SecondarySkills)
             {
                 skill.ApplyOnDefense(attackData, damageModifier);
             }
-        }
-    }
-
-    [XmlRoot("Heroes")]
-    public class HeroesList : List<Hero>
-    {
-    }
-
-    public class HeroStats
-    {
-        public int Level { get; set; }
-
-        public int Attack { get; set; }
-        public int Defense { get; set; }
-
-        public List<SecondarySkill> SecondarySkills { get; set; }
-
-        public HeroStats()
-        {
-            Level = 1;
-            SecondarySkills = new List<SecondarySkill>();
         }
     }
 }

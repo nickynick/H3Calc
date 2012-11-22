@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace H3Calc
 {
-    class ImmediateNumericUpDown : NumericUpDown
+    public class ImmediateNumericUpDown : NumericUpDown
     {
         public ImmediateNumericUpDown() : base()
         {
