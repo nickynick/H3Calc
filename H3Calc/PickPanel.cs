@@ -69,7 +69,8 @@ namespace H3Calc
             {
                 if (data == null)
                 {
-                    data = GetDataFromControls();                    
+                    data = new PickPanelData();
+                    UpdateDataFromControls();                    
                 }
                 return data;
             }
@@ -274,22 +275,22 @@ namespace H3Calc
             }
         }
 
-        private PickPanelData GetDataFromControls()
+        void UpdateDataFromControls() 
         {
-            PickPanelData data = new PickPanelData();
+            data.Spells.Clear();
 
-            data.Unit = PickedUnit;
+            data.Unit = PickedUnit;           
 
-            data.Spells = new List<Spell>();
-
-            Hero hero = GetSelectedHero();            
-
+            Hero hero = GetSelectedHero();
             if (hero != null)
             {
-                HeroStats stats = new HeroStats(hero);                
+                HeroStats stats = data.HeroStats;
 
+                stats.Hero = hero;
                 stats.Attack = (int)HeroAttackUpDn.Value;
                 stats.Defense = (int)HeroDefenseUpDn.Value;
+
+                stats.SecondarySkills.Clear();                
 
                 if (Mode != ApplicationMode.Simple)
                 {
@@ -318,8 +319,10 @@ namespace H3Calc
                         CheckSpellCheckbox(AirShieldChbx, typeof(AirShield), data.Spells, stats);
                     }
                 }
-
-                data.HeroStats = stats;
+            }
+            else
+            {
+                data.HeroStats = null;
             }
 
             if (OpponentHeroStats != null)
@@ -328,8 +331,6 @@ namespace H3Calc
                 CheckSpellCheckbox(CurseChbx, typeof(Curse), data.Spells, OpponentHeroStats);
                 CheckSpellCheckbox(WeaknessChbx, typeof(Weakness), data.Spells, OpponentHeroStats);
             }
-
-            return data;
         }
 
         private void SetControlsWithData(PickPanelData data)
@@ -492,10 +493,10 @@ namespace H3Calc
 
         private void UpdateData()
         {
-            data = null;
-
             if (!updatingControlsFromData)
             {
+                UpdateDataFromControls();            
+
                 if (DataChanged != null)
                 {
                     DataChanged(this, null);
@@ -575,9 +576,41 @@ namespace H3Calc
     }
 
     public class PickPanelData
-    {
-        public Unit Unit { get; set; }        
-        public HeroStats HeroStats { get; set; }
-        public List<Spell> Spells { get; set; }
+    {        
+        public Unit Unit { get; set; }
+
+        private HeroStats heroStats;
+        public HeroStats HeroStats
+        {
+            get
+            {
+                if (heroStats == null)
+                {
+                    heroStats = new HeroStats();
+                }
+                return heroStats;
+            }
+            set
+            {
+                heroStats = value;
+            }
+        }
+
+        private List<Spell> spells;
+        public List<Spell> Spells
+        {
+            get
+            {
+                if (spells == null)
+                {
+                    spells = new List<Spell>();
+                }
+                return spells;
+            }
+            set
+            {
+                spells = value;
+            }
+        }
     }
 }

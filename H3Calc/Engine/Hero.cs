@@ -89,10 +89,8 @@ namespace H3Calc.Engine
 
         public List<SecondarySkill> SecondarySkills { get; set; }
 
-        public HeroStats(Hero hero)
-        {
-            Hero = hero;
-
+        public HeroStats()
+        {            
             Level = 1;
             SecondarySkills = new List<SecondarySkill>();
         }
@@ -102,7 +100,7 @@ namespace H3Calc.Engine
             modifiedStats.Attack += Attack;
             modifiedStats.Defense += Defense;
 
-            if (Hero.SpecializedUnitId >= 0)
+            if (Hero != null && Hero.SpecializedUnitId >= 0)
             {
                 ApplyUnitSpecialization(unit, modifiedStats);
             }
