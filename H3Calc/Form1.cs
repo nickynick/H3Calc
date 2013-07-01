@@ -15,12 +15,7 @@ namespace H3Calc
     public partial class Form1 : Form
     {        
         protected TerrainsList terrains;
-        protected List<Hero> heroes;        
-        
-        protected DamageCalculator calculator;
-
-        protected Control[] AttackerHeroControls;
-        protected Control[] DefenderHeroControls;        
+        protected List<Hero> heroes;                
 
         protected ApplicationMode Mode
         {
@@ -43,29 +38,16 @@ namespace H3Calc
             this.Menu = this.mainMenu1; 
 
             ReadTerrainData();
-            ReadHeroData();            
-            
-            calculator = new DamageCalculator();                                  
+            ReadHeroData();
 
-            terrainComboBox.DataSource = terrains;
-            terrainComboBox.DisplayMember = "Name";
-
-            attackerCountUpDn.ValueChanged += ControlValueChanged;
-            defenderCountUpDn.ValueChanged += ControlValueChanged;
-
-            attackerPickPanel.Heroes = defenderPickPanel.Heroes = heroes;
-            attackerPickPanel.Mode = defenderPickPanel.Mode = Mode;                        
-
-            attackerPickPanel.DataChanged += PickPanelDataChanged;
-            defenderPickPanel.DataChanged += PickPanelDataChanged;
-
-            terrainComboBox.SelectedValueChanged += ControlValueChanged;            
+            combatDamagePanel.Heroes = heroes;
+            combatDamagePanel.Terrains = terrains;
+            combatDamagePanel.Mode = Mode;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            UpdateControlsOnModeChange();            
-            UpdateCalculatedDamage();            
+            UpdateControlsOnModeChange();                        
         } 
 
         private void ReadTerrainData()
@@ -113,111 +95,10 @@ namespace H3Calc
                     break;
             }
 
-            attackerPickPanel.Mode = Mode;
-            defenderPickPanel.Mode = Mode;
+            combatDamagePanel.Mode = Mode;
 
-            // TODO: remove this crap, use proper layout (how?)
-
-            attackerGroupBox.Height = attackerPickPanel.Height + 25;
-            defenderGroupBox.Height = defenderPickPanel.Height + 25;
-
-            //resultPanel.Top = terrainGroupBox.Top = attackerGroupBox.Top + attackerGroupBox.Height + 6;
-
-            this.Height = attackerGroupBox.Top + attackerGroupBox.Height + 120;            
-        }
-        
-        private void UpdateCalculatedDamage()
-        {
-            DamageCalculatorInputData inputData = new DamageCalculatorInputData();
-
-            inputData.Attacker = attackerPickPanel.Data.Unit;
-            inputData.Defender = defenderPickPanel.Data.Unit;
-
-            bool haveInputData = ((inputData.Attacker != null) && (inputData.Defender != null));
-
-            resultPanel.Visible = haveInputData;
-
-            if (!haveInputData)
-            {
-                return;
-            }          
-
-            inputData.Terrain = (Terrain)terrainComboBox.SelectedValue;
-            if (inputData.Terrain.Id == -1)
-            {
-                inputData.Terrain = null;
-            }
-
-            inputData.AttackerHeroStats = attackerPickPanel.Data.HeroStats;
-            inputData.AttackerSpells = attackerPickPanel.Data.Spells;
-
-            inputData.DefenderHeroStats = defenderPickPanel.Data.HeroStats;
-            inputData.DefenderSpells = defenderPickPanel.Data.Spells;
-
-            inputData.AttackerCount = (int)attackerCountUpDn.Value;
-
-            int minDamage, maxDamage;
-            string notes;
-            calculator.CalculateDamage(inputData, out minDamage, out maxDamage, out notes);
-
-            int minKills = minDamage / inputData.Defender.InitialStats.Health;
-            int maxKills = maxDamage / inputData.Defender.InitialStats.Health;
-
-            calculatedDamageLbl.Text = FormatRange(minDamage, maxDamage);
-            calculatedKillsLbl.Text = FormatRange(minKills, maxKills);
-            notesLbl.Text = (notes != null) ? "(" + notes + ")" : null;
-
-            //// TODO: refactor this crap
-
-            inputData.Attacker = defenderPickPanel.Data.Unit;
-            inputData.AttackerHeroStats = defenderPickPanel.Data.HeroStats; 
-            inputData.AttackerSpells = defenderPickPanel.Data.Spells;
-
-            inputData.Defender = attackerPickPanel.Data.Unit;
-            inputData.DefenderHeroStats = attackerPickPanel.Data.HeroStats;
-            inputData.DefenderSpells = attackerPickPanel.Data.Spells;
-
-            int minRetDamage, tempRetDamage, maxRetDamage;            
-            string retNotes;
-
-            inputData.AttackerCount = Math.Max(0, (int)defenderCountUpDn.Value - minKills);
-            calculator.CalculateDamage(inputData, out tempRetDamage, out maxRetDamage, out retNotes);
-
-            inputData.AttackerCount = Math.Max(0, (int)defenderCountUpDn.Value - maxKills);
-            calculator.CalculateDamage(inputData, out minRetDamage, out tempRetDamage, out retNotes);
-
-            int minRetKills = minRetDamage / inputData.Defender.InitialStats.Health;
-            int maxRetKills = maxRetDamage / inputData.Defender.InitialStats.Health;
-
-            calculatedRetDamageLbl.Text = FormatRange(minRetDamage, maxRetDamage);
-            calculatedRetKillsLbl.Text = FormatRange(minRetKills, maxRetKills);
-            retNotesLbl.Text = (retNotes != null) ? "(" + retNotes + ")" : null;
-        }
-
-        private string FormatRange(int min, int max)
-        {
-            if (min != max)
-            {
-                return min.ToString() + " — " + max.ToString();
-            }
-            else
-            {
-                return min.ToString();
-            }
-        }        
-
-        private void ControlValueChanged(object sender, EventArgs e)
-        {            
-            UpdateCalculatedDamage();
-        }
-
-        private void PickPanelDataChanged(object sender, EventArgs e)
-        {
-            attackerPickPanel.OpponentHeroStats = defenderPickPanel.Data.HeroStats;
-            defenderPickPanel.OpponentHeroStats = attackerPickPanel.Data.HeroStats;
-
-            UpdateCalculatedDamage();
-        }
+            this.Height = 2 * combatDamagePanel.Top + combatDamagePanel.Height;
+        } 
 
         private void menuItemMode_Click(object sender, EventArgs e)
         {
@@ -234,30 +115,13 @@ namespace H3Calc
                 Mode = ApplicationMode.Scientific;
             }
                         
-            UpdateControlsOnModeChange();
-            UpdateCalculatedDamage();
+            UpdateControlsOnModeChange();            
         }
 
         private void aboutMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
-        }
-
-        private void swapBtn_Click(object sender, EventArgs e)
-        {
-            PickPanelData tempData = attackerPickPanel.Data;
-            attackerPickPanel.Data = defenderPickPanel.Data;
-            defenderPickPanel.Data = tempData;
-
-            attackerPickPanel.OpponentHeroStats = defenderPickPanel.Data.HeroStats;
-            defenderPickPanel.OpponentHeroStats = attackerPickPanel.Data.HeroStats;
-
-            int tempCount = (int)attackerCountUpDn.Value;
-            attackerCountUpDn.Value = defenderCountUpDn.Value;
-            defenderCountUpDn.Value = tempCount;            
-
-            UpdateCalculatedDamage();
         }        
     }
 }

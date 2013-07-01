@@ -52,6 +52,12 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CombatDamagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CombatDamagePanel.Designer.cs">
+      <DependentUpon>CombatDamagePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\DamageCalculator.cs" />
     <Compile Include="Engine\Hero.cs" />
     <Compile Include="Engine\SecondarySkillLevel.cs" />
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CombatDamagePanel.resx">
+      <DependentUpon>CombatDamagePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
