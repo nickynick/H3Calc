@@ -43,10 +43,10 @@
             this.terrainGroupBox = new System.Windows.Forms.GroupBox();
             this.terrainComboBox = new System.Windows.Forms.ComboBox();
             this.defenderGroupBox = new System.Windows.Forms.GroupBox();
-            this.attackerGroupBox = new System.Windows.Forms.GroupBox();
-            this.defenderCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.defenderPickPanel = new H3Calc.PickPanel();
+            this.attackerGroupBox = new System.Windows.Forms.GroupBox();
             this.attackerPickPanel = new H3Calc.PickPanel();
+            this.defenderCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.attackerCountUpDn = new H3Calc.ImmediateNumericUpDown();
             this.resultPanel.SuspendLayout();
             this.terrainGroupBox.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             // resultPanel
             // 
+            this.resultPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.resultPanel.Controls.Add(this.retKillsLbl);
             this.resultPanel.Controls.Add(this.calculatedRetDamageLbl);
             this.resultPanel.Controls.Add(this.retNotesLbl);
@@ -185,7 +186,7 @@
             // 
             // terrainGroupBox
             // 
-            this.terrainGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.terrainGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.terrainGroupBox.Controls.Add(this.terrainComboBox);
             this.terrainGroupBox.Location = new System.Drawing.Point(577, 424);
             this.terrainGroupBox.Name = "terrainGroupBox";
@@ -216,6 +217,16 @@
             this.defenderGroupBox.TabStop = false;
             this.defenderGroupBox.Text = "Defender";
             // 
+            // defenderPickPanel
+            // 
+            this.defenderPickPanel.Heroes = null;
+            this.defenderPickPanel.Location = new System.Drawing.Point(6, 19);
+            this.defenderPickPanel.Mode = H3Calc.ApplicationMode.Scientific;
+            this.defenderPickPanel.Name = "defenderPickPanel";
+            this.defenderPickPanel.OpponentHeroStats = null;
+            this.defenderPickPanel.Size = new System.Drawing.Size(295, 387);
+            this.defenderPickPanel.TabIndex = 2;
+            // 
             // attackerGroupBox
             // 
             this.attackerGroupBox.Controls.Add(this.attackerPickPanel);
@@ -225,6 +236,16 @@
             this.attackerGroupBox.TabIndex = 19;
             this.attackerGroupBox.TabStop = false;
             this.attackerGroupBox.Text = "Attacker";
+            // 
+            // attackerPickPanel
+            // 
+            this.attackerPickPanel.Heroes = null;
+            this.attackerPickPanel.Location = new System.Drawing.Point(6, 19);
+            this.attackerPickPanel.Mode = H3Calc.ApplicationMode.Scientific;
+            this.attackerPickPanel.Name = "attackerPickPanel";
+            this.attackerPickPanel.OpponentHeroStats = null;
+            this.attackerPickPanel.Size = new System.Drawing.Size(295, 387);
+            this.attackerPickPanel.TabIndex = 0;
             // 
             // defenderCountUpDn
             // 
@@ -248,26 +269,6 @@
             0,
             0,
             0});
-            // 
-            // defenderPickPanel
-            // 
-            this.defenderPickPanel.Heroes = null;
-            this.defenderPickPanel.Location = new System.Drawing.Point(6, 19);
-            this.defenderPickPanel.Mode = H3Calc.ApplicationMode.Scientific;
-            this.defenderPickPanel.Name = "defenderPickPanel";
-            this.defenderPickPanel.OpponentHeroStats = null;
-            this.defenderPickPanel.Size = new System.Drawing.Size(295, 387);
-            this.defenderPickPanel.TabIndex = 2;
-            // 
-            // attackerPickPanel
-            // 
-            this.attackerPickPanel.Heroes = null;
-            this.attackerPickPanel.Location = new System.Drawing.Point(6, 19);
-            this.attackerPickPanel.Mode = H3Calc.ApplicationMode.Scientific;
-            this.attackerPickPanel.Name = "attackerPickPanel";
-            this.attackerPickPanel.OpponentHeroStats = null;
-            this.attackerPickPanel.Size = new System.Drawing.Size(295, 387);
-            this.attackerPickPanel.TabIndex = 0;
             // 
             // attackerCountUpDn
             // 

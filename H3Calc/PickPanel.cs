@@ -237,9 +237,9 @@ namespace H3Calc
                 heroComboBoxItems.Add(new KeyValuePair<string, Hero>(hero.Name, hero));
             }
 
-            HeroComboBox.DataSource = heroComboBoxItems;
             HeroComboBox.DisplayMember = "Key";
             HeroComboBox.ValueMember = "Value";
+            HeroComboBox.DataSource = heroComboBoxItems;
         }
 
         private void ModeUpdated()

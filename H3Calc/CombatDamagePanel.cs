@@ -91,7 +91,7 @@ namespace H3Calc
 
             //resultPanel.Top = terrainGroupBox.Top = attackerGroupBox.Top + attackerGroupBox.Height + 6;
 
-            this.Height = attackerGroupBox.Top + attackerGroupBox.Height + 120;               
+            this.Height = attackerGroupBox.Bottom + terrainGroupBox.Height + 16;               
         }
         
         private void UpdateCalculatedDamage()

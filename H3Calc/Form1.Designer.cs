@@ -84,10 +84,10 @@
             // combatDamagePanel
             // 
             this.combatDamagePanel.Heroes = null;
-            this.combatDamagePanel.Location = new System.Drawing.Point(9, 8);
-            this.combatDamagePanel.Mode = H3Calc.ApplicationMode.Simple;
+            this.combatDamagePanel.Location = new System.Drawing.Point(9, 12);
+            this.combatDamagePanel.Mode = H3Calc.ApplicationMode.Scientific;
             this.combatDamagePanel.Name = "combatDamagePanel";
-            this.combatDamagePanel.Size = new System.Drawing.Size(778, 482);
+            this.combatDamagePanel.Size = new System.Drawing.Size(778, 475);
             this.combatDamagePanel.TabIndex = 0;
             this.combatDamagePanel.Terrains = null;
             // 

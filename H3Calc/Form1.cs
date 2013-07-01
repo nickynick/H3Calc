@@ -97,7 +97,9 @@ namespace H3Calc
 
             combatDamagePanel.Mode = Mode;
 
-            this.Height = 2 * combatDamagePanel.Top + combatDamagePanel.Height;
+            Size size = this.ClientSize;
+            size.Height = 2 * combatDamagePanel.Top + combatDamagePanel.Height;
+            this.ClientSize = size;
         } 
 
         private void menuItemMode_Click(object sender, EventArgs e)
