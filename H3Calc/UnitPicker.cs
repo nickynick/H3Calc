@@ -9,30 +9,23 @@ using System.Windows.Forms;
 using H3Calc.Engine;
 using System.Xml.Serialization;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace H3Calc
 {
     public partial class UnitPicker : Form
     {
-        protected UnitsList units;
+        public List<Unit> Units { get; set; }        
 
         public event EventHandler<UnitEventArgs> UnitPicked;
 
-        public UnitPicker()
+        public UnitPicker(List<Unit> units)
         {
             InitializeComponent();
             this.ClientSize = new Size(950, 695);
 
-            ReadUnitData();
-        }
-
-        private void ReadUnitData()
-        {
-            XmlSerializer deserializer = new XmlSerializer(typeof(UnitsList));
-            TextReader reader = new StringReader(Properties.Resources.units);
-            units = (UnitsList)deserializer.Deserialize(reader);
-            reader.Close();
-        }
+            Units = units;
+        }        
 
         private Unit UnitFromPicker(int x, int y)
         {
@@ -54,7 +47,7 @@ namespace H3Calc
             }
 
             int unitId = row * 14 + column;
-            return units.FirstOrDefault(u => u.Id == unitId);
+            return Units.FirstOrDefault(u => u.Id == unitId);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)

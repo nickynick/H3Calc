@@ -12,6 +12,21 @@ namespace H3Calc
 {
     public partial class CombatDamagePanel : UserControl
     {
+        private List<Unit> units;
+        public List<Unit> Units
+        {
+            get
+            {
+                return units;
+            }
+            set
+            {
+                units = value;
+
+                attackerPickPanel.Units = defenderPickPanel.Units = units;
+            }
+        }
+
         private List<Hero> heroes;
         public List<Hero> Heroes
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace H3Calc.Engine
 {
@@ -12,11 +13,11 @@ namespace H3Calc.Engine
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [DefaultValue(null)]
-        [XmlElement("SpecializedSecondarySkill")]
+        [DefaultValue(null)]        
+        [JsonProperty("SpecializedSecondarySkill")]
         public string SpecializedSecondarySkillString;
-
-        [XmlIgnore]
+        
+        [JsonIgnore]
         public Type SpecializedSecondarySkill
         {
             get
@@ -37,11 +38,11 @@ namespace H3Calc.Engine
             }
         }
 
-        [DefaultValue(null)]
-        [XmlElement("SpecializedSpell")]
+        [DefaultValue(null)]        
+        [JsonProperty("SpecializedSpell")]
         public string SpecializedSpellString;
-
-        [XmlIgnore]
+        
+        [JsonIgnore]
         public Type SpecializedSpell
         {
             get
@@ -71,12 +72,7 @@ namespace H3Calc.Engine
             SpecializedSpell = null;
             SpecializedUnitId = -1;
         }
-    }
-
-    [XmlRoot("Heroes")]
-    public class HeroesList : List<Hero>
-    {
-    }
+    }    
 
     public class HeroStats : IUnitStatsModifier, IDamageModifierProvider
     {

@@ -49,12 +49,7 @@ namespace H3Calc.Engine
             return (UnitStats)MemberwiseClone();
         }
     }
-
-    [XmlRoot("Units")]
-    public class UnitsList : List<Unit>
-    {
-    }
-
+    
     public struct AttackData
     {
         public Unit Attacker { get; set; }

@@ -1,0 +1,1853 @@
+[
+  {
+    "Id": 0,
+    "Name": "Копейщик",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 5,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 10
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 1,
+    "Name": "Алебардщик",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 10
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 2,
+    "Name": "Лучник",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 3,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 10
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 3,
+    "Name": "Стрелок",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 3,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 10
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true,
+    "NumberOfHits": 2
+  },
+  {
+    "Id": 4,
+    "Name": "Грифон",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 8,
+      "MinDamage": 3,
+      "MaxDamage": 6,
+      "Health": 25
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 5,
+    "Name": "Королевский грифон",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 9,
+      "MinDamage": 3,
+      "MaxDamage": 6,
+      "Health": 25
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 6,
+    "Name": "Рыцарь",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 12,
+      "MinDamage": 6,
+      "MaxDamage": 9,
+      "Health": 35
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 7,
+    "Name": "Крестоносец",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 12,
+      "MinDamage": 7,
+      "MaxDamage": 10,
+      "Health": 35
+    },
+    "NativeTerrainId": 2,
+    "NumberOfHits": 2
+  },
+  {
+    "Id": 8,
+    "Name": "Монах",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 7,
+      "MinDamage": 10,
+      "MaxDamage": 12,
+      "Health": 30
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 9,
+    "Name": "Фанатик",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 10,
+      "MinDamage": 10,
+      "MaxDamage": 12,
+      "Health": 30
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 10,
+    "Name": "Кавалерист",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 15,
+      "MinDamage": 15,
+      "MaxDamage": 25,
+      "Health": 100
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 11,
+    "Name": "Чемпион",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 16,
+      "MinDamage": 20,
+      "MaxDamage": 25,
+      "Health": 100
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 12,
+    "Name": "Ангел",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 20,
+      "Defense": 20,
+      "MinDamage": 50,
+      "MaxDamage": 50,
+      "Health": 200
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 13,
+    "Name": "Архангел",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 30,
+      "Defense": 30,
+      "MinDamage": 50,
+      "MaxDamage": 50,
+      "Health": 250
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 14,
+    "Name": "Кентавр",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 3,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 8
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 15,
+    "Name": "Командир кентавров",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 3,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 10
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 16,
+    "Name": "Гном",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 7,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 20
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 17,
+    "Name": "Боевой гном",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 7,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 20
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 18,
+    "Name": "Эльф",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 5,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 15
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 19,
+    "Name": "Великий эльф",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 5,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 15
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true,
+    "NumberOfHits": 2
+  },
+  {
+    "Id": 20,
+    "Name": "Пегас",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 8,
+      "MinDamage": 5,
+      "MaxDamage": 9,
+      "Health": 30
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 21,
+    "Name": "Серебряный пегас",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 10,
+      "MinDamage": 5,
+      "MaxDamage": 9,
+      "Health": 30
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 22,
+    "Name": "Страж - дендроид",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 12,
+      "MinDamage": 10,
+      "MaxDamage": 14,
+      "Health": 55
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 23,
+    "Name": "Дендроид - солдат",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 12,
+      "MinDamage": 10,
+      "MaxDamage": 14,
+      "Health": 65
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 24,
+    "Name": "Единорог",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 14,
+      "MinDamage": 18,
+      "MaxDamage": 22,
+      "Health": 90
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 25,
+    "Name": "Боевой единорог",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 14,
+      "MinDamage": 18,
+      "MaxDamage": 22,
+      "Health": 110
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 26,
+    "Name": "Зеленый дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 18,
+      "Defense": 18,
+      "MinDamage": 40,
+      "MaxDamage": 50,
+      "Health": 180
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 27,
+    "Name": "Золотой дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 27,
+      "Defense": 27,
+      "MinDamage": 40,
+      "MaxDamage": 50,
+      "Health": 250
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 28,
+    "Name": "Гремлин",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 3,
+      "Defense": 3,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 4
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 29,
+    "Name": "Гремлин - вожак",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 4,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 4
+    },
+    "NativeTerrainId": 3,
+    "IsRanged": true
+  },
+  {
+    "Id": 30,
+    "Name": "Каменная гаргулия",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 6,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 16
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 31,
+    "Name": "Обсидиановая гаргулия",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 7,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 16
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 32,
+    "Name": "Каменный голем",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 10,
+      "MinDamage": 4,
+      "MaxDamage": 5,
+      "Health": 30
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 33,
+    "Name": "Железный голем",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 10,
+      "MinDamage": 4,
+      "MaxDamage": 5,
+      "Health": 35
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 34,
+    "Name": "Маг",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 8,
+      "MinDamage": 7,
+      "MaxDamage": 9,
+      "Health": 25
+    },
+    "NativeTerrainId": 3,
+    "IsRanged": true
+  },
+  {
+    "Id": 35,
+    "Name": "Архи-маг",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 9,
+      "MinDamage": 7,
+      "MaxDamage": 9,
+      "Health": 30
+    },
+    "NativeTerrainId": 3,
+    "IsRanged": true
+  },
+  {
+    "Id": 36,
+    "Name": "Джин",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 12,
+      "MinDamage": 13,
+      "MaxDamage": 16,
+      "Health": 40
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 37,
+    "Name": "Мастер джин",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 12,
+      "MinDamage": 13,
+      "MaxDamage": 16,
+      "Health": 40
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 38,
+    "Name": "Нага",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 13,
+      "MinDamage": 20,
+      "MaxDamage": 20,
+      "Health": 110
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 39,
+    "Name": "Нага-королева",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 13,
+      "MinDamage": 30,
+      "MaxDamage": 30,
+      "Health": 110
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 40,
+    "Name": "Гигант",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 19,
+      "Defense": 16,
+      "MinDamage": 40,
+      "MaxDamage": 60,
+      "Health": 150
+    },
+    "NativeTerrainId": 3
+  },
+  {
+    "Id": 41,
+    "Name": "Титан",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 24,
+      "Defense": 24,
+      "MinDamage": 40,
+      "MaxDamage": 60,
+      "Health": 300
+    },
+    "NativeTerrainId": 3,
+    "IsRanged": true
+  },
+  {
+    "Id": 42,
+    "Name": "Скелет",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 4,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 6
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 43,
+    "Name": "Скелет - воин",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 6,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 6
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 44,
+    "Name": "Живой мертвец",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 15
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 45,
+    "Name": "Зомби",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 20
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 46,
+    "Name": "Страж",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 7,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 18
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 47,
+    "Name": "Привидение",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 7,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 18
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 48,
+    "Name": "Вампир",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 9,
+      "MinDamage": 5,
+      "MaxDamage": 8,
+      "Health": 30
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 49,
+    "Name": "Вампир - лорд",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 5,
+      "MaxDamage": 8,
+      "Health": 40
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 50,
+    "Name": "Лич",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 10,
+      "MinDamage": 11,
+      "MaxDamage": 13,
+      "Health": 30
+    },
+    "NativeTerrainId": 0,
+    "IsRanged": true
+  },
+  {
+    "Id": 51,
+    "Name": "Могущественный лич",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 10,
+      "MinDamage": 11,
+      "MaxDamage": 15,
+      "Health": 40
+    },
+    "NativeTerrainId": 0,
+    "IsRanged": true
+  },
+  {
+    "Id": 52,
+    "Name": "Черный рыцарь",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 16,
+      "MinDamage": 15,
+      "MaxDamage": 30,
+      "Health": 120
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 53,
+    "Name": "Рыцарь смерти",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 18,
+      "Defense": 18,
+      "MinDamage": 15,
+      "MaxDamage": 30,
+      "Health": 120
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 54,
+    "Name": "Костяной дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 17,
+      "Defense": 15,
+      "MinDamage": 25,
+      "MaxDamage": 50,
+      "Health": 150
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 55,
+    "Name": "Дракон - привидение",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 19,
+      "Defense": 17,
+      "MinDamage": 25,
+      "MaxDamage": 50,
+      "Health": 200
+    },
+    "NativeTerrainId": 0
+  },
+  {
+    "Id": 56,
+    "Name": "Троглодит",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 3,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 5
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 57,
+    "Name": "Адский троглодит",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 4,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 6
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 58,
+    "Name": "Гарпия",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 5,
+      "MinDamage": 1,
+      "MaxDamage": 4,
+      "Health": 14
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 59,
+    "Name": "Гарпия - ведьма",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 6,
+      "MinDamage": 1,
+      "MaxDamage": 4,
+      "Health": 14
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 60,
+    "Name": "Созерцатель ",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 7,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 22
+    },
+    "NativeTerrainId": 6,
+    "IsRanged": true
+  },
+  {
+    "Id": 61,
+    "Name": "Злые глаза",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 8,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 22
+    },
+    "NativeTerrainId": 6,
+    "IsRanged": true
+  },
+  {
+    "Id": 62,
+    "Name": "Медуза",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 9,
+      "MinDamage": 6,
+      "MaxDamage": 8,
+      "Health": 25
+    },
+    "NativeTerrainId": 6,
+    "IsRanged": true
+  },
+  {
+    "Id": 63,
+    "Name": "Королева медуза",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 6,
+      "MaxDamage": 8,
+      "Health": 30
+    },
+    "NativeTerrainId": 6,
+    "IsRanged": true
+  },
+  {
+    "Id": 64,
+    "Name": "Минотавр",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 14,
+      "Defense": 12,
+      "MinDamage": 12,
+      "MaxDamage": 20,
+      "Health": 50
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 65,
+    "Name": "Король - минотавр",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 15,
+      "MinDamage": 12,
+      "MaxDamage": 20,
+      "Health": 50
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 66,
+    "Name": "Мантикора",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 13,
+      "MinDamage": 14,
+      "MaxDamage": 20,
+      "Health": 80
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 67,
+    "Name": "Скорпикора",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 14,
+      "MinDamage": 14,
+      "MaxDamage": 20,
+      "Health": 80
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 68,
+    "Name": "Красный дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 19,
+      "Defense": 19,
+      "MinDamage": 40,
+      "MaxDamage": 50,
+      "Health": 180
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 69,
+    "Name": "Черный дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 25,
+      "Defense": 25,
+      "MinDamage": 40,
+      "MaxDamage": 50,
+      "Health": 300
+    },
+    "NativeTerrainId": 6
+  },
+  {
+    "Id": 70,
+    "Name": "Бес",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 2,
+      "Defense": 3,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 4
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 71,
+    "Name": "Фамильяр",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 4,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 4
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 72,
+    "Name": "Гог",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 4,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 13
+    },
+    "NativeTerrainId": 7,
+    "IsRanged": true
+  },
+  {
+    "Id": 73,
+    "Name": "Магог",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 4,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 13
+    },
+    "NativeTerrainId": 7,
+    "IsRanged": true
+  },
+  {
+    "Id": 74,
+    "Name": "Адская гончая",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 6,
+      "MinDamage": 2,
+      "MaxDamage": 7,
+      "Health": 25
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 75,
+    "Name": "Цербер",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 8,
+      "MinDamage": 2,
+      "MaxDamage": 7,
+      "Health": 25
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 76,
+    "Name": "Демон",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 7,
+      "MaxDamage": 9,
+      "Health": 35
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 77,
+    "Name": "Рогатый демон",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 7,
+      "MaxDamage": 9,
+      "Health": 40
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 78,
+    "Name": "Порождение зла",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 13,
+      "MinDamage": 13,
+      "MaxDamage": 17,
+      "Health": 45
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 79,
+    "Name": "Адское отродье",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 13,
+      "MinDamage": 13,
+      "MaxDamage": 17,
+      "Health": 45
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 80,
+    "Name": "Эфрит",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 12,
+      "MinDamage": 16,
+      "MaxDamage": 24,
+      "Health": 90
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 81,
+    "Name": "Султан - эфрит",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 14,
+      "MinDamage": 16,
+      "MaxDamage": 24,
+      "Health": 90
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 82,
+    "Name": "Дьявол",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 19,
+      "Defense": 21,
+      "MinDamage": 30,
+      "MaxDamage": 40,
+      "Health": 160
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 83,
+    "Name": "Архидьявол",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 26,
+      "Defense": 28,
+      "MinDamage": 30,
+      "MaxDamage": 40,
+      "Health": 200
+    },
+    "NativeTerrainId": 7
+  },
+  {
+    "Id": 84,
+    "Name": "Гнолл",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 3,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 6
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 85,
+    "Name": "Гнолл - мародер",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 6,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 6
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 86,
+    "Name": "Ящер",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 6,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 14
+    },
+    "NativeTerrainId": 4,
+    "IsRanged": true
+  },
+  {
+    "Id": 87,
+    "Name": "Ящер - воин",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 8,
+      "MinDamage": 2,
+      "MaxDamage": 5,
+      "Health": 15
+    },
+    "NativeTerrainId": 4,
+    "IsRanged": true
+  },
+  {
+    "Id": 88,
+    "Name": "Змий",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 9,
+      "MinDamage": 2,
+      "MaxDamage": 5,
+      "Health": 20
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 89,
+    "Name": "Стрекоза",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 10,
+      "MinDamage": 2,
+      "MaxDamage": 5,
+      "Health": 20
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 90,
+    "Name": "Василиск",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 11,
+      "MinDamage": 6,
+      "MaxDamage": 10,
+      "Health": 35
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 91,
+    "Name": "Великий василиск",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 12,
+      "MinDamage": 6,
+      "MaxDamage": 10,
+      "Health": 40
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 92,
+    "Name": "Горгона",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 14,
+      "MinDamage": 12,
+      "MaxDamage": 16,
+      "Health": 70
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 93,
+    "Name": "Могучая горгона",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 16,
+      "MinDamage": 12,
+      "MaxDamage": 16,
+      "Health": 70
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 94,
+    "Name": "Виверна",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 14,
+      "Defense": 14,
+      "MinDamage": 14,
+      "MaxDamage": 18,
+      "Health": 70
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 95,
+    "Name": "Виверна - монарх",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 14,
+      "Defense": 14,
+      "MinDamage": 18,
+      "MaxDamage": 22,
+      "Health": 70
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 96,
+    "Name": "Гидра",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 16,
+      "Defense": 18,
+      "MinDamage": 25,
+      "MaxDamage": 45,
+      "Health": 175
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 97,
+    "Name": "Гидра хаоса",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 18,
+      "Defense": 20,
+      "MinDamage": 25,
+      "MaxDamage": 45,
+      "Health": 250
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 98,
+    "Name": "Гоблин",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 5
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 99,
+    "Name": "Хобгоблин",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 3,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 5
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 100,
+    "Name": "Наездник на волках",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 10
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 101,
+    "Name": "Налетчик",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 5,
+      "MinDamage": 3,
+      "MaxDamage": 4,
+      "Health": 10
+    },
+    "NativeTerrainId": 5,
+    "NumberOfHits": 2
+  },
+  {
+    "Id": 102,
+    "Name": "Орк",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 4,
+      "MinDamage": 2,
+      "MaxDamage": 5,
+      "Health": 15
+    },
+    "NativeTerrainId": 5,
+    "IsRanged": true
+  },
+  {
+    "Id": 103,
+    "Name": "Орк - вождь",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 4,
+      "MinDamage": 2,
+      "MaxDamage": 5,
+      "Health": 20
+    },
+    "NativeTerrainId": 5,
+    "IsRanged": true
+  },
+  {
+    "Id": 104,
+    "Name": "Людоед",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 7,
+      "MinDamage": 6,
+      "MaxDamage": 12,
+      "Health": 40
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 105,
+    "Name": "Людоед - маг",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 7,
+      "MinDamage": 6,
+      "MaxDamage": 12,
+      "Health": 60
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 106,
+    "Name": "Птица рух",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 11,
+      "MinDamage": 11,
+      "MaxDamage": 15,
+      "Health": 60
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 107,
+    "Name": "Птица грома",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 11,
+      "MinDamage": 11,
+      "MaxDamage": 15,
+      "Health": 60
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 108,
+    "Name": "Циклоп",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 12,
+      "MinDamage": 16,
+      "MaxDamage": 20,
+      "Health": 70
+    },
+    "NativeTerrainId": 5,
+    "IsRanged": true
+  },
+  {
+    "Id": 109,
+    "Name": "Король циклопов",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 17,
+      "Defense": 13,
+      "MinDamage": 16,
+      "MaxDamage": 20,
+      "Health": 70
+    },
+    "NativeTerrainId": 5,
+    "IsRanged": true
+  },
+  {
+    "Id": 110,
+    "Name": "Чудище",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 17,
+      "Defense": 17,
+      "MinDamage": 30,
+      "MaxDamage": 50,
+      "Health": 160
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 111,
+    "Name": "Древнее чудище",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 19,
+      "Defense": 19,
+      "MinDamage": 30,
+      "MaxDamage": 50,
+      "Health": 300
+    },
+    "NativeTerrainId": 5
+  },
+  {
+    "Id": 112,
+    "Name": "Маленькая фея",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 2,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 3
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 113,
+    "Name": "Фея",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 2,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 3
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 114,
+    "Name": "Воздушный элементаль",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 9,
+      "MinDamage": 2,
+      "MaxDamage": 8,
+      "Health": 25
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 115,
+    "Name": "Элементаль шторма",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 9,
+      "MinDamage": 2,
+      "MaxDamage": 8,
+      "Health": 25
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 116,
+    "Name": "Элементаль воды",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 10,
+      "MinDamage": 3,
+      "MaxDamage": 7,
+      "Health": 30
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 117,
+    "Name": "Ледяной элементаль",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 10,
+      "MinDamage": 3,
+      "MaxDamage": 7,
+      "Health": 30
+    },
+    "NativeTerrainId": 2,
+    "IsRanged": true
+  },
+  {
+    "Id": 118,
+    "Name": "Огненный элементаль",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 8,
+      "MinDamage": 4,
+      "MaxDamage": 6,
+      "Health": 35
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 119,
+    "Name": "Энергетич.элементаль",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 8,
+      "MinDamage": 4,
+      "MaxDamage": 6,
+      "Health": 35
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 120,
+    "Name": "Элементаль земли",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 4,
+      "MaxDamage": 8,
+      "Health": 40
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 121,
+    "Name": "Элементаль магмы",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 11,
+      "MinDamage": 6,
+      "MaxDamage": 10,
+      "Health": 40
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 122,
+    "Name": "Психический элементаль",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 13,
+      "MinDamage": 10,
+      "MaxDamage": 20,
+      "Health": 75
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 123,
+    "Name": "Магический элементаль",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 13,
+      "MinDamage": 15,
+      "MaxDamage": 25,
+      "Health": 80
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 124,
+    "Name": "Огненная птица",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 18,
+      "Defense": 18,
+      "MinDamage": 30,
+      "MaxDamage": 40,
+      "Health": 150
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 125,
+    "Name": "Феникс",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 21,
+      "Defense": 18,
+      "MinDamage": 30,
+      "MaxDamage": 40,
+      "Health": 200
+    },
+    "NativeTerrainId": 2
+  },
+  {
+    "Id": 126,
+    "Name": "Крестьянин",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 1,
+      "Defense": 1,
+      "MinDamage": 1,
+      "MaxDamage": 1,
+      "Health": 1
+    }
+  },
+  {
+    "Id": 127,
+    "Name": "Хоббит",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 4,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 4
+    },
+    "IsRanged": true
+  },
+  {
+    "Id": 128,
+    "Name": "Кабан",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 5,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 15
+    }
+  },
+  {
+    "Id": 129,
+    "Name": "Вор",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 3,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 10
+    }
+  },
+  {
+    "Id": 130,
+    "Name": "Кочевник",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 9,
+      "Defense": 8,
+      "MinDamage": 2,
+      "MaxDamage": 6,
+      "Health": 30
+    }
+  },
+  {
+    "Id": 131,
+    "Name": "Мумия",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 7,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 30
+    }
+  },
+  {
+    "Id": 132,
+    "Name": "Снайпер",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 10,
+      "MinDamage": 8,
+      "MaxDamage": 10,
+      "Health": 15
+    },
+    "IsRanged": true
+  },
+  {
+    "Id": 133,
+    "Name": "Тролль",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 14,
+      "Defense": 7,
+      "MinDamage": 10,
+      "MaxDamage": 15,
+      "Health": 40
+    }
+  },
+  {
+    "Id": 134,
+    "Name": "Золотой голем",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 12,
+      "MinDamage": 8,
+      "MaxDamage": 10,
+      "Health": 50
+    }
+  },
+  {
+    "Id": 135,
+    "Name": "Алмазный голем",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 12,
+      "MinDamage": 10,
+      "MaxDamage": 14,
+      "Health": 60
+    }
+  },
+  {
+    "Id": 136,
+    "Name": "Чародей",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 17,
+      "Defense": 12,
+      "MinDamage": 14,
+      "MaxDamage": 14,
+      "Health": 30
+    },
+    "IsRanged": true
+  },
+  {
+    "Id": 137,
+    "Name": "Сказочный дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 20,
+      "Defense": 20,
+      "MinDamage": 20,
+      "MaxDamage": 30,
+      "Health": 500
+    }
+  },
+  {
+    "Id": 138,
+    "Name": "Ржавый дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 30,
+      "Defense": 30,
+      "MinDamage": 50,
+      "MaxDamage": 50,
+      "Health": 750
+    }
+  },
+  {
+    "Id": 139,
+    "Name": "Кристальный дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 40,
+      "Defense": 40,
+      "MinDamage": 60,
+      "MaxDamage": 75,
+      "Health": 800
+    }
+  },
+  {
+    "Id": 140,
+    "Name": "Лазурный дракон",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 50,
+      "Defense": 50,
+      "MinDamage": 70,
+      "MaxDamage": 80,
+      "Health": 1000
+    }
+  }
+]

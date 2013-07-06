@@ -28,6 +28,8 @@ namespace H3Calc
             }
         }
 
+        public List<Unit> Units { get; set; }
+
         private ApplicationMode mode;
         public ApplicationMode Mode
         {
@@ -559,7 +561,7 @@ namespace H3Calc
 
         private void UnitBtn_Click(object sender, EventArgs e)
         {
-            UnitPicker unitPicker = new UnitPicker();
+            UnitPicker unitPicker = new UnitPicker(Units);
             unitPicker.UnitPicked += UnitPicked;
             unitPicker.StartPosition = FormStartPosition.CenterParent;
             unitPicker.ShowDialog();

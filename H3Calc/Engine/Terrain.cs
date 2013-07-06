@@ -23,9 +23,4 @@ namespace H3Calc.Engine
         public void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
         public void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats) { }
     }
-
-    [XmlRoot("Terrains")]
-    public class TerrainsList : List<Terrain>
-    {
-    }
 }

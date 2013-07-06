@@ -9,12 +9,14 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.IO;
 using H3Calc.Engine;
+using Newtonsoft.Json;
 
 namespace H3Calc
 {
     public partial class Form1 : Form
-    {        
-        protected TerrainsList terrains;
+    {
+        protected List<Unit> units;
+        protected List<Terrain> terrains;
         protected List<Hero> heroes;                
 
         protected ApplicationMode Mode
@@ -35,44 +37,43 @@ namespace H3Calc
             InitializeComponent();
 
             // Removed this line from designer file to workaround against weird VS designer bug :<
-            this.Menu = this.mainMenu1; 
+            this.Menu = this.mainMenu1;
 
-            ReadTerrainData();
-            ReadHeroData();
+            ReadData();
 
+            combatDamagePanel.Units = units;
             combatDamagePanel.Heroes = heroes;
-            combatDamagePanel.Terrains = terrains;
+            combatDamagePanel.Terrains = terrains;            
             combatDamagePanel.Mode = Mode;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateControlsOnModeChange();                        
-        } 
-
-        private void ReadTerrainData()
-        {
-            XmlSerializer deserializer = new XmlSerializer(typeof(TerrainsList));            
-            TextReader reader = new StringReader(Properties.Resources.terrains);
-            terrains = (TerrainsList)deserializer.Deserialize(reader);
-            reader.Close();
-
-            Terrain emptyTerrain = new Terrain { Id = -1, Name = "Don't care" };
-            terrains.Insert(0, emptyTerrain);
         }
 
-        private void ReadHeroData()
+        private void ReadData()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(HeroesList));
-            TextReader reader = new StringReader(Properties.Resources.heroes);
-            HeroesList unsortedHeroes = (HeroesList)deserializer.Deserialize(reader);
-            reader.Close();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                DefaultValueHandling = DefaultValueHandling.Ignore
+            };
 
-            heroes = unsortedHeroes.OrderBy(x => x.Name).ToList();
+            String unitsJson = System.Text.Encoding.UTF8.GetString(Properties.Resources.units);
+            units = JsonConvert.DeserializeObject<List<Unit>>(unitsJson, settings);
 
+            String terrainsJson = System.Text.Encoding.UTF8.GetString(Properties.Resources.terrains);
+            terrains = JsonConvert.DeserializeObject<List<Terrain>>(terrainsJson, settings);
+            Terrain emptyTerrain = new Terrain { Id = -1, Name = "Don't care" };
+            terrains.Insert(0, emptyTerrain);
+
+            String heroesJson = System.Text.Encoding.UTF8.GetString(Properties.Resources.heroes);
+            heroes = JsonConvert.DeserializeObject<List<Hero>>(heroesJson, settings);
+            heroes = heroes.OrderBy(x => x.Name).ToList();
             Hero genericHero = new Hero();
             genericHero.Name = "Generic hero";
-            heroes.Insert(0, genericHero);
+            heroes.Insert(0, genericHero);            
         }        
 
         private void UpdateControlsOnModeChange()
