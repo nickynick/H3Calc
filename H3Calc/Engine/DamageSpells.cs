@@ -6,10 +6,10 @@ using System.Text;
 namespace H3Calc.Engine
 {
     public abstract class DamageSpell : Spell
-    {
-        protected DamageSpell(string name, Type secondarySkillType) : base(name, secondarySkillType) { }
+    {        
+        protected DamageSpell(string name, Type secondarySkillType, int level) : base(name, secondarySkillType, level) { }
 
-        public int BaseDamage()
+        public virtual int BaseDamage(Unit unit)
         {
             if (SkillLevel <= SecondarySkillLevel.Basic)
             {
@@ -25,14 +25,30 @@ namespace H3Calc.Engine
             }
         }
 
+        public virtual SpellDamageModifier BaseModifier(Unit unit)
+        {
+            SpellDamageModifier damageModifier = new SpellDamageModifier();
+
+            if (IsSpecialized)
+            {
+                damageModifier.DamageMultipliers.Add(SpecializationMultiplier(unit));
+            }
+
+            return damageModifier;
+        }
+
         protected abstract int BasicBaseDamage();
         protected abstract int AdvancedBaseDamage();
         protected abstract int ExpertBaseDamage();
-    }
+        protected virtual double SpecializationMultiplier(Unit unit)
+        {
+            return 1 + 0.03 * (CasterStats.Level / unit.Level);
+        }
+    }    
 
     public class MagicArrow : DamageSpell
     {
-        public MagicArrow() : base("Magic Arrow", null) { }
+        public MagicArrow() : base("Magic Arrow", null, 1) { }
 
         public override bool IsAffectedBySecondarySkillType(Type skillType)
         {
@@ -56,11 +72,16 @@ namespace H3Calc.Engine
         {
             return CasterStats.SpellPower * 10 + 30;
         }
+
+        protected override double SpecializationMultiplier(Unit unit)
+        {
+            return 1.5;
+        }
     }
 
     public class FireWall : DamageSpell
     {
-        public FireWall() : base("Fire Wall", typeof(FireMagic)) { }
+        public FireWall() : base("Fire Wall", typeof(FireMagic), 2) { }
 
         protected override int BasicBaseDamage()
         {
@@ -76,11 +97,16 @@ namespace H3Calc.Engine
         {
             return CasterStats.SpellPower * 10 + 50;
         }
+
+        protected override double SpecializationMultiplier(Unit unit)
+        {
+            return 2;
+        }
     }
 
     public class Fireball : DamageSpell
     {
-        public Fireball() : base("Fireball", typeof(FireMagic)) { }
+        public Fireball() : base("Fireball", typeof(FireMagic), 3) { }
 
         protected override int BasicBaseDamage()
         {
@@ -100,7 +126,7 @@ namespace H3Calc.Engine
 
     public class LandMine : DamageSpell
     {
-        public LandMine() : base("Land Mine", typeof(FireMagic)) { }
+        public LandMine() : base("Land Mine", typeof(FireMagic), 3) { }        
 
         protected override int BasicBaseDamage()
         {
@@ -120,7 +146,7 @@ namespace H3Calc.Engine
 
     public class Armageddon : DamageSpell
     {
-        public Armageddon() : base("Armageddon", typeof(FireMagic)) { }
+        public Armageddon() : base("Armageddon", typeof(FireMagic), 4) { }         
 
         protected override int BasicBaseDamage()
         {
@@ -140,7 +166,7 @@ namespace H3Calc.Engine
 
     public class Inferno : DamageSpell
     {
-        public Inferno() : base("Inferno", typeof(FireMagic)) { }
+        public Inferno() : base("Inferno", typeof(FireMagic), 4) { }        
 
         protected override int BasicBaseDamage()
         {
@@ -160,7 +186,7 @@ namespace H3Calc.Engine
 
     public class IceBolt : DamageSpell
     {
-        public IceBolt() : base("Ice Bolt", typeof(WaterMagic)) { }
+        public IceBolt() : base("Ice Bolt", typeof(WaterMagic), 2) { }        
 
         protected override int BasicBaseDamage()
         {
@@ -180,8 +206,8 @@ namespace H3Calc.Engine
 
     public class FrostRing : DamageSpell
     {
-        public FrostRing() : base("Frost Ring", typeof(WaterMagic)) { }
-
+        public FrostRing() : base("Frost Ring", typeof(WaterMagic), 3) { } 
+        
         protected override int BasicBaseDamage()
         {
             return CasterStats.SpellPower * 10 + 15;
@@ -200,7 +226,17 @@ namespace H3Calc.Engine
 
     public class DeathRipple : DamageSpell
     {
-        public DeathRipple() : base("Death Ripple", typeof(EarthMagic)) { }
+        public DeathRipple() : base("Death Ripple", typeof(EarthMagic), 2) { }
+
+        public override int BaseDamage(Unit unit)
+        {
+            if (unit.IsUndead)
+            {
+                return 0;
+            }
+
+            return base.BaseDamage(unit);
+        }
 
         protected override int BasicBaseDamage()
         {
@@ -220,7 +256,7 @@ namespace H3Calc.Engine
 
     public class MeteorShower : DamageSpell
     {
-        public MeteorShower() : base("Meteor Shower", typeof(EarthMagic)) { }
+        public MeteorShower() : base("Meteor Shower", typeof(EarthMagic), 4) { }         
 
         protected override int BasicBaseDamage()
         {
@@ -240,7 +276,7 @@ namespace H3Calc.Engine
 
     public class Implosion : DamageSpell
     {
-        public Implosion() : base("Implosion", typeof(EarthMagic)) { }
+        public Implosion() : base("Implosion", typeof(EarthMagic), 5) { }
 
         protected override int BasicBaseDamage()
         {
@@ -260,7 +296,7 @@ namespace H3Calc.Engine
 
     public class LightningBolt : DamageSpell
     {
-        public LightningBolt() : base("Lightning Bolt", typeof(AirMagic)) { }
+        public LightningBolt() : base("Lightning Bolt", typeof(AirMagic), 2) { }         
 
         protected override int BasicBaseDamage()
         {
@@ -280,7 +316,17 @@ namespace H3Calc.Engine
 
     public class DestroyUndead : DamageSpell
     {
-        public DestroyUndead() : base("Destroy Undead", typeof(AirMagic)) { }
+        public DestroyUndead() : base("Destroy Undead", typeof(AirMagic), 3) { }
+
+        public override int BaseDamage(Unit unit)
+        {
+            if (!unit.IsUndead)
+            {
+                return 0;
+            }
+
+            return base.BaseDamage(unit);
+        }
 
         protected override int BasicBaseDamage()
         {
@@ -300,7 +346,7 @@ namespace H3Calc.Engine
 
     public class ChainLightning : DamageSpell
     {
-        public ChainLightning() : base("Chain Lightning", typeof(AirMagic)) { }
+        public ChainLightning() : base("Chain Lightning", typeof(AirMagic), 4) { }         
 
         protected override int BasicBaseDamage()
         {
@@ -320,7 +366,7 @@ namespace H3Calc.Engine
 
     public class TitansBolt : DamageSpell
     {
-        public TitansBolt() : base("Titan's Bolt", typeof(AirMagic)) { }
+        public TitansBolt() : base("Titan's Bolt", typeof(AirMagic), 4) { }
 
         protected override int BasicBaseDamage()
         {

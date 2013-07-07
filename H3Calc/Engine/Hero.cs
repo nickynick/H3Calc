@@ -22,19 +22,11 @@ namespace H3Calc.Engine
         {
             get
             {
-                if (SpecializedSecondarySkillString == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    string fullName = typeof(SecondarySkillLevel).Namespace + "." + SpecializedSecondarySkillString;
-                    return Type.GetType(fullName);
-                }
+                return Utils.TypeFromString(SpecializedSecondarySkillString);                
             }
             set
             {
-                SpecializedSecondarySkillString = (value != null) ? value.Name : null;
+                SpecializedSecondarySkillString = Utils.StringFromType(value);
             }
         }
 
@@ -47,19 +39,11 @@ namespace H3Calc.Engine
         {
             get
             {
-                if (SpecializedSpellString == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    string fullName = typeof(ModifierSpell).Namespace + "." + SpecializedSpellString;
-                    return Type.GetType(fullName);
-                }
+                return Utils.TypeFromString(SpecializedSpellString);
             }
             set
             {
-                SpecializedSpellString = (value != null) ? value.Name : null;
+                SpecializedSpellString = Utils.StringFromType(value);
             }
         }
 
@@ -74,7 +58,7 @@ namespace H3Calc.Engine
         }
     }    
 
-    public class HeroStats : ICombatUnitStatsModifier, ICombatDamageModifierProvider
+    public class HeroStats : ICombatUnitStatsModifier, ICombatDamageModifierProvider, ISpellDamageModifierProvider
     {
         public Hero Hero { get; set; }
 
@@ -174,6 +158,14 @@ namespace H3Calc.Engine
             foreach (SecondarySkill skill in SecondarySkills)
             {
                 skill.ApplyOnDefense(attackData, damageModifier);
+            }
+        }
+
+        public void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier)
+        {
+            foreach (SecondarySkill skill in SecondarySkills)
+            {
+                skill.ApplySpell(data, damageModifier);
             }
         }
     }

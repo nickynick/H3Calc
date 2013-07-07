@@ -9,13 +9,15 @@ namespace H3Calc.Engine
     {
         public readonly string Name;
         protected readonly Type SecondarySkillType;
+        public readonly int Level;
 
         public HeroStats CasterStats { get; set; }        
 
-        protected Spell(string name, Type secondarySkillType)
+        protected Spell(string name, Type secondarySkillType, int level)
         {
             Name = name;
             SecondarySkillType = secondarySkillType;
+            Level = level;
         }
 
         public SecondarySkillLevel SkillLevel

@@ -26,7 +26,7 @@ namespace H3Calc.Engine
         public virtual void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier) { }
         public virtual void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier) { }
 
-        public virtual void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier) { }
+        public virtual void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier) { }
     }    
 
     public class Offense : SecondarySkill
@@ -146,7 +146,7 @@ namespace H3Calc.Engine
 
     public class Sorcery : SecondarySkill
     {
-        public override void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier)
+        public override void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier)
         {
             if (SkillLevel == SecondarySkillLevel.None)
             {

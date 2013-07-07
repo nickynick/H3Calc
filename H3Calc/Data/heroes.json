@@ -52,7 +52,8 @@
   },
   {
     "Id": 11,
-    "Name": "Аделаида"
+    "Name": "Аделаида",
+    "SpecializedSpell": "FrostRing"
   },
   {
     "Id": 12,
@@ -136,7 +137,8 @@
   },
   {
     "Id": 30,
-    "Name": "Алагар"
+    "Name": "Алагар",
+    "SpecializedSpell": "IceBolt"
   },
   {
     "Id": 31,
@@ -204,7 +206,8 @@
   },
   {
     "Id": 45,
-    "Name": "Солмир"
+    "Name": "Солмир",
+    "SpecializedSpell": "ChainLightning"
   },
   {
     "Id": 46,
@@ -258,7 +261,8 @@
   },
   {
     "Id": 57,
-    "Name": "Ксирон"
+    "Name": "Ксирон",
+    "SpecializedSpell": "Inferno"
   },
   {
     "Id": 58,
@@ -285,7 +289,8 @@
   },
   {
     "Id": 63,
-    "Name": "Ксарфакс"
+    "Name": "Ксарфакс",
+    "SpecializedSpell": "Fireball"
   },
   {
     "Id": 64,
@@ -327,11 +332,13 @@
   },
   {
     "Id": 72,
-    "Name": "Септиенна"
+    "Name": "Септиенна",
+    "SpecializedSpell": "DestroyUndead"
   },
   {
     "Id": 73,
-    "Name": "Аислин"
+    "Name": "Аислин",
+    "SpecializedSpell": "MeteorShower"
   },
   {
     "Id": 74,
@@ -419,7 +426,8 @@
   },
   {
     "Id": 93,
-    "Name": "Деемер"
+    "Name": "Деемер",
+    "SpecializedSpell": "MeteorShower"
   },
   {
     "Id": 94,
@@ -621,7 +629,8 @@
   },
   {
     "Id": 136,
-    "Name": "Луна"
+    "Name": "Луна",
+    "SpecializedSpell": "FireWall"
   },
   {
     "Id": 137,
@@ -629,7 +638,8 @@
   },
   {
     "Id": 138,
-    "Name": "Циель"
+    "Name": "Циель",
+    "SpecializedSpell": "MagicArrow"
   },
   {
     "SpecializedSpell": "StoneSkin",

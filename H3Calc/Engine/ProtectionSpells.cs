@@ -7,11 +7,11 @@ namespace H3Calc.Engine
 {
     public abstract class ProtectionSpell : Spell, ISpellDamageModifierProvider
     {
-        protected ProtectionSpell(String name, Type secondarySkillType) : base(name, secondarySkillType) { }
+        protected ProtectionSpell(String name, Type secondarySkillType, int level) : base(name, secondarySkillType, level) { }
 
-        public void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier) 
+        public void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier) 
         {
-            if (spell.IsAffectedBySecondarySkillType(SecondarySkillType))
+            if (data.Spell.IsAffectedBySecondarySkillType(SecondarySkillType))
             {
                 if (SkillLevel <= SecondarySkillLevel.Basic)
                 {
@@ -27,21 +27,21 @@ namespace H3Calc.Engine
 
     public class ProtectionFromFire : ProtectionSpell
     {
-        public ProtectionFromFire() : base("Protection from Fire", typeof(FireMagic)) { }
+        public ProtectionFromFire() : base("Protection from Fire", typeof(FireMagic), 2) { }
     }
 
     public class ProtectionFromWater : ProtectionSpell
     {
-        public ProtectionFromWater() : base("Protection from Water", typeof(WaterMagic)) { }
+        public ProtectionFromWater() : base("Protection from Water", typeof(WaterMagic), 2) { }
     }
 
     public class ProtectionFromEarth : ProtectionSpell
     {
-        public ProtectionFromEarth() : base("Protection from Earth", typeof(EarthMagic)) { }
+        public ProtectionFromEarth() : base("Protection from Earth", typeof(EarthMagic), 2) { }
     }
 
     public class ProtectionFromAir : ProtectionSpell
     {
-        public ProtectionFromAir() : base("Protection from Air", typeof(AirMagic)) { }
+        public ProtectionFromAir() : base("Protection from Air", typeof(AirMagic), 2) { }
     }
 }

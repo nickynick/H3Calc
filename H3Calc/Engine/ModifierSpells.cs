@@ -7,7 +7,7 @@ namespace H3Calc.Engine
 {
     public abstract class ModifierSpell : Spell, ICombatUnitStatsModifier, ICombatDamageModifierProvider
     {
-        protected ModifierSpell(String name, Type secondarySkillType) : base(name, secondarySkillType) { }
+        protected ModifierSpell(String name, Type secondarySkillType, int level) : base(name, secondarySkillType, level) { }
 
         public virtual void ApplyPermanently(Unit unit, UnitStats modifiedStats) { }
         public virtual void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
@@ -19,7 +19,7 @@ namespace H3Calc.Engine
 
     public class Bloodlust : ModifierSpell
     {
-        public Bloodlust() : base("Bloodlust", typeof(FireMagic)) { }
+        public Bloodlust() : base("Bloodlust", typeof(FireMagic), 1) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -50,7 +50,7 @@ namespace H3Calc.Engine
 
     public class Curse : ModifierSpell
     {
-        public Curse() : base("Curse", typeof(FireMagic)) { }
+        public Curse() : base("Curse", typeof(FireMagic), 1) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -67,7 +67,7 @@ namespace H3Calc.Engine
 
     public class Frenzy : ModifierSpell
     {
-        public Frenzy() : base("Frenzy", typeof(FireMagic)) { }
+        public Frenzy() : base("Frenzy", typeof(FireMagic), 4) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -90,7 +90,7 @@ namespace H3Calc.Engine
 
     public class Slayer : ModifierSpell
     {
-        public Slayer() : base("Slayer", typeof(FireMagic)) { }
+        public Slayer() : base("Slayer", typeof(FireMagic), 4) { }
 
         public override void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats)
         {
@@ -157,7 +157,7 @@ namespace H3Calc.Engine
 
     public class Bless : ModifierSpell
     {
-        public Bless() : base("Bless", typeof(WaterMagic)) { }
+        public Bless() : base("Bless", typeof(WaterMagic), 1) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -183,7 +183,7 @@ namespace H3Calc.Engine
 
     public class Weakness : ModifierSpell
     {
-        public Weakness() : base("Weakness", typeof(WaterMagic)) { }
+        public Weakness() : base("Weakness", typeof(WaterMagic), 2) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -214,7 +214,7 @@ namespace H3Calc.Engine
 
     public class Prayer : ModifierSpell
     {
-        public Prayer() : base("Prayer", typeof(WaterMagic)) { }
+        public Prayer() : base("Prayer", typeof(WaterMagic), 4) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -246,7 +246,7 @@ namespace H3Calc.Engine
 
     public class Shield : ModifierSpell
     {
-        public Shield() : base("Shield", typeof(EarthMagic)) { }
+        public Shield() : base("Shield", typeof(EarthMagic), 1) { }
 
         public override void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
@@ -268,7 +268,7 @@ namespace H3Calc.Engine
 
     public class StoneSkin : ModifierSpell
     {
-        public StoneSkin() : base("Stone Skin", typeof(EarthMagic)) { }
+        public StoneSkin() : base("Stone Skin", typeof(EarthMagic), 1) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -299,7 +299,7 @@ namespace H3Calc.Engine
 
     public class DisruptingRay : ModifierSpell
     {
-        public DisruptingRay() : base("Disrupting Ray", typeof(AirMagic)) { }
+        public DisruptingRay() : base("Disrupting Ray", typeof(AirMagic), 2) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -330,7 +330,7 @@ namespace H3Calc.Engine
 
     public class Precision : ModifierSpell
     {
-        public Precision() : base("Precision", typeof(AirMagic)) { }
+        public Precision() : base("Precision", typeof(AirMagic), 2) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -366,7 +366,7 @@ namespace H3Calc.Engine
 
     public class AirShield : ModifierSpell
     {
-        public AirShield() : base("Air Shield", typeof(AirMagic)) { }
+        public AirShield() : base("Air Shield", typeof(AirMagic), 3) { }
 
         public override void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {

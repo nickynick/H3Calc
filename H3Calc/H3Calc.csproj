@@ -71,6 +71,7 @@
     <Compile Include="Engine\SpellDamageCalculator.cs" />
     <Compile Include="Engine\Terrain.cs" />
     <Compile Include="Engine\Unit.cs" />
+    <Compile Include="Engine\Utils.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -7,11 +7,41 @@ namespace H3Calc.Engine
 {
     public class SpellDamageCalculator
     {
+        public void CalculateDamage(SpellDamageCalculatorData data, out int damage)
+        {
+            int baseDamage = data.Spell.BaseDamage(data.Unit);
+
+            SpellDamageModifier damageModifier = data.Spell.BaseModifier(data.Unit);
+
+            UnitUniqueTraitManager.Instance.ApplySpell(data, damageModifier);
+            data.Spell.CasterStats.ApplySpell(data, damageModifier);
+            // TODO: protection spells
+            // TODO: orbs
+            // TODO: sorcery (UI)
+
+            damage = PerformCalculation(baseDamage, damageModifier);
+        }
+
+        private int PerformCalculation(int baseDamage, SpellDamageModifier damageModifier)
+        {
+            double result = baseDamage;
+
+            foreach (double damageMultiplier in damageModifier.DamageMultipliers)
+            {
+                result *= damageMultiplier;
+            }
+
+            result = Math.Floor(result);
+
+            int intResult = (int)result;
+            return intResult;            
+        }
     }
 
     public class SpellDamageCalculatorData
     {
-        // TODO
+        public Unit Unit { get; set; }
+        public DamageSpell Spell { get; set; }        
     }
 
     public class SpellDamageModifier
@@ -26,6 +56,6 @@ namespace H3Calc.Engine
 
     public interface ISpellDamageModifierProvider
     {
-        void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier);
+        void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier);
     }  
 }

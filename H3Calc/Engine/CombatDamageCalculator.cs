@@ -9,13 +9,6 @@ namespace H3Calc.Engine
 
     public class CombatDamageCalculator
     {
-        private UnitUniqueTraitManager unitManager;
-
-        public CombatDamageCalculator()
-        {
-            unitManager = new UnitUniqueTraitManager();
-        }
-
         public void CalculateDamage(CombatDamageCalculatorInputData data, out int minDamage, out int maxDamage, out string notes)
         {
             if (data.AttackerCount == 0)
@@ -64,10 +57,10 @@ namespace H3Calc.Engine
                 defenderDamageModifierProviders.AddRange(data.DefenderSpells);
             }
 
-            attackerStatsModifiers.Add(unitManager);
-            defenderStatsModifiers.Add(unitManager);
-            attackerDamageModifierProviders.Add(unitManager);
-            defenderDamageModifierProviders.Add(unitManager);
+            attackerStatsModifiers.Add(UnitUniqueTraitManager.Instance);
+            defenderStatsModifiers.Add(UnitUniqueTraitManager.Instance);
+            attackerDamageModifierProviders.Add(UnitUniqueTraitManager.Instance);
+            defenderDamageModifierProviders.Add(UnitUniqueTraitManager.Instance);
 
             /////////////////////////
 

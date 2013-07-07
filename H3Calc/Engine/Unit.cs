@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Xml.Schema;
+using Newtonsoft.Json;
 
 namespace H3Calc.Engine
 {
@@ -26,11 +27,64 @@ namespace H3Calc.Engine
         [DefaultValue(1)]
         public int NumberOfHits { get; set; }
 
+        [DefaultValue(false)]
+        public bool IsUndead { get; set; } 
+        
+        [JsonProperty("VulnerableSpells")]
+        public List<string> VulnerableSpellStrings { get; set; }
+
+        [JsonIgnore]
+        public List<Type> VulnerableSpells
+        {
+            get
+            {
+                return (VulnerableSpellStrings != null) ? VulnerableSpellStrings.Select(s => Utils.TypeFromString(s)).ToList() : new List<Type>();
+            }
+            set
+            {
+                VulnerableSpellStrings = (VulnerableSpells != null) ? VulnerableSpells.Select(t => Utils.StringFromType(t)).ToList() : new List<string>();
+            }
+        }
+
+        [JsonProperty("ImmuneSpells")]
+        public List<string> ImmuneSpellStrings { get; set; }
+
+        [JsonIgnore]
+        public List<Type> ImmuneSpells
+        {
+            get
+            {
+                return (ImmuneSpellStrings != null) ? ImmuneSpellStrings.Select(s => Utils.TypeFromString(s)).ToList() : new List<Type>();
+            }
+            set
+            {
+                ImmuneSpellStrings = (ImmuneSpells != null) ? ImmuneSpells.Select(t => Utils.StringFromType(t)).ToList() : new List<string>();
+            }
+        }
+
+        public int ImmuneSpellLevel { get; set; }
+
+        [JsonProperty("ImmuneMagic")]
+        public string ImmuneMagicString { get; set; }
+
+        [JsonIgnore]
+        public Type ImmuneMagic
+        {
+            get
+            {
+                return Utils.TypeFromString(ImmuneMagicString);
+            }
+            set
+            {
+                ImmuneMagicString = Utils.StringFromType(value);
+            }
+        }
+
         public Unit()
         {
             NativeTerrainId = -1;
             IsRanged = false;
-            NumberOfHits = 1;            
+            NumberOfHits = 1;
         }
     }
 
@@ -56,8 +110,24 @@ namespace H3Calc.Engine
         public Unit Defender { get; set; }
     }
 
-    public class UnitUniqueTraitManager : ICombatUnitStatsModifier, ICombatDamageModifierProvider
+    public class UnitUniqueTraitManager : ICombatUnitStatsModifier, ICombatDamageModifierProvider, ISpellDamageModifierProvider
     {
+        private static UnitUniqueTraitManager instance;
+
+        private UnitUniqueTraitManager() { }
+
+        public static UnitUniqueTraitManager Instance
+        {
+           get 
+           {
+              if (instance == null)
+              {
+                  instance = new UnitUniqueTraitManager();
+              }
+              return instance;
+           }
+        }
+
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
         }
@@ -115,8 +185,7 @@ namespace H3Calc.Engine
 
             if ((attackerId == 122) &&
                 (
-                 (defenderId >= 42 && defenderId <= 55) || // Necropolis creatures
-                 (defenderId == 131) || // Mummy
+                 attackData.Defender.IsUndead ||                 
                  (defenderId == 32 || defenderId == 33 || defenderId == 134 || defenderId == 135) || // Golems
                  (defenderId == 40 || defenderId == 41) || // Giant / Titan
                  (defenderId == 69) || // Black Dragon
@@ -136,6 +205,46 @@ namespace H3Calc.Engine
 
         public void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
+        }
+
+        public void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier)
+        {
+            Unit unit = data.Unit;
+            Spell spell = data.Spell;
+
+            // TODO: orb of vulnerability
+            bool isImmune = false;            
+            isImmune |= (spell.IsAffectedBySecondarySkillType(unit.ImmuneMagic));            
+            isImmune |= (unit.ImmuneSpells != null && unit.ImmuneSpells.Contains(spell.GetType()));
+            isImmune |= (unit.ImmuneSpellLevel >= spell.Level);
+
+            if (isImmune)
+            {
+                damageModifier.DamageMultipliers.Add(0);
+                return;
+            }
+
+            if (unit.VulnerableSpells != null && unit.VulnerableSpells.Contains(spell.GetType()))
+            {
+                damageModifier.DamageMultipliers.Add(2);
+            }
+            
+            if (unit.Id == 32) // Stone Golem
+            {
+                damageModifier.DamageMultipliers.Add(0.5);
+            }
+            else if (unit.Id == 33) // Iron Golem
+            {
+                damageModifier.DamageMultipliers.Add(0.25);
+            }
+            else if (unit.Id == 134) // Gold Golem
+            {
+                damageModifier.DamageMultipliers.Add(0.15);
+            }
+            else if (unit.Id == 135) // Diamond Golem
+            {
+                damageModifier.DamageMultipliers.Add(0.05);
+            }
         }
     }
 }
