@@ -5,69 +5,26 @@ using System.Text;
 
 namespace H3Calc.Engine
 {
-    public abstract class Spell : IUnitStatsModifier, IDamageModifierProvider
+    public abstract class ModifierSpell : Spell, ICombatUnitStatsModifier, ICombatDamageModifierProvider
     {
-        public readonly string Name;
-        public readonly Type SecondarySkillType;
-
-        public HeroStats CasterStats { get; set; }        
-
-        protected Spell(string name, Type secondarySkillType)
-        {
-            Name = name;
-            SecondarySkillType = secondarySkillType;
-        }
-
-        public SecondarySkillLevel SkillLevel
-        {
-            get
-            {
-                if (CasterStats == null)
-                {
-                    return SecondarySkillLevel.None;                    
-                }
-
-                foreach (SecondarySkill skill in CasterStats.SecondarySkills)
-                {
-                    if (skill.GetType() == SecondarySkillType)
-                    {
-                        return skill.SkillLevel;
-                    }
-                }
-
-                return SecondarySkillLevel.None;
-            }
-        }
-
-        public bool IsSpecialized         
-        {
-            get
-            {
-                if (CasterStats == null)
-                {
-                    return false;
-                }
-
-                return (CasterStats.Hero.SpecializedSpell == GetType());
-            }
-        }
+        protected ModifierSpell(String name, Type secondarySkillType) : base(name, secondarySkillType) { }
 
         public virtual void ApplyPermanently(Unit unit, UnitStats modifiedStats) { }
         public virtual void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
         public virtual void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats) { }
 
-        public virtual void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier) { }
-        public virtual void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier) { }
+        public virtual void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier) { }
+        public virtual void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier) { }
     }
 
-    public class Bloodlust : Spell
+    public class Bloodlust : ModifierSpell
     {
         public Bloodlust() : base("Bloodlust", typeof(FireMagic)) { }
 
-        public override void ApplyPermanently(Unit unit, UnitStats modifiedStats) 
+        public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
             int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
-            
+
             if (IsSpecialized)
             {
                 switch (unit.Level)
@@ -91,7 +48,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Curse : Spell
+    public class Curse : ModifierSpell
     {
         public Curse() : base("Curse", typeof(FireMagic)) { }
 
@@ -103,12 +60,12 @@ namespace H3Calc.Engine
             }
             else
             {
-                modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MinDamage - 1;         
+                modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MinDamage - 1;
             }
         }
     }
 
-    public class Frenzy : Spell
+    public class Frenzy : ModifierSpell
     {
         public Frenzy() : base("Frenzy", typeof(FireMagic)) { }
 
@@ -118,24 +75,24 @@ namespace H3Calc.Engine
             {
                 modifiedStats.Attack += modifiedStats.Defense;
             }
-            else if (SkillLevel <= SecondarySkillLevel.Advanced) 
+            else if (SkillLevel <= SecondarySkillLevel.Advanced)
             {
                 modifiedStats.Attack += modifiedStats.Defense * 3 / 2;
             }
-            else 
+            else
             {
-                modifiedStats.Attack += modifiedStats.Defense * 2;                    
+                modifiedStats.Attack += modifiedStats.Defense * 2;
             }
 
             modifiedStats.Defense = 0;
         }
     }
 
-    public class Slayer : Spell
+    public class Slayer : ModifierSpell
     {
         public Slayer() : base("Slayer", typeof(FireMagic)) { }
 
-        public override void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) 
+        public override void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats)
         {
             List<int> affectedUnitIds = new List<int>();
 
@@ -198,7 +155,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Bless : Spell
+    public class Bless : ModifierSpell
     {
         public Bless() : base("Bless", typeof(WaterMagic)) { }
 
@@ -214,7 +171,7 @@ namespace H3Calc.Engine
             }
         }
 
-        public override void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (IsSpecialized)
             {
@@ -224,14 +181,14 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Weakness : Spell
+    public class Weakness : ModifierSpell
     {
         public Weakness() : base("Weakness", typeof(WaterMagic)) { }
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
             int reduction = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
-            
+
             if (IsSpecialized)
             {
                 switch (unit.Level)
@@ -255,7 +212,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Prayer : Spell
+    public class Prayer : ModifierSpell
     {
         public Prayer() : base("Prayer", typeof(WaterMagic)) { }
 
@@ -287,11 +244,11 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Shield : Spell
+    public class Shield : ModifierSpell
     {
         public Shield() : base("Shield", typeof(EarthMagic)) { }
 
-        public override void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (attackData.Attacker.IsRanged)
             {
@@ -309,7 +266,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class StoneSkin : Spell
+    public class StoneSkin : ModifierSpell
     {
         public StoneSkin() : base("Stone Skin", typeof(EarthMagic)) { }
 
@@ -340,7 +297,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class DisruptingRay : Spell
+    public class DisruptingRay : ModifierSpell
     {
         public DisruptingRay() : base("Disrupting Ray", typeof(AirMagic)) { }
 
@@ -371,7 +328,7 @@ namespace H3Calc.Engine
         }
     }
 
-    public class Precision : Spell
+    public class Precision : ModifierSpell
     {
         public Precision() : base("Precision", typeof(AirMagic)) { }
 
@@ -407,11 +364,11 @@ namespace H3Calc.Engine
         }
     }
 
-    public class AirShield : Spell
+    public class AirShield : ModifierSpell
     {
         public AirShield() : base("Air Shield", typeof(AirMagic)) { }
 
-        public override void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (!attackData.Attacker.IsRanged)
             {
@@ -429,5 +386,3 @@ namespace H3Calc.Engine
         }
     }
 }
-
-

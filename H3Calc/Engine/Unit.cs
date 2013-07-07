@@ -56,7 +56,7 @@ namespace H3Calc.Engine
         public Unit Defender { get; set; }
     }
 
-    public class UnitUniqueTraitManager : IUnitStatsModifier, IDamageModifierProvider
+    public class UnitUniqueTraitManager : ICombatUnitStatsModifier, ICombatDamageModifierProvider
     {
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
@@ -79,7 +79,7 @@ namespace H3Calc.Engine
             }
         }
 
-        public void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        public void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
             int attackerId = attackData.Attacker.Id;
             int defenderId = attackData.Defender.Id;
@@ -134,7 +134,7 @@ namespace H3Calc.Engine
             }
         }
 
-        public void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        public void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
         }
     }

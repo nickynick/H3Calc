@@ -53,7 +53,7 @@ namespace H3Calc.Engine
                 }
                 else
                 {
-                    string fullName = typeof(Spell).Namespace + "." + SpecializedSpellString;
+                    string fullName = typeof(ModifierSpell).Namespace + "." + SpecializedSpellString;
                     return Type.GetType(fullName);
                 }
             }
@@ -74,7 +74,7 @@ namespace H3Calc.Engine
         }
     }    
 
-    public class HeroStats : IUnitStatsModifier, IDamageModifierProvider
+    public class HeroStats : ICombatUnitStatsModifier, ICombatDamageModifierProvider
     {
         public Hero Hero { get; set; }
 
@@ -82,6 +82,7 @@ namespace H3Calc.Engine
 
         public int Attack { get; set; }
         public int Defense { get; set; }
+        public int SpellPower { get; set; }
 
         public List<SecondarySkill> SecondarySkills { get; set; }
 
@@ -160,7 +161,7 @@ namespace H3Calc.Engine
         public void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats) { }
         public void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats) { }
 
-        public void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        public void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
             foreach (SecondarySkill skill in SecondarySkills)
             {
@@ -168,7 +169,7 @@ namespace H3Calc.Engine
             }
         }
 
-        public void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        public void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
             foreach (SecondarySkill skill in SecondarySkills)
             {

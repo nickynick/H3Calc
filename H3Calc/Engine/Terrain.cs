@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace H3Calc.Engine
 {
-    public class Terrain : IUnitStatsModifier
+    public class Terrain : ICombatUnitStatsModifier
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -382,7 +382,7 @@ namespace H3Calc
                         comboBox.SelectedValue = skill.SkillLevel;                            
                     }
                    
-                    foreach (Spell spell in data.Spells)
+                    foreach (ModifierSpell spell in data.Spells)
                     {
                         CheckBox chbx = CheckBoxForSpell(spell);
                         chbx.Checked = true;                        
@@ -434,11 +434,11 @@ namespace H3Calc
             }
         }
 
-        private void CheckSpellCheckbox(CheckBox chbx, Type spellType, List<Spell> spells, HeroStats casterStats)
+        private void CheckSpellCheckbox(CheckBox chbx, Type spellType, List<ModifierSpell> spells, HeroStats casterStats)
         {
             if (chbx.Checked)
             {
-                Spell spell = (Spell)Activator.CreateInstance(spellType);
+                ModifierSpell spell = (ModifierSpell)Activator.CreateInstance(spellType);
                 spell.CasterStats = casterStats;
 
                 spells.Add(spell);
@@ -461,7 +461,7 @@ namespace H3Calc
             return null;
         }
 
-        private CheckBox CheckBoxForSpell(Spell spell)
+        private CheckBox CheckBoxForSpell(ModifierSpell spell)
         {
             Type spellType = spell.GetType();
 
@@ -598,14 +598,14 @@ namespace H3Calc
             }
         }
 
-        private List<Spell> spells;
-        public List<Spell> Spells
+        private List<ModifierSpell> spells;
+        public List<ModifierSpell> Spells
         {
             get
             {
                 if (spells == null)
                 {
-                    spells = new List<Spell>();
+                    spells = new List<ModifierSpell>();
                 }
                 return spells;
             }

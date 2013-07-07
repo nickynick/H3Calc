@@ -5,7 +5,7 @@ using System.Text;
 
 namespace H3Calc.Engine
 {
-    public abstract class SecondarySkill : IDamageModifierProvider
+    public abstract class SecondarySkill : ICombatDamageModifierProvider, ISpellDamageModifierProvider
     {
         public SecondarySkillLevel SkillLevel { get; set; }
         public HeroStats HeroStats { get; set; }
@@ -23,20 +23,22 @@ namespace H3Calc.Engine
             }
         }
 
-        public virtual void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier) { }
-        public virtual void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier) { }
-    }
+        public virtual void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier) { }
+        public virtual void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier) { }
+
+        public virtual void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier) { }
+    }    
 
     public class Offense : SecondarySkill
     {
-        public override void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (attackData.Attacker.IsRanged || (SkillLevel == SecondarySkillLevel.None))
             {
                 return;
             }
 
-            double bonus = 0;
+            double bonus;
 
             if (SkillLevel == SecondarySkillLevel.Basic)
             {
@@ -62,14 +64,14 @@ namespace H3Calc.Engine
 
     public class Archery : SecondarySkill
     {
-        public override void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (!attackData.Attacker.IsRanged || (SkillLevel == SecondarySkillLevel.None))
             {
                 return;
             }
 
-            double bonus = 0;
+            double bonus;
 
             if (SkillLevel == SecondarySkillLevel.Basic)
             {
@@ -95,14 +97,14 @@ namespace H3Calc.Engine
 
     public class Armorer : SecondarySkill
     {
-        public override void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier)
+        public override void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier)
         {
             if (SkillLevel == SecondarySkillLevel.None)
             {
                 return;
             }
 
-            double reduction = 0;
+            double reduction;
 
             if (SkillLevel == SecondarySkillLevel.Basic)
             {
@@ -140,5 +142,38 @@ namespace H3Calc.Engine
 
     public class AirMagic : SecondarySkill
     {
+    }
+
+    public class Sorcery : SecondarySkill
+    {
+        public override void ApplySpell(DamageSpell spell, Unit unit, SpellDamageModifier damageModifier)
+        {
+            if (SkillLevel == SecondarySkillLevel.None)
+            {
+                return;
+            }
+
+            double multiplier;
+
+            if (SkillLevel == SecondarySkillLevel.Basic)
+            {
+                multiplier = 1.05;
+            }
+            else if (SkillLevel == SecondarySkillLevel.Advanced)
+            {
+                multiplier = 1.1;
+            }
+            else
+            {
+                multiplier = 1.15;
+            }
+
+            if (IsSpecialized)
+            {
+                multiplier *= (1.0 + 0.05 * HeroStats.Level);
+            }
+
+            damageModifier.DamageMultipliers.Add(multiplier);
+        }
     }
 }

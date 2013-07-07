@@ -280,7 +280,8 @@
   },
   {
     "Id": 62,
-    "Name": "Зидар"
+    "Name": "Зидар",
+    "SpecializedSecondarySkill": "Sorcery"
   },
   {
     "Id": 63,
@@ -334,7 +335,8 @@
   },
   {
     "Id": 74,
-    "Name": "Сандро"
+    "Name": "Сандро",
+    "SpecializedSecondarySkill": "Sorcery"
   },
   {
     "Id": 75,
@@ -404,7 +406,8 @@
   },
   {
     "Id": 90,
-    "Name": "Малекит"
+    "Name": "Малекит",
+    "SpecializedSecondarySkill": "Sorcery"
   },
   {
     "Id": 91,
@@ -468,7 +471,8 @@
   },
   {
     "Id": 104,
-    "Name": "Гирд"
+    "Name": "Гирд",
+    "SpecializedSecondarySkill": "Sorcery"
   },
   {
     "Id": 105,
@@ -564,7 +568,8 @@
   },
   {
     "Id": 125,
-    "Name": "Стиг"
+    "Name": "Стиг",
+    "SpecializedSecondarySkill": "Sorcery"
   },
   {
     "Id": 126,

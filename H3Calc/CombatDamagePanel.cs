@@ -74,7 +74,7 @@ namespace H3Calc
             }
         }
 
-        protected DamageCalculator calculator;
+        protected CombatDamageCalculator calculator;
 
         protected Control[] AttackerHeroControls;
         protected Control[] DefenderHeroControls;                
@@ -84,7 +84,7 @@ namespace H3Calc
         {
             InitializeComponent();                        
 
-            calculator = new DamageCalculator();                                              
+            calculator = new CombatDamageCalculator();                                              
 
             attackerCountUpDn.ValueChanged += ControlValueChanged;
             defenderCountUpDn.ValueChanged += ControlValueChanged;
@@ -111,7 +111,7 @@ namespace H3Calc
         
         private void UpdateCalculatedDamage()
         {
-            DamageCalculatorInputData inputData = new DamageCalculatorInputData();
+            CombatDamageCalculatorInputData inputData = new CombatDamageCalculatorInputData();
 
             inputData.Attacker = attackerPickPanel.Data.Unit;
             inputData.Defender = defenderPickPanel.Data.Unit;

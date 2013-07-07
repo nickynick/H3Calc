@@ -7,16 +7,16 @@ namespace H3Calc.Engine
 {
     // http://mightandmagic.wikia.com/wiki/Damage_(Heroes)
 
-    public class DamageCalculator
+    public class CombatDamageCalculator
     {
         private UnitUniqueTraitManager unitManager;
 
-        public DamageCalculator()
+        public CombatDamageCalculator()
         {
             unitManager = new UnitUniqueTraitManager();
         }
 
-        public void CalculateDamage(DamageCalculatorInputData data, out int minDamage, out int maxDamage, out string notes)
+        public void CalculateDamage(CombatDamageCalculatorInputData data, out int minDamage, out int maxDamage, out string notes)
         {
             if (data.AttackerCount == 0)
             {
@@ -26,13 +26,13 @@ namespace H3Calc.Engine
                 return;
             }
 
-            DamageModifier damageModifier = new DamageModifier();
+            CombatDamageModifier damageModifier = new CombatDamageModifier();
             AttackData attackData = new AttackData { Attacker = data.Attacker, Defender = data.Defender };
 
-            List<IUnitStatsModifier> attackerStatsModifiers = new List<IUnitStatsModifier>();
-            List<IUnitStatsModifier> defenderStatsModifiers = new List<IUnitStatsModifier>();
-            List<IDamageModifierProvider> attackerDamageModifierProviders = new List<IDamageModifierProvider>();
-            List<IDamageModifierProvider> defenderDamageModifierProviders = new List<IDamageModifierProvider>();
+            List<ICombatUnitStatsModifier> attackerStatsModifiers = new List<ICombatUnitStatsModifier>();
+            List<ICombatUnitStatsModifier> defenderStatsModifiers = new List<ICombatUnitStatsModifier>();
+            List<ICombatDamageModifierProvider> attackerDamageModifierProviders = new List<ICombatDamageModifierProvider>();
+            List<ICombatDamageModifierProvider> defenderDamageModifierProviders = new List<ICombatDamageModifierProvider>();
 
             if (data.Terrain != null)
             {
@@ -74,13 +74,13 @@ namespace H3Calc.Engine
             UnitStats modifiedAttackerStats = data.Attacker.InitialStats.Copy();
             UnitStats modifiedDefenderStats = data.Defender.InitialStats.Copy();
 
-            foreach (IUnitStatsModifier modifier in attackerStatsModifiers)
+            foreach (ICombatUnitStatsModifier modifier in attackerStatsModifiers)
             {
                 modifier.ApplyPermanently(data.Attacker, modifiedAttackerStats);
                 modifier.ApplyOnAttack(attackData, modifiedAttackerStats);
             }
 
-            foreach (IUnitStatsModifier modifier in defenderStatsModifiers)
+            foreach (ICombatUnitStatsModifier modifier in defenderStatsModifiers)
             {
                 modifier.ApplyPermanently(data.Defender, modifiedDefenderStats);
                 modifier.ApplyOnDefense(attackData, modifiedDefenderStats);
@@ -102,12 +102,12 @@ namespace H3Calc.Engine
 
             /////////////////////////
 
-            foreach (IDamageModifierProvider provider in attackerDamageModifierProviders)
+            foreach (ICombatDamageModifierProvider provider in attackerDamageModifierProviders)
             {
                 provider.ApplyOnAttack(attackData, damageModifier);
             }
 
-            foreach (IDamageModifierProvider provider in defenderDamageModifierProviders)
+            foreach (ICombatDamageModifierProvider provider in defenderDamageModifierProviders)
             {
                 provider.ApplyOnDefense(attackData, damageModifier);
             }            
@@ -120,7 +120,7 @@ namespace H3Calc.Engine
             notes = GenerateNotes(data);            
         }
 
-        private int PerformCalculation(int baseDamage, DamageModifier damageModifier)
+        private int PerformCalculation(int baseDamage, CombatDamageModifier damageModifier)
         {
             double result = baseDamage;
 
@@ -143,7 +143,7 @@ namespace H3Calc.Engine
             return (intResult > 0) ? intResult : 1;
         }
 
-        private string GenerateNotes(DamageCalculatorInputData data)
+        private string GenerateNotes(CombatDamageCalculatorInputData data)
         {
             if (data.Attacker.NumberOfHits > 1)
             {
@@ -160,7 +160,7 @@ namespace H3Calc.Engine
         }
     }    
 
-    public class DamageCalculatorInputData
+    public class CombatDamageCalculatorInputData
     {
         public Unit Attacker { get; set; }
         public Unit Defender { get; set; }
@@ -170,40 +170,40 @@ namespace H3Calc.Engine
         public HeroStats AttackerHeroStats { get; set; }
         public HeroStats DefenderHeroStats { get; set; }        
 
-        public List<Spell> AttackerSpells { get; set; }
-        public List<Spell> DefenderSpells { get; set; }
+        public List<ModifierSpell> AttackerSpells { get; set; }
+        public List<ModifierSpell> DefenderSpells { get; set; }
 
         public Terrain Terrain { get; set; }
 
-        public DamageCalculatorInputData()
+        public CombatDamageCalculatorInputData()
         {
-            AttackerSpells = new List<Spell>();
-            DefenderSpells = new List<Spell>();
+            AttackerSpells = new List<ModifierSpell>();
+            DefenderSpells = new List<ModifierSpell>();
         }        
     }
 
-    public class DamageModifier
+    public class CombatDamageModifier
     {        
         public List<double> DamageBonuses { get; set; }
         public List<double> DamageReductions { get; set; }
 
-        public DamageModifier()
+        public CombatDamageModifier()
         {
             DamageBonuses = new List<double>();
             DamageReductions = new List<double>();
         }
     }
 
-    public interface IUnitStatsModifier
+    public interface ICombatUnitStatsModifier
     {
         void ApplyPermanently(Unit unit, UnitStats modifiedStats);
         void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats);
         void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats);
     }
 
-    public interface IDamageModifierProvider
+    public interface ICombatDamageModifierProvider
     {
-        void ApplyOnAttack(AttackData attackData, DamageModifier damageModifier);
-        void ApplyOnDefense(AttackData attackData, DamageModifier damageModifier);
+        void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier);
+        void ApplyOnDefense(AttackData attackData, CombatDamageModifier damageModifier);
     }    
 }
