@@ -61,3 +61,6 @@ packages/
 
 #Test files
 *.testsettings
+
+#ILMerge
+ILMerge/

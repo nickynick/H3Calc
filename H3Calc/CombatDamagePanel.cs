@@ -12,6 +12,30 @@ namespace H3Calc
 {
     public partial class CombatDamagePanel : UserControl
     {
+        public event EventHandler DataChanged;
+
+        private CombatDamageCalculatorInputData data;
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public CombatDamageCalculatorInputData Data
+        {
+            get
+            {
+                if (data == null)
+                {
+                    data = new CombatDamageCalculatorInputData();
+                }
+                return data;
+            }
+            set
+            {
+                data = value;
+                SetControlsWithData(value);
+                UpdateCalculatedDamage();
+            }
+        }
+
+
         private List<Unit> units;
         public List<Unit> Units
         {
@@ -23,7 +47,9 @@ namespace H3Calc
             {
                 units = value;
 
+                dataUpdateSuspended = true;
                 attackerPickPanel.Units = defenderPickPanel.Units = units;
+                dataUpdateSuspended = false;
             }
         }
 
@@ -38,7 +64,9 @@ namespace H3Calc
             {
                 heroes = value;
 
+                dataUpdateSuspended = true;
                 attackerPickPanel.Heroes = defenderPickPanel.Heroes = heroes;
+                dataUpdateSuspended = false;
             }
         }
 
@@ -53,8 +81,10 @@ namespace H3Calc
             {
                 terrains = value;
 
+                dataUpdateSuspended = true;
                 terrainComboBox.DataSource = terrains;
                 terrainComboBox.DisplayMember = "Name";
+                dataUpdateSuspended = false;
             }
         }
 
@@ -77,8 +107,8 @@ namespace H3Calc
         protected CombatDamageCalculator calculator;
 
         protected Control[] AttackerHeroControls;
-        protected Control[] DefenderHeroControls;                
-
+        protected Control[] DefenderHeroControls;
+        protected bool dataUpdateSuspended;
 
         public CombatDamagePanel()
         {
@@ -107,44 +137,94 @@ namespace H3Calc
             //resultPanel.Top = terrainGroupBox.Top = attackerGroupBox.Top + attackerGroupBox.Height + 6;
 
             this.Height = attackerGroupBox.Bottom + terrainGroupBox.Height + 16;               
-        }
-        
-        private void UpdateCalculatedDamage()
+        }        
+
+        private void UpdateData()
         {
-            CombatDamageCalculatorInputData inputData = new CombatDamageCalculatorInputData();
-
-            inputData.Attacker = attackerPickPanel.Data.Unit;
-            inputData.Defender = defenderPickPanel.Data.Unit;
-
-            bool haveInputData = ((inputData.Attacker != null) && (inputData.Defender != null));
-
-            resultPanel.Visible = haveInputData;
-
-            if (!haveInputData)
+            if (!dataUpdateSuspended)
             {
-                return;
-            }          
+                attackerPickPanel.OpponentHeroStats = defenderPickPanel.Data.HeroStats;
+                defenderPickPanel.OpponentHeroStats = attackerPickPanel.Data.HeroStats;                
 
-            inputData.Terrain = (Terrain)terrainComboBox.SelectedValue;
-            if (inputData.Terrain.Id == -1)
+                UpdateDataFromControls(Data);
+
+                if (DataChanged != null)
+                {
+                    DataChanged(this, null);
+                }
+
+                UpdateCalculatedDamage();
+            }
+        }
+
+        void UpdateDataFromControls(CombatDamageCalculatorInputData data)
+        {
+            data.Attacker = attackerPickPanel.Data.Unit;
+            data.Defender = defenderPickPanel.Data.Unit;
+
+            data.Terrain = (Terrain)terrainComboBox.SelectedValue;
+            if (data.Terrain.Id == -1)
             {
-                inputData.Terrain = null;
+                data.Terrain = null;
             }
 
-            inputData.AttackerHeroStats = attackerPickPanel.Data.HeroStats;
-            inputData.AttackerSpells = attackerPickPanel.Data.Spells;
+            data.AttackerHeroStats = attackerPickPanel.Data.HeroStats;
+            data.AttackerSpells = attackerPickPanel.Data.Spells;
 
-            inputData.DefenderHeroStats = defenderPickPanel.Data.HeroStats;
-            inputData.DefenderSpells = defenderPickPanel.Data.Spells;
+            data.DefenderHeroStats = defenderPickPanel.Data.HeroStats;
+            data.DefenderSpells = defenderPickPanel.Data.Spells;
 
-            inputData.AttackerCount = (int)attackerCountUpDn.Value;
+            data.AttackerCount = (int)attackerCountUpDn.Value;
+            data.DefenderCount = (int)defenderCountUpDn.Value;   
+        }
+
+        void SetControlsWithData(CombatDamageCalculatorInputData data)
+        {
+            dataUpdateSuspended = true;
+
+            PickPanelData panelData = attackerPickPanel.Data;
+            panelData.Unit = data.Attacker;
+            panelData.HeroStats = data.AttackerHeroStats;
+            panelData.Spells = data.AttackerSpells;
+            attackerPickPanel.Data = panelData;
+
+            panelData = defenderPickPanel.Data;
+            panelData.Unit = data.Defender;
+            panelData.HeroStats = data.DefenderHeroStats;
+            panelData.Spells = data.DefenderSpells;
+            defenderPickPanel.Data = panelData;
+
+            if (data.Terrain != null)
+            {
+                terrainComboBox.SelectedValue = data.Terrain;
+            }
+            else
+            {
+                terrainComboBox.SelectedIndex = 0;
+            }
+
+            attackerCountUpDn.Value = data.AttackerCount;
+            defenderCountUpDn.Value = data.DefenderCount;
+
+            dataUpdateSuspended = false;
+        }
+
+
+        private void UpdateCalculatedDamage()
+        {
+            bool hasInputData = ((Data.Attacker != null) && (Data.Defender != null));
+            resultPanel.Visible = hasInputData;
+            if (!hasInputData)
+            {
+                return;
+            }            
 
             int minDamage, maxDamage;
             string notes;
-            calculator.CalculateDamage(inputData, out minDamage, out maxDamage, out notes);
+            calculator.CalculateDamage(Data, out minDamage, out maxDamage, out notes);            
 
-            int minKills = minDamage / inputData.Defender.InitialStats.Health;
-            int maxKills = maxDamage / inputData.Defender.InitialStats.Health;
+            int minKills = minDamage / Data.Defender.InitialStats.Health;
+            int maxKills = maxDamage / Data.Defender.InitialStats.Health;
 
             calculatedDamageLbl.Text = FormatRange(minDamage, maxDamage);
             calculatedKillsLbl.Text = FormatRange(minKills, maxKills);
@@ -152,25 +232,28 @@ namespace H3Calc
 
             //// TODO: refactor this crap
 
-            inputData.Attacker = defenderPickPanel.Data.Unit;
-            inputData.AttackerHeroStats = defenderPickPanel.Data.HeroStats; 
-            inputData.AttackerSpells = defenderPickPanel.Data.Spells;
+            CombatDamageCalculatorInputData retData = new CombatDamageCalculatorInputData();
 
-            inputData.Defender = attackerPickPanel.Data.Unit;
-            inputData.DefenderHeroStats = attackerPickPanel.Data.HeroStats;
-            inputData.DefenderSpells = attackerPickPanel.Data.Spells;
+            retData.Attacker = Data.Defender;
+            retData.AttackerHeroStats = Data.DefenderHeroStats;
+            retData.AttackerSpells = Data.DefenderSpells;
 
+            retData.Defender = Data.Attacker;
+            retData.DefenderHeroStats = Data.AttackerHeroStats;
+            retData.DefenderSpells = Data.AttackerSpells;
+            retData.DefenderCount = Data.AttackerCount;
+           
             int minRetDamage, tempRetDamage, maxRetDamage;            
             string retNotes;
 
-            inputData.AttackerCount = Math.Max(0, (int)defenderCountUpDn.Value - minKills);
-            calculator.CalculateDamage(inputData, out tempRetDamage, out maxRetDamage, out retNotes);
+            retData.AttackerCount = Math.Max(0, Data.DefenderCount - minKills);
+            calculator.CalculateDamage(retData, out tempRetDamage, out maxRetDamage, out retNotes);
 
-            inputData.AttackerCount = Math.Max(0, (int)defenderCountUpDn.Value - maxKills);
-            calculator.CalculateDamage(inputData, out minRetDamage, out tempRetDamage, out retNotes);
+            retData.AttackerCount = Math.Max(0, Data.DefenderCount - maxKills);
+            calculator.CalculateDamage(retData, out minRetDamage, out tempRetDamage, out retNotes);
 
-            int minRetKills = minRetDamage / inputData.Defender.InitialStats.Health;
-            int maxRetKills = maxRetDamage / inputData.Defender.InitialStats.Health;
+            int minRetKills = minRetDamage / Data.Defender.InitialStats.Health;
+            int maxRetKills = maxRetDamage / Data.Defender.InitialStats.Health;
 
             calculatedRetDamageLbl.Text = FormatRange(minRetDamage, maxRetDamage);
             calculatedRetKillsLbl.Text = FormatRange(minRetKills, maxRetKills);
@@ -190,16 +273,13 @@ namespace H3Calc
         }        
 
         private void ControlValueChanged(object sender, EventArgs e)
-        {            
-            UpdateCalculatedDamage();
+        {
+            UpdateData();
         }
 
         private void PickPanelDataChanged(object sender, EventArgs e)
         {
-            attackerPickPanel.OpponentHeroStats = defenderPickPanel.Data.HeroStats;
-            defenderPickPanel.OpponentHeroStats = attackerPickPanel.Data.HeroStats;
-
-            UpdateCalculatedDamage();
+            UpdateData();
         }        
 
         private void swapBtn_Click(object sender, EventArgs e)

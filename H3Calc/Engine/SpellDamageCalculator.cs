@@ -9,15 +9,30 @@ namespace H3Calc.Engine
     {
         public void CalculateDamage(SpellDamageCalculatorData data, out int damage)
         {
-            int baseDamage = data.Spell.BaseDamage(data.Unit);
+            int baseDamage = data.Spell.BaseDamage(data.Target);
 
-            SpellDamageModifier damageModifier = data.Spell.BaseModifier(data.Unit);
+            SpellDamageModifier damageModifier = data.Spell.BaseModifier(data.Target);
 
             UnitUniqueTraitManager.Instance.ApplySpell(data, damageModifier);
-            data.Spell.CasterStats.ApplySpell(data, damageModifier);
-            // TODO: protection spells
-            // TODO: orbs
-            // TODO: sorcery (UI)
+            data.CasterHeroStats.ApplySpell(data, damageModifier);
+
+            if (data.TargetProtectionSpells != null) 
+            {
+                foreach (ProtectionSpell protectionSpell in data.TargetProtectionSpells) 
+                {
+                    protectionSpell.ApplySpell(data, damageModifier);                        
+                }
+            }
+
+            if (data.CasterMagicOrbs != null)
+            {
+                foreach (MagicOrb magicOrb in data.CasterMagicOrbs)
+                {
+                    magicOrb.ApplySpell(data, damageModifier);
+                }
+            }
+                                    
+            // TODO: orb of vulnerability
 
             damage = PerformCalculation(baseDamage, damageModifier);
         }
@@ -40,8 +55,11 @@ namespace H3Calc.Engine
 
     public class SpellDamageCalculatorData
     {
-        public Unit Unit { get; set; }
+        public HeroStats CasterHeroStats { get; set; }
         public DamageSpell Spell { get; set; }        
+        public Unit Target { get; set; }
+        public List<ProtectionSpell> TargetProtectionSpells { get; set; }
+        public List<MagicOrb> CasterMagicOrbs { get; set; }
     }
 
     public class SpellDamageModifier

@@ -64,6 +64,7 @@
     <Compile Include="Engine\CombatDamageCalculator.cs" />
     <Compile Include="Engine\DamageSpells.cs" />
     <Compile Include="Engine\Hero.cs" />
+    <Compile Include="Engine\MagicOrb.cs" />
     <Compile Include="Engine\ModifierSpells.cs" />
     <Compile Include="Engine\ProtectionSpells.cs" />
     <Compile Include="Engine\SecondarySkillLevel.cs" />
@@ -91,6 +92,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Engine\Spell.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SpellDamagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpellDamagePanel.Designer.cs">
+      <DependentUpon>SpellDamagePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnitPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +126,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SpellDamagePanel.resx">
+      <DependentUpon>SpellDamagePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnitPicker.resx">
       <DependentUpon>UnitPicker.cs</DependentUpon>
     </EmbeddedResource>

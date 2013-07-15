@@ -12,8 +12,13 @@ namespace H3Calc.Engine
         public static readonly SecondarySkillLevel Advanced = new SecondarySkillLevel(2, "Advanced");
         public static readonly SecondarySkillLevel Expert = new SecondarySkillLevel(3, "Expert");
 
-        public readonly int Value;
-        public readonly string Name;
+        public static SecondarySkillLevel[] Levels()
+        {
+            return new SecondarySkillLevel[] { None, Basic, Advanced, Expert};
+        }
+
+        public int Value { get; private set; }
+        public string Name { get; private set; }
 
         private SecondarySkillLevel() { }
         private SecondarySkillLevel(int value, string name)
@@ -24,6 +29,11 @@ namespace H3Calc.Engine
 
         public override bool Equals(object obj)
         {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
             SecondarySkillLevel otherObj = (SecondarySkillLevel)obj;
             return (Value == otherObj.Value);
         }

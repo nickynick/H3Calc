@@ -13,7 +13,7 @@ namespace H3Calc.Engine
         {
             if (data.Spell.IsAffectedBySecondarySkillType(SecondarySkillType))
             {
-                if (SkillLevel <= SecondarySkillLevel.Basic)
+                if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
                 {
                     damageModifier.DamageMultipliers.Add(0.7);
                 }

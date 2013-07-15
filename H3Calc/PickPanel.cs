@@ -72,7 +72,6 @@ namespace H3Calc
                 if (data == null)
                 {
                     data = new PickPanelData();
-                    UpdateDataFromControls();                    
                 }
                 return data;
             }
@@ -109,42 +108,6 @@ namespace H3Calc
             InitializeComponent();            
 
             mode = ApplicationMode.Scientific;
-
-            GenerateSecondarySkillComboBoxItems(HeroOffenseComboBox);
-            GenerateSecondarySkillComboBoxItems(HeroArcheryComboBox);
-            GenerateSecondarySkillComboBoxItems(HeroArmorerComboBox);
-
-            GenerateSecondarySkillComboBoxItems(HeroAirComboBox);
-            GenerateSecondarySkillComboBoxItems(HeroFireComboBox);
-            GenerateSecondarySkillComboBoxItems(HeroEarthComboBox);
-            GenerateSecondarySkillComboBoxItems(HeroWaterComboBox);
-            
-            HasHeroChbx.CheckedChanged += ControlValueChanged;
-            HasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
-            HeroComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroComboBox.SelectedValueChanged += HeroComboBoxValueChanged;
-            HeroLevelUpDn.ValueChanged += ControlValueChanged;
-            HeroAttackUpDn.ValueChanged += ControlValueChanged;
-            HeroDefenseUpDn.ValueChanged += ControlValueChanged;
-            HeroOffenseComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroArcheryComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroArmorerComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroAirComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroFireComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroEarthComboBox.SelectedValueChanged += ControlValueChanged;
-            HeroWaterComboBox.SelectedValueChanged += ControlValueChanged;
-            BlessChbx.CheckedChanged += ControlValueChanged;
-            BloodlustChbx.CheckedChanged += ControlValueChanged;
-            FrenzyChbx.CheckedChanged += ControlValueChanged;   
-            PrayerChbx.CheckedChanged += ControlValueChanged;
-            PrecisionChbx.CheckedChanged += ControlValueChanged;
-            SlayerChbx.CheckedChanged += ControlValueChanged;
-            ShieldChbx.CheckedChanged += ControlValueChanged;
-            StoneSkinChbx.CheckedChanged += ControlValueChanged;
-            AirShieldChbx.CheckedChanged += ControlValueChanged;            
-            DisruptingRayChbx.CheckedChanged += ControlValueChanged;
-            CurseChbx.CheckedChanged += ControlValueChanged;
-            WeaknessChbx.CheckedChanged += ControlValueChanged;
 
             standardModeControls = new Control[] 
             {
@@ -201,30 +164,46 @@ namespace H3Calc
                 CurseChbx,
                 WeaknessChbx
             };
+
+            foreach (ComboBox comboBox in secondarySkillComboboxes)
+            {
+                comboBox.DataSource = SecondarySkillLevel.Levels();
+                comboBox.DisplayMember = "Name";
+            }
+            
+            HasHeroChbx.CheckedChanged += ControlValueChanged;
+            HasHeroChbx.CheckedChanged += HeroComboBoxValueChanged;
+            HeroComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroComboBox.SelectedValueChanged += HeroComboBoxValueChanged;
+            HeroLevelUpDn.ValueChanged += ControlValueChanged;
+            HeroAttackUpDn.ValueChanged += ControlValueChanged;
+            HeroDefenseUpDn.ValueChanged += ControlValueChanged;
+            HeroOffenseComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroArcheryComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroArmorerComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroAirComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroFireComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroEarthComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroWaterComboBox.SelectedValueChanged += ControlValueChanged;
+            BlessChbx.CheckedChanged += ControlValueChanged;
+            BloodlustChbx.CheckedChanged += ControlValueChanged;
+            FrenzyChbx.CheckedChanged += ControlValueChanged;   
+            PrayerChbx.CheckedChanged += ControlValueChanged;
+            PrecisionChbx.CheckedChanged += ControlValueChanged;
+            SlayerChbx.CheckedChanged += ControlValueChanged;
+            ShieldChbx.CheckedChanged += ControlValueChanged;
+            StoneSkinChbx.CheckedChanged += ControlValueChanged;
+            AirShieldChbx.CheckedChanged += ControlValueChanged;            
+            DisruptingRayChbx.CheckedChanged += ControlValueChanged;
+            CurseChbx.CheckedChanged += ControlValueChanged;
+            WeaknessChbx.CheckedChanged += ControlValueChanged;
         }
 
         private void PickPanel_Load(object sender, EventArgs e)
         {
             UpdateControlsOnHeroChange();
             ModeUpdated();
-        }
-
-        private void GenerateSecondarySkillComboBoxItems(ComboBox comboBox)
-        {
-            comboBox.Items.Clear();
-
-            var items = new List<KeyValuePair<string, SecondarySkillLevel>>();
-            items.Add(new KeyValuePair<string, SecondarySkillLevel>(SecondarySkillLevel.None.Name, SecondarySkillLevel.None));
-            items.Add(new KeyValuePair<string, SecondarySkillLevel>(SecondarySkillLevel.Basic.Name, SecondarySkillLevel.Basic));
-            items.Add(new KeyValuePair<string, SecondarySkillLevel>(SecondarySkillLevel.Advanced.Name, SecondarySkillLevel.Advanced));
-            items.Add(new KeyValuePair<string, SecondarySkillLevel>(SecondarySkillLevel.Expert.Name, SecondarySkillLevel.Expert));
-
-            comboBox.DataSource = items;
-            comboBox.DisplayMember = "Key";
-            comboBox.ValueMember = "Value";
-
-            comboBox.SelectedIndex = 0;
-        }
+        }        
 
         private void UpdateHeroComboBox()
         {
@@ -279,46 +258,44 @@ namespace H3Calc
 
         void UpdateDataFromControls() 
         {
-            data.Spells.Clear();
+            Data.Spells.Clear();
 
-            data.Unit = PickedUnit;           
+            Data.Unit = PickedUnit;           
 
             Hero hero = GetSelectedHero();
             if (hero != null)
             {
-                HeroStats stats = data.HeroStats;
+                HeroStats stats = Data.HeroStats;
 
                 stats.Hero = hero;
                 stats.Attack = (int)HeroAttackUpDn.Value;
                 stats.Defense = (int)HeroDefenseUpDn.Value;
 
-                stats.SecondarySkills.Clear();                
-
                 if (Mode != ApplicationMode.Simple)
                 {
                     stats.Level = (int)HeroLevelUpDn.Value;
 
-                    CheckSecondarySkillComboBox(HeroOffenseComboBox, typeof(Offense), stats.SecondarySkills, stats);
-                    CheckSecondarySkillComboBox(HeroArcheryComboBox, typeof(Archery), stats.SecondarySkills, stats);
-                    CheckSecondarySkillComboBox(HeroArmorerComboBox, typeof(Armorer), stats.SecondarySkills, stats);
+                    stats.SetLevelForSecondarySkillType(typeof(Offense), (SecondarySkillLevel)HeroOffenseComboBox.SelectedValue);
+                    stats.SetLevelForSecondarySkillType(typeof(Archery), (SecondarySkillLevel)HeroArcheryComboBox.SelectedValue);
+                    stats.SetLevelForSecondarySkillType(typeof(Armorer), (SecondarySkillLevel)HeroArmorerComboBox.SelectedValue);                    
 
                     if (Mode == ApplicationMode.Scientific)
                     {
-                        CheckSecondarySkillComboBox(HeroAirComboBox, typeof(AirMagic), stats.SecondarySkills, stats);
-                        CheckSecondarySkillComboBox(HeroFireComboBox, typeof(FireMagic), stats.SecondarySkills, stats);
-                        CheckSecondarySkillComboBox(HeroEarthComboBox, typeof(EarthMagic), stats.SecondarySkills, stats);
-                        CheckSecondarySkillComboBox(HeroWaterComboBox, typeof(WaterMagic), stats.SecondarySkills, stats);
+                        stats.SetLevelForSecondarySkillType(typeof(AirMagic), (SecondarySkillLevel)HeroAirComboBox.SelectedValue);
+                        stats.SetLevelForSecondarySkillType(typeof(FireMagic), (SecondarySkillLevel)HeroFireComboBox.SelectedValue);
+                        stats.SetLevelForSecondarySkillType(typeof(EarthMagic), (SecondarySkillLevel)HeroEarthComboBox.SelectedValue);
+                        stats.SetLevelForSecondarySkillType(typeof(WaterMagic), (SecondarySkillLevel)HeroWaterComboBox.SelectedValue);
 
-                        CheckSpellCheckbox(BlessChbx, typeof(Bless), data.Spells, stats);
-                        CheckSpellCheckbox(BloodlustChbx, typeof(Bloodlust), data.Spells, stats);
-                        CheckSpellCheckbox(FrenzyChbx, typeof(Frenzy), data.Spells, stats);
-                        CheckSpellCheckbox(PrayerChbx, typeof(Prayer), data.Spells, stats);
-                        CheckSpellCheckbox(PrecisionChbx, typeof(Precision), data.Spells, stats);
-                        CheckSpellCheckbox(SlayerChbx, typeof(Slayer), data.Spells, stats);
+                        CheckSpellCheckbox(BlessChbx, typeof(Bless), Data.Spells, stats);
+                        CheckSpellCheckbox(BloodlustChbx, typeof(Bloodlust), Data.Spells, stats);
+                        CheckSpellCheckbox(FrenzyChbx, typeof(Frenzy), Data.Spells, stats);
+                        CheckSpellCheckbox(PrayerChbx, typeof(Prayer), Data.Spells, stats);
+                        CheckSpellCheckbox(PrecisionChbx, typeof(Precision), Data.Spells, stats);
+                        CheckSpellCheckbox(SlayerChbx, typeof(Slayer), Data.Spells, stats);
 
-                        CheckSpellCheckbox(ShieldChbx, typeof(Shield), data.Spells, stats);
-                        CheckSpellCheckbox(StoneSkinChbx, typeof(StoneSkin), data.Spells, stats);
-                        CheckSpellCheckbox(AirShieldChbx, typeof(AirShield), data.Spells, stats);
+                        CheckSpellCheckbox(ShieldChbx, typeof(Shield), Data.Spells, stats);
+                        CheckSpellCheckbox(StoneSkinChbx, typeof(StoneSkin), Data.Spells, stats);
+                        CheckSpellCheckbox(AirShieldChbx, typeof(AirShield), Data.Spells, stats);
                     }
                 }
             }
@@ -329,9 +306,9 @@ namespace H3Calc
 
             if (OpponentHeroStats != null)
             {
-                CheckSpellCheckbox(DisruptingRayChbx, typeof(DisruptingRay), data.Spells, OpponentHeroStats);
-                CheckSpellCheckbox(CurseChbx, typeof(Curse), data.Spells, OpponentHeroStats);
-                CheckSpellCheckbox(WeaknessChbx, typeof(Weakness), data.Spells, OpponentHeroStats);
+                CheckSpellCheckbox(DisruptingRayChbx, typeof(DisruptingRay), Data.Spells, OpponentHeroStats);
+                CheckSpellCheckbox(CurseChbx, typeof(Curse), Data.Spells, OpponentHeroStats);
+                CheckSpellCheckbox(WeaknessChbx, typeof(Weakness), Data.Spells, OpponentHeroStats);
             }
         }
 
@@ -347,7 +324,7 @@ namespace H3Calc
             }
             else if (HeroComboBox.DataSource != null)
             {
-                if (data.HeroStats != null)
+                if (data.HeroStats != null && data.HeroStats.Hero != null)
                 {
                     HeroComboBox.SelectedValue = data.HeroStats.Hero;
                 }
@@ -359,7 +336,7 @@ namespace H3Calc
 
             foreach (ComboBox comboBox in secondarySkillComboboxes)
             {
-                comboBox.SelectedValue = SecondarySkillLevel.None;
+                comboBox.SelectedItem = SecondarySkillLevel.None;
             }
 
             foreach (CheckBox checkBox in spellCheckboxes)
@@ -379,7 +356,10 @@ namespace H3Calc
                     foreach (SecondarySkill skill in data.HeroStats.SecondarySkills)
                     {
                         ComboBox comboBox = ComboBoxForSecondarySkill(skill);
-                        comboBox.SelectedValue = skill.SkillLevel;                            
+                        if (comboBox != null)
+                        {
+                            comboBox.SelectedItem = skill.SkillLevel;
+                        }
                     }
                    
                     foreach (ModifierSpell spell in data.Spells)
@@ -419,27 +399,14 @@ namespace H3Calc
             {
                 return (Hero)HeroComboBox.SelectedValue;                                
             }        
-        }
+        }        
 
-        private void CheckSecondarySkillComboBox(ComboBox comboBox, Type skillType, List<SecondarySkill> skills, HeroStats heroStats)
-        {
-            SecondarySkillLevel skillLevel = (SecondarySkillLevel)comboBox.SelectedValue;
-            if (skillLevel != SecondarySkillLevel.None)
-            {
-                SecondarySkill skill = (SecondarySkill)Activator.CreateInstance(skillType);
-                skill.SkillLevel = skillLevel;
-                skill.HeroStats = heroStats;
-
-                skills.Add(skill);
-            }
-        }
-
-        private void CheckSpellCheckbox(CheckBox chbx, Type spellType, List<ModifierSpell> spells, HeroStats casterStats)
+        private void CheckSpellCheckbox(CheckBox chbx, Type spellType, List<ModifierSpell> spells, HeroStats heroStats)
         {
             if (chbx.Checked)
             {
                 ModifierSpell spell = (ModifierSpell)Activator.CreateInstance(spellType);
-                spell.CasterStats = casterStats;
+                spell.CasterStats = heroStats.SpellCasterStatsForSpell(spell);
 
                 spells.Add(spell);
             }

@@ -209,7 +209,7 @@ namespace H3Calc.Engine
 
         public void ApplySpell(SpellDamageCalculatorData data, SpellDamageModifier damageModifier)
         {
-            Unit unit = data.Unit;
+            Unit unit = data.Target;
             Spell spell = data.Spell;
 
             // TODO: orb of vulnerability

@@ -76,6 +76,67 @@ namespace H3Calc.Engine
             SecondarySkills = new List<SecondarySkill>();
         }
 
+        private SecondarySkill ExistingSecondarySkillOfType(Type secondarySkillType)
+        {
+            return SecondarySkills.FirstOrDefault(s => s.GetType() == secondarySkillType);            
+        }
+
+        public SecondarySkillLevel LevelForSecondarySkillType(Type secondarySkillType)
+        {
+            SecondarySkill skill = ExistingSecondarySkillOfType(secondarySkillType);
+            return (skill != null) ? skill.SkillLevel : SecondarySkillLevel.None;            
+        }
+
+        public void SetLevelForSecondarySkillType(Type secondarySkillType, SecondarySkillLevel level)
+        {
+            SecondarySkill skill = ExistingSecondarySkillOfType(secondarySkillType);
+
+            if (level == SecondarySkillLevel.None)
+            {
+                if (skill != null)
+                {
+                    SecondarySkills.Remove(skill);
+                }
+            }
+            else
+            {
+                if (skill == null)
+                {
+                    skill = (SecondarySkill)Activator.CreateInstance(secondarySkillType);
+                    SecondarySkills.Add(skill);
+                }
+
+                skill.SkillLevel = level;
+            }
+        }
+        
+        public SpellCasterStats SpellCasterStatsForSpell(Spell spell)
+        {
+            SpellCasterStats stats = new SpellCasterStats();
+
+            stats.SpellPower = SpellPower;
+
+            stats.SkillLevel = SecondarySkillLevel.None;
+            foreach (SecondarySkill skill in SecondarySkills) 
+            {
+                if (spell.IsAffectedBySecondarySkillType(skill.GetType())) 
+                {
+                    if (stats.SkillLevel < skill.SkillLevel)
+                    {
+                        stats.SkillLevel = skill.SkillLevel;
+                    }
+                }
+            }            
+
+            if (spell.GetType() == Hero.SpecializedSpell)
+            {
+                stats.IsSpecialized = true;
+                stats.SpecializationLevel = Level;
+            }
+
+            return stats;
+        }
+
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
             modifiedStats.Attack += Attack;

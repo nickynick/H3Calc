@@ -23,9 +23,9 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            int bonus = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 switch (unit.Level)
                 {
@@ -54,7 +54,7 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MinDamage;
             }
@@ -71,11 +71,11 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 modifiedStats.Attack += modifiedStats.Defense;
             }
-            else if (SkillLevel <= SecondarySkillLevel.Advanced)
+            else if (CasterStats.SkillLevel <= SecondarySkillLevel.Advanced)
             {
                 modifiedStats.Attack += modifiedStats.Defense * 3 / 2;
             }
@@ -113,7 +113,7 @@ namespace H3Calc.Engine
             affectedUnitIds.Add(139); // Crystal Dragon
             affectedUnitIds.Add(140); // Azure Dragon
 
-            if (SkillLevel >= SecondarySkillLevel.Advanced)
+            if (CasterStats.SkillLevel >= SecondarySkillLevel.Advanced)
             {
                 affectedUnitIds.Add(12); // Angel
                 affectedUnitIds.Add(13); // Archangel
@@ -121,7 +121,7 @@ namespace H3Calc.Engine
                 affectedUnitIds.Add(83); // Archdevil
             }
 
-            if (SkillLevel == SecondarySkillLevel.Expert)
+            if (CasterStats.SkillLevel == SecondarySkillLevel.Expert)
             {
                 affectedUnitIds.Add(40); // Giant
                 affectedUnitIds.Add(41); // Titan
@@ -131,7 +131,7 @@ namespace H3Calc.Engine
             {
                 int bonus = 8;
 
-                if (IsSpecialized)
+                if (CasterStats.IsSpecialized)
                 {
                     switch (attackData.Attacker.Level)
                     {
@@ -161,7 +161,7 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 modifiedStats.MinDamage = modifiedStats.MaxDamage = unit.InitialStats.MaxDamage;
             }
@@ -173,9 +173,9 @@ namespace H3Calc.Engine
 
         public override void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
         {
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
-                double bonus = 0.03 * (CasterStats.Level / attackData.Attacker.Level);
+                double bonus = 0.03 * (CasterStats.SpecializationLevel / attackData.Attacker.Level);
                 damageModifier.DamageBonuses.Add(bonus);
             }
         }
@@ -187,9 +187,9 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            int reduction = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            int reduction = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 switch (unit.Level)
                 {
@@ -218,9 +218,9 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 2 : 4;
+            int bonus = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 2 : 4;
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 switch (unit.Level)
                 {
@@ -255,7 +255,7 @@ namespace H3Calc.Engine
                 return;
             }
 
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 damageModifier.DamageReductions.Add(0.15);
             }
@@ -272,9 +272,9 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
-            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            int bonus = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 switch (unit.Level)
                 {
@@ -305,11 +305,11 @@ namespace H3Calc.Engine
         {
             int reduction;
 
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 reduction = 3;
             }
-            else if (SkillLevel <= SecondarySkillLevel.Advanced)
+            else if (CasterStats.SkillLevel <= SecondarySkillLevel.Advanced)
             {
                 reduction = 4;
             }
@@ -318,7 +318,7 @@ namespace H3Calc.Engine
                 reduction = 5;
             }
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 reduction += 2;
             }
@@ -339,9 +339,9 @@ namespace H3Calc.Engine
                 return;
             }
 
-            int bonus = (SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
+            int bonus = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 switch (unit.Level)
                 {
@@ -375,7 +375,7 @@ namespace H3Calc.Engine
                 return;
             }
 
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 damageModifier.DamageReductions.Add(0.25);
             }

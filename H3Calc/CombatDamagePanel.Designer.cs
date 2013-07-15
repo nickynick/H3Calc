@@ -226,6 +226,7 @@
             this.defenderPickPanel.OpponentHeroStats = null;
             this.defenderPickPanel.Size = new System.Drawing.Size(295, 387);
             this.defenderPickPanel.TabIndex = 2;
+            this.defenderPickPanel.Units = null;
             // 
             // attackerGroupBox
             // 
@@ -246,6 +247,7 @@
             this.attackerPickPanel.OpponentHeroStats = null;
             this.attackerPickPanel.Size = new System.Drawing.Size(295, 387);
             this.attackerPickPanel.TabIndex = 0;
+            this.attackerPickPanel.Units = null;
             // 
             // defenderCountUpDn
             // 

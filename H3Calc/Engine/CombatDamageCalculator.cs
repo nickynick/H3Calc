@@ -158,7 +158,8 @@ namespace H3Calc.Engine
         public Unit Attacker { get; set; }
         public Unit Defender { get; set; }
 
-        public int AttackerCount { get; set; }        
+        public int AttackerCount { get; set; }
+        public int DefenderCount { get; set; }        
 
         public HeroStats AttackerHeroStats { get; set; }
         public HeroStats DefenderHeroStats { get; set; }        
@@ -170,6 +171,9 @@ namespace H3Calc.Engine
 
         public CombatDamageCalculatorInputData()
         {
+            AttackerCount = 1;
+            DefenderCount = 1;
+
             AttackerSpells = new List<ModifierSpell>();
             DefenderSpells = new List<ModifierSpell>();
         }        

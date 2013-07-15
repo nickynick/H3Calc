@@ -36,7 +36,14 @@
             this.menuItemMode2 = new System.Windows.Forms.MenuItem();
             this.menuItemMode3 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.combatDamagePanel = new H3Calc.CombatDamagePanel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.spellDamagePanel = new H3Calc.SpellDamagePanel();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -81,28 +88,75 @@
             this.aboutMenuItem.Text = "About";
             this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(797, 507);
+            this.tabControl.TabIndex = 1;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.combatDamagePanel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(789, 481);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Combat";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // combatDamagePanel
             // 
             this.combatDamagePanel.Heroes = null;
-            this.combatDamagePanel.Location = new System.Drawing.Point(9, 12);
+            this.combatDamagePanel.Location = new System.Drawing.Point(6, 3);
             this.combatDamagePanel.Mode = H3Calc.ApplicationMode.Scientific;
             this.combatDamagePanel.Name = "combatDamagePanel";
             this.combatDamagePanel.Size = new System.Drawing.Size(778, 475);
             this.combatDamagePanel.TabIndex = 0;
             this.combatDamagePanel.Terrains = null;
+            this.combatDamagePanel.Units = null;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.spellDamagePanel);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(789, 481);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Magic";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // spellDamagePanel
+            // 
+            this.spellDamagePanel.Heroes = null;
+            this.spellDamagePanel.Location = new System.Drawing.Point(6, 6);
+            this.spellDamagePanel.Name = "spellDamagePanel";
+            this.spellDamagePanel.Size = new System.Drawing.Size(777, 327);
+            this.spellDamagePanel.Spells = null;
+            this.spellDamagePanel.TabIndex = 0;
+            this.spellDamagePanel.Units = null;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 500);
-            this.Controls.Add(this.combatDamagePanel);
+            this.ClientSize = new System.Drawing.Size(818, 530);
+            this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Heroes III Damage Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -116,6 +170,10 @@
         private System.Windows.Forms.MenuItem aboutMenuItem;
         private System.Windows.Forms.MenuItem menuItemMode;
         private CombatDamagePanel combatDamagePanel;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private SpellDamagePanel spellDamagePanel;
 
     }
 }

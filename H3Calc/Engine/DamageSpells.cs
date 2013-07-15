@@ -11,11 +11,11 @@ namespace H3Calc.Engine
 
         public virtual int BaseDamage(Unit unit)
         {
-            if (SkillLevel <= SecondarySkillLevel.Basic)
+            if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
                 return BasicBaseDamage();
             }
-            else if (SkillLevel == SecondarySkillLevel.Advanced)
+            else if (CasterStats.SkillLevel == SecondarySkillLevel.Advanced)
             {
                 return AdvancedBaseDamage();
             }
@@ -29,7 +29,7 @@ namespace H3Calc.Engine
         {
             SpellDamageModifier damageModifier = new SpellDamageModifier();
 
-            if (IsSpecialized)
+            if (CasterStats.IsSpecialized)
             {
                 damageModifier.DamageMultipliers.Add(SpecializationMultiplier(unit));
             }
@@ -42,7 +42,7 @@ namespace H3Calc.Engine
         protected abstract int ExpertBaseDamage();
         protected virtual double SpecializationMultiplier(Unit unit)
         {
-            return 1 + 0.03 * (CasterStats.Level / unit.Level);
+            return 1 + 0.03 * (CasterStats.SpecializationLevel / unit.Level);
         }
     }    
 
