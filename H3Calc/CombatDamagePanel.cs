@@ -136,7 +136,7 @@ namespace H3Calc
 
             //resultPanel.Top = terrainGroupBox.Top = attackerGroupBox.Top + attackerGroupBox.Height + 6;
 
-            this.Height = attackerGroupBox.Bottom + terrainGroupBox.Height + 16;               
+            Height = attackerGroupBox.Bottom + terrainGroupBox.Height + 16;               
         }        
 
         private void UpdateData()
@@ -252,8 +252,8 @@ namespace H3Calc
             retData.AttackerCount = Math.Max(0, Data.DefenderCount - maxKills);
             calculator.CalculateDamage(retData, out minRetDamage, out tempRetDamage, out retNotes);
 
-            int minRetKills = minRetDamage / Data.Defender.InitialStats.Health;
-            int maxRetKills = maxRetDamage / Data.Defender.InitialStats.Health;
+            int minRetKills = minRetDamage / retData.Defender.InitialStats.Health;
+            int maxRetKills = maxRetDamage / retData.Defender.InitialStats.Health;
 
             calculatedRetDamageLbl.Text = FormatRange(minRetDamage, maxRetDamage);
             calculatedRetKillsLbl.Text = FormatRange(minRetKills, maxRetKills);
