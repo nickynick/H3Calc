@@ -176,7 +176,28 @@ namespace H3Calc.Engine
 
             AttackerSpells = new List<ModifierSpell>();
             DefenderSpells = new List<ModifierSpell>();
-        }        
+        }
+
+        public CombatDamageCalculatorInputData InverseData()
+        {
+            CombatDamageCalculatorInputData data = new CombatDamageCalculatorInputData();
+
+            data.Attacker = Defender;
+            data.Defender = Attacker;
+
+            data.AttackerCount = DefenderCount;
+            data.DefenderCount = AttackerCount;
+
+            data.AttackerHeroStats = DefenderHeroStats;
+            data.DefenderHeroStats = AttackerHeroStats;
+
+            data.AttackerSpells = DefenderSpells;
+            data.DefenderSpells = AttackerSpells;
+
+            data.Terrain = Terrain;
+
+            return data;
+        }
     }
 
     public class CombatDamageModifier

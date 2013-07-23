@@ -103,6 +103,7 @@ namespace H3Calc.Engine
                 if (skill == null)
                 {
                     skill = (SecondarySkill)Activator.CreateInstance(secondarySkillType);
+                    skill.HeroStats = this;
                     SecondarySkills.Add(skill);
                 }
 

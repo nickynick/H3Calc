@@ -57,8 +57,10 @@ namespace H3Calc
                 if (opponentHeroStats != value)
                 {
                     opponentHeroStats = value;
-                    UpdateControlsOnHeroChange();
+                    UpdateControlsOnHeroChange();                    
                 }
+
+                UpdateDataFromControls();
             }
         }
         
@@ -197,7 +199,7 @@ namespace H3Calc
             DisruptingRayChbx.CheckedChanged += ControlValueChanged;
             CurseChbx.CheckedChanged += ControlValueChanged;
             WeaknessChbx.CheckedChanged += ControlValueChanged;
-        }
+        }        
 
         private void PickPanel_Load(object sender, EventArgs e)
         {

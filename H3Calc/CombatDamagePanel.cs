@@ -232,19 +232,10 @@ namespace H3Calc
 
             //// TODO: refactor this crap
 
-            CombatDamageCalculatorInputData retData = new CombatDamageCalculatorInputData();
-
-            retData.Attacker = Data.Defender;
-            retData.AttackerHeroStats = Data.DefenderHeroStats;
-            retData.AttackerSpells = Data.DefenderSpells;
-
-            retData.Defender = Data.Attacker;
-            retData.DefenderHeroStats = Data.AttackerHeroStats;
-            retData.DefenderSpells = Data.AttackerSpells;
-            retData.DefenderCount = Data.AttackerCount;
-           
-            int minRetDamage, tempRetDamage, maxRetDamage;            
+            int minRetDamage, tempRetDamage, maxRetDamage;
             string retNotes;
+
+            CombatDamageCalculatorInputData retData = Data.InverseData();
 
             retData.AttackerCount = Math.Max(0, Data.DefenderCount - minKills);
             calculator.CalculateDamage(retData, out tempRetDamage, out maxRetDamage, out retNotes);
