@@ -23,6 +23,11 @@ namespace H3Calc.Engine
 
         public override void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
+            if (unit.IsRanged)
+            {
+                return;
+            }
+
             int bonus = (CasterStats.SkillLevel <= SecondarySkillLevel.Basic) ? 3 : 6;
 
             if (CasterStats.IsSpecialized)
