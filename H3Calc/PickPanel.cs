@@ -61,6 +61,7 @@ namespace H3Calc
                 }
 
                 UpdateDataFromControls();
+                UpdateControlsOnHeroChange();
             }
         }
         
@@ -480,7 +481,14 @@ namespace H3Calc
             SynchronizeHeroControls(Mode);
             
             bool hasHero = GetSelectedHero() != null;
-            bool hasOpponentHero = OpponentHeroStats != null;
+            bool hasOpponentHero = false;
+            if (opponentHeroStats != null)
+            {
+                if (opponentHeroStats.Hero != null)
+                {
+                    hasOpponentHero = opponentHeroStats != null;
+                }
+            }
 
             HeroAttackLbl.Enabled = hasHero;
             HeroDefenseLbl.Enabled = hasHero;
