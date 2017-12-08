@@ -1933,5 +1933,257 @@
       "MaxDamage": 80,
       "Health": 1000
     }
+  },
+  {
+    "Id": 141,
+    "Name": "Nymphs",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 5,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 2,
+      "Health": 4
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 142,
+    "Name": "Oceanids",
+    "Level": 1,
+    "InitialStats": {
+      "Attack": 6,
+      "Defense": 2,
+      "MinDamage": 1,
+      "MaxDamage": 3,
+      "Health": 4
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 143,
+    "Name": "Crew Mates",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 7,
+      "Defense": 4,
+      "MinDamage": 2,
+      "MaxDamage": 4,
+      "Health": 15
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 144,
+    "Name": "Seamen",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 6,
+      "MinDamage": 3,
+      "MaxDamage": 4,
+      "Health": 15
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 145,
+    "Name": "Pirates",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 6,
+      "MinDamage": 3,
+      "MaxDamage": 7,
+      "Health": 15
+    },
+    "IsRanged": true,
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 146,
+    "Name": "Corsairs",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 8,
+      "MinDamage": 3,
+      "MaxDamage": 7,
+      "Health": 15
+    },
+    "IsRanged": true,
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 147,
+    "Name": "Sea Dogs",
+    "Level": 3,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 11,
+      "MinDamage": 3,
+      "MaxDamage": 7,
+      "Health": 15
+    },
+    "IsRanged": true,
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 148,
+    "Name": "Stormbirds",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 8,
+      "MinDamage": 6,
+      "MaxDamage": 9,
+      "Health": 30
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 149,
+    "Name": "Ayssids",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 11,
+      "Defense": 8,
+      "MinDamage": 6,
+      "MaxDamage": 10,
+      "Health": 30
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 150,
+    "Name": "Sea Witches",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 7,
+      "MinDamage": 10,
+      "MaxDamage": 14,
+      "Health": 35
+    },
+    "IsRanged": true,
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 151,
+    "Name": "Sorceresses",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 9,
+      "MinDamage": 10,
+      "MaxDamage": 16,
+      "Health": 35
+    },
+    "IsRanged": true,
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 152,
+    "Name": "Nix",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 13,
+      "Defense": 16,
+      "MinDamage": 18,
+      "MaxDamage": 22,
+      "Health": 80
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 153,
+    "Name": "Nix Warriors",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 15,
+      "Defense": 20,
+      "MinDamage": 18,
+      "MaxDamage": 22,
+      "Health": 90
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 154,
+    "Name": "Sea Serpents",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 22,
+      "Defense": 16,
+      "MinDamage": 30,
+      "MaxDamage": 55,
+      "Health": 180
+    },
+    "NativeTerrainId": 4
+  },
+  {
+    "Id": 155,
+    "Name": "Haspids",
+    "Level": 7,
+    "InitialStats": {
+      "Attack": 29,
+      "Defense": 20,
+      "MinDamage": 30,
+      "MaxDamage": 55,
+      "Health": 300
+    },
+    "NativeTerrainId": 4
+  },
+
+  {
+    "Id": 156,
+    "Name": "Satyr",
+    "Level": 4,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 11,
+      "MinDamage": 6,
+      "MaxDamage": 10,
+      "Health": 35
+    }
+  },
+
+  {
+    "Id": 157,
+    "Name": "Fangarm",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 12,
+      "Defense": 12,
+      "MinDamage": 8,
+      "MaxDamage": 12,
+      "Health": 50
+    }
+  },
+  {
+    "Id": 158,
+    "Name": "Ballista",
+    "Level": 5,
+    "InitialStats": {
+      "Attack": 10,
+      "Defense": 10,
+      "MinDamage": 2,
+      "MaxDamage": 3,
+      "Health": 250
+    },
+    "IsRanged": true
+  },
+  {
+    "Id": 159,
+    "Name": "Cannon",
+    "Level": 6,
+    "InitialStats": {
+      "Attack": 20,
+      "Defense": 10,
+      "MinDamage": 5,
+      "MaxDamage": 8,
+      "Health": 250
+    },
+    "IsRanged": true
   }
 ]

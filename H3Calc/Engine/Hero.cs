@@ -46,15 +46,14 @@ namespace H3Calc.Engine
                 SpecializedSpellString = Utils.StringFromType(value);
             }
         }
-
-        [DefaultValue(-1)]
-        public int SpecializedUnitId { get; set; }        
+        [DefaultValue(null)]
+        public int[] SpecializedUnitIds { get; set; }        
 
         public Hero()
         {
             SpecializedSecondarySkill = null;
             SpecializedSpell = null;
-            SpecializedUnitId = -1;
+            SpecializedUnitIds = null;
         }
     }    
 
@@ -140,10 +139,17 @@ namespace H3Calc.Engine
 
         public void ApplyPermanently(Unit unit, UnitStats modifiedStats)
         {
+            if (unit.Id == 158 || unit.Id == 159) // 158 - Ballista, 159 - Cannon
+            {
+                modifiedStats.MinDamage *= Attack + 1;
+                modifiedStats.MaxDamage *= Attack + 1;
+
+            }
+
             modifiedStats.Attack += Attack;
             modifiedStats.Defense += Defense;
 
-            if (Hero != null && Hero.SpecializedUnitId >= 0)
+            if (Hero != null && Hero.SpecializedUnitIds != null && Hero.SpecializedUnitIds.Length > 0)
             {
                 ApplyUnitSpecialization(unit, modifiedStats);
             }
@@ -151,14 +157,12 @@ namespace H3Calc.Engine
 
         private void ApplyUnitSpecialization(Unit unit, UnitStats modifiedStats)
         {
-            // TODO: this is dirty, should handle upgraded units in a better way.
-            if ((unit.Id != Hero.SpecializedUnitId) && (unit.Id != Hero.SpecializedUnitId + 1))
+            if (!Hero.SpecializedUnitIds.Contains(unit.Id))
             {
                 return;
             }
 
             // Special formulae first.
-
             // Water/Ice Elementals
             if ((unit.Id == 116) || (unit.Id == 117))
             {

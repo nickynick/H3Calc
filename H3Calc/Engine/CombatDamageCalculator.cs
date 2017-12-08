@@ -126,6 +126,11 @@ namespace H3Calc.Engine
             result *= totalBonus;
             result = Math.Floor(result);
 
+            if (damageModifier.BaseDamageMultiplier != 0)
+            {
+                result += baseDamage * (damageModifier.BaseDamageMultiplier - 1);
+            }
+
             foreach (double damageReduction in damageModifier.DamageReductions)
             {
                 result *= (1 - damageReduction);
@@ -204,6 +209,7 @@ namespace H3Calc.Engine
     {        
         public List<double> DamageBonuses { get; set; }
         public List<double> DamageReductions { get; set; }
+        public int BaseDamageMultiplier { get; set; } //for war machines and maybe luck
 
         public CombatDamageModifier()
         {

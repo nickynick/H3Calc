@@ -65,6 +65,8 @@
             this.HeroDefenseUpDn = new H3Calc.ImmediateNumericUpDown();
             this.HeroLevelUpDn = new H3Calc.ImmediateNumericUpDown();
             this.HeroAttackUpDn = new H3Calc.ImmediateNumericUpDown();
+            this.HeroArtilleryComboBox = new System.Windows.Forms.ComboBox();
+            this.HeroArtilleryLbl = new System.Windows.Forms.Label();
             this.StandardModePanel.SuspendLayout();
             this.ScientificModePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroDefenseUpDn)).BeginInit();
@@ -379,6 +381,8 @@
             // 
             // StandardModePanel
             // 
+            this.StandardModePanel.Controls.Add(this.HeroArtilleryLbl);
+            this.StandardModePanel.Controls.Add(this.HeroArtilleryComboBox);
             this.StandardModePanel.Controls.Add(this.HeroEarthComboBox);
             this.StandardModePanel.Controls.Add(this.HeroWaterLbl);
             this.StandardModePanel.Controls.Add(this.HeroFireComboBox);
@@ -453,6 +457,24 @@
             this.HeroAttackUpDn.Size = new System.Drawing.Size(42, 20);
             this.HeroAttackUpDn.TabIndex = 54;
             // 
+            // HeroArtilleryComboBox
+            // 
+            this.HeroArtilleryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HeroArtilleryComboBox.FormattingEnabled = true;
+            this.HeroArtilleryComboBox.Location = new System.Drawing.Point(52, 67);
+            this.HeroArtilleryComboBox.Name = "HeroArtilleryComboBox";
+            this.HeroArtilleryComboBox.Size = new System.Drawing.Size(77, 21);
+            this.HeroArtilleryComboBox.TabIndex = 87;
+            // 
+            // HeroArtilleryLbl
+            // 
+            this.HeroArtilleryLbl.AutoSize = true;
+            this.HeroArtilleryLbl.Location = new System.Drawing.Point(3, 70);
+            this.HeroArtilleryLbl.Name = "HeroArtilleryLbl";
+            this.HeroArtilleryLbl.Size = new System.Drawing.Size(40, 13);
+            this.HeroArtilleryLbl.TabIndex = 88;
+            this.HeroArtilleryLbl.Text = "Artillery";
+            // 
             // PickPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,5 +544,7 @@
         public System.Windows.Forms.Label HeroDefenseLbl;
         private System.Windows.Forms.Panel StandardModePanel;
         private System.Windows.Forms.Panel ScientificModePanel;
+        public System.Windows.Forms.Label HeroArtilleryLbl;
+        public System.Windows.Forms.ComboBox HeroArtilleryComboBox;
     }
 }

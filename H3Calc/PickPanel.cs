@@ -120,6 +120,8 @@ namespace H3Calc
                 HeroOffenseComboBox,
                 HeroArcheryLbl,
                 HeroArcheryComboBox,
+                HeroArtilleryLbl,
+                HeroArtilleryComboBox,
                 HeroArmorerLbl,
                 HeroArmorerComboBox
             };
@@ -141,6 +143,7 @@ namespace H3Calc
             {
                 HeroOffenseComboBox,
                 HeroArcheryComboBox,
+                HeroArtilleryComboBox,
                 HeroArmorerComboBox,
 
                 HeroAirComboBox,
@@ -182,6 +185,7 @@ namespace H3Calc
             HeroDefenseUpDn.ValueChanged += ControlValueChanged;
             HeroOffenseComboBox.SelectedValueChanged += ControlValueChanged;
             HeroArcheryComboBox.SelectedValueChanged += ControlValueChanged;
+            HeroArtilleryComboBox.SelectedValueChanged += ControlValueChanged;
             HeroArmorerComboBox.SelectedValueChanged += ControlValueChanged;
             HeroAirComboBox.SelectedValueChanged += ControlValueChanged;
             HeroFireComboBox.SelectedValueChanged += ControlValueChanged;
@@ -279,6 +283,7 @@ namespace H3Calc
 
                     stats.SetLevelForSecondarySkillType(typeof(Offense), (SecondarySkillLevel)HeroOffenseComboBox.SelectedValue);
                     stats.SetLevelForSecondarySkillType(typeof(Archery), (SecondarySkillLevel)HeroArcheryComboBox.SelectedValue);
+                    stats.SetLevelForSecondarySkillType(typeof(Artillery), (SecondarySkillLevel)HeroArtilleryComboBox.SelectedValue);
                     stats.SetLevelForSecondarySkillType(typeof(Armorer), (SecondarySkillLevel)HeroArmorerComboBox.SelectedValue);                    
 
                     if (Mode == ApplicationMode.Scientific)
@@ -420,7 +425,9 @@ namespace H3Calc
 
             if (skillType == typeof(Offense)) { return HeroOffenseComboBox; }
             if (skillType == typeof(Archery)) { return HeroArcheryComboBox; }
+            if (skillType == typeof(Artillery)) { return HeroArtilleryComboBox; }
             if (skillType == typeof(Armorer)) { return HeroArmorerComboBox; }
+
 
             if (skillType == typeof(AirMagic)) { return HeroAirComboBox; }
             if (skillType == typeof(FireMagic)) { return HeroFireComboBox; }
