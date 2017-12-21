@@ -29,7 +29,8 @@
   },
   {
     "Id": 6,
-    "Name": "Кристиан"
+    "Name": "Кристиан",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 7,
@@ -167,7 +168,8 @@
   },
   {
     "Id": 36,
-    "Name": "Торосар"
+    "Name": "Торосар",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 37,
@@ -248,7 +250,8 @@
   },
   {
     "Id": 54,
-    "Name": "Пир"
+    "Name": "Пир",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 55,
@@ -373,7 +376,8 @@
   },
   {
     "Id": 81,
-    "Name": "Арлаш"
+    "Name": "Арлаш",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 82,
@@ -547,7 +551,8 @@
   },
   {
     "Id": 118,
-    "Name": "Гервульф"
+    "Name": "Гервульф",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 119,
