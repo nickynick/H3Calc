@@ -128,7 +128,7 @@ namespace H3Calc.Engine
                 }
             }            
 
-            if (spell.GetType() == Hero.SpecializedSpell)
+            if (Hero != null && spell.GetType() == Hero.SpecializedSpell)
             {
                 stats.IsSpecialized = true;
                 stats.SpecializationLevel = Level;
@@ -171,7 +171,7 @@ namespace H3Calc.Engine
             }
 
             // Fire/Energy Elementals
-            if ((unit.Id == 116) || (unit.Id == 117))
+            if ((unit.Id == 118) || (unit.Id == 119))
             {
                 modifiedStats.Attack += 1;
                 modifiedStats.Defense += 2;
