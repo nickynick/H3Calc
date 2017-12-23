@@ -161,6 +161,7 @@
     <None Include="Data\Peka.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\unit-portraits_big.png" />
     <Content Include="Peka.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -60,16 +60,16 @@ namespace H3Calc
         public UnitPicker(List<Unit> units)
         {
             InitializeComponent();
-            this.ClientSize = new Size(950, 833);
+            this.ClientSize = new Size(860, 768);
 
             Units = units;
         }        
 
         private Unit UnitFromPicker(int x, int y)
         {
-            const int kPortraitWidth = 58;
-            const int kPortraitHeight = 64;
-            const int kPadding = 5;
+            const int kPortraitWidth = 50;
+            const int kPortraitHeight = 55;
+            const int kPadding = 4;
 
             if ((x % (kPortraitWidth + kPadding) < kPadding) || (y % (kPortraitHeight + kPadding) < kPadding))
             {
