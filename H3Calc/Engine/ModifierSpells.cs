@@ -61,12 +61,13 @@ namespace H3Calc.Engine
         {
             if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
-                modifiedStats.MinDamage = modifiedStats.MaxDamage = modifiedStats.MinDamage;
+                modifiedStats.MaxDamage = modifiedStats.MinDamage;
             }
             else
             {
-                modifiedStats.MinDamage = modifiedStats.MaxDamage = (modifiedStats.MinDamage - 1 < 1) ? 1 : modifiedStats.MinDamage - 1; //min damage can't be less than 1
-            }
+                
+                modifiedStats.MinDamage = modifiedStats.MaxDamage = (modifiedStats.MinDamage - 1 < 1) ? 1 : modifiedStats.MinDamage - 1; // min damage can't be less than 1
+            } 
         }
     }
 
@@ -168,7 +169,7 @@ namespace H3Calc.Engine
         {
             if (CasterStats.SkillLevel <= SecondarySkillLevel.Basic)
             {
-                modifiedStats.MinDamage = modifiedStats.MaxDamage = modifiedStats.MaxDamage;
+                modifiedStats.MinDamage = modifiedStats.MaxDamage;
             }
             else
             {
