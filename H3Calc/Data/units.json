@@ -1514,7 +1514,7 @@
       "MaxDamage": 2,
       "Health": 3
     },
-    "NativeTerrainId": 2
+    "NativeTerrainId": 8
   },
   {
     "Id": 113,
@@ -1527,7 +1527,7 @@
       "MaxDamage": 3,
       "Health": 3
     },
-    "NativeTerrainId": 2
+    "NativeTerrainId": 8
   },
   {
     "Id": 114,
@@ -1540,7 +1540,7 @@
       "MaxDamage": 8,
       "Health": 25
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
       "LightningBolt",
       "ChainLightning",
@@ -1561,7 +1561,7 @@
       "MaxDamage": 8,
       "Health": 25
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "IsRanged": true,
     "VulnerableSpells": [
       "LightningBolt",
@@ -1583,7 +1583,7 @@
       "MaxDamage": 7,
       "Health": 30
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
       "Inferno",
       "Fireball",
@@ -1605,7 +1605,7 @@
       "MaxDamage": 7,
       "Health": 30
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "IsRanged": true,
     "VulnerableSpells": [
       "Inferno",
@@ -1628,12 +1628,12 @@
       "MaxDamage": 6,
       "Health": 35
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
       "IceBolt",
       "FrostRing"
     ],
-    "ImmuneMagic" : "FireMagic"
+    "ImmuneMagic": "FireMagic"
   },
   {
     "Id": 119,
@@ -1646,12 +1646,12 @@
       "MaxDamage": 6,
       "Health": 35
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
       "IceBolt",
       "FrostRing"
     ],
-    "ImmuneMagic" : "FireMagic"
+    "ImmuneMagic": "FireMagic"
   },
   {
     "Id": 120,
@@ -1664,9 +1664,9 @@
       "MaxDamage": 8,
       "Health": 40
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
-      "MeteorShower"      
+      "MeteorShower"
     ],
     "ImmuneSpells": [
       "LightningBolt",
@@ -1685,9 +1685,9 @@
       "MaxDamage": 10,
       "Health": 40
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "VulnerableSpells": [
-      "MeteorShower"      
+      "MeteorShower"
     ],
     "ImmuneSpells": [
       "LightningBolt",
@@ -1706,7 +1706,7 @@
       "MaxDamage": 20,
       "Health": 75
     },
-    "NativeTerrainId": 2
+    "NativeTerrainId": 8
   },
   {
     "Id": 123,
@@ -1719,7 +1719,7 @@
       "MaxDamage": 25,
       "Health": 80
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "ImmuneSpellLevel": 5
   },
   {
@@ -1733,7 +1733,7 @@
       "MaxDamage": 40,
       "Health": 150
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "ImmuneMagic": "FireMagic"
   },
   {
@@ -1747,7 +1747,7 @@
       "MaxDamage": 40,
       "Health": 200
     },
-    "NativeTerrainId": 2,
+    "NativeTerrainId": 8,
     "ImmuneMagic": "FireMagic"
   },
   {
@@ -2100,8 +2100,8 @@
     "Name": "Nix Warriors",
     "Level": 6,
     "InitialStats": {
-      "Attack": 15,
-      "Defense": 20,
+      "Attack": 14,
+      "Defense": 17,
       "MinDamage": 18,
       "MaxDamage": 22,
       "Health": 90
@@ -2180,10 +2180,22 @@
     "InitialStats": {
       "Attack": 20,
       "Defense": 10,
-      "MinDamage": 5,
-      "MaxDamage": 8,
+      "MinDamage": 4,
+      "MaxDamage": 7,
       "Health": 250
     },
     "IsRanged": true
+  },
+  {
+    "Id": 160,
+    "Name": "Лепрекон",
+    "Level": 2,
+    "InitialStats": {
+      "Attack": 8,
+      "Defense": 5,
+      "MinDamage": 3,
+      "MaxDamage": 5,
+      "Health": 15
+    }
   }
 ]
