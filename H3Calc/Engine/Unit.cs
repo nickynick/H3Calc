@@ -134,6 +134,15 @@ namespace H3Calc.Engine
 
         public void ApplyOnAttack(AttackData attackData, UnitStats modifiedStats)
         {
+            if (attackData.Defender.Id == 152) // Nix
+            {
+                modifiedStats.Attack = (int)Math.Round(modifiedStats.Attack * 0.7);
+            }
+
+            if (attackData.Defender.Id == 153) // Nix Warrior
+            {
+                modifiedStats.Attack = (int)Math.Round(modifiedStats.Attack * 0.4);
+            }
         }
 
         public void ApplyOnDefense(AttackData attackData, UnitStats modifiedStats)

@@ -7,12 +7,12 @@
   {
     "Id": 1,
     "Name": "Валеска",
-    "SpecializedUnitId": 2
+    "SpecializedUnitIds": [ 2, 3 ]
   },
   {
     "Id": 2,
     "Name": "Эдрик",
-    "SpecializedUnitId": 4
+    "SpecializedUnitIds": [ 4, 5 ]
   },
   {
     "Id": 3,
@@ -25,16 +25,17 @@
   {
     "Id": 5,
     "Name": "Сорша",
-    "SpecializedUnitId": 6
+    "SpecializedUnitIds": [ 6, 7 ]
   },
   {
     "Id": 6,
-    "Name": "Кристиан"
+    "Name": "Кристиан",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 7,
     "Name": "Турис",
-    "SpecializedUnitId": 10
+    "SpecializedUnitIds": [ 10, 11 ]
   },
   {
     "Id": 8,
@@ -58,7 +59,7 @@
   {
     "Id": 12,
     "Name": "Инхам",
-    "SpecializedUnitId": 8
+    "SpecializedUnitIds": [ 8, 9 ]
   },
   {
     "Id": 13,
@@ -81,7 +82,7 @@
   {
     "Id": 17,
     "Name": "Уфретин",
-    "SpecializedUnitId": 16
+    "SpecializedUnitIds": [ 16, 17 ]
   },
   {
     "Id": 18,
@@ -90,7 +91,7 @@
   {
     "Id": 19,
     "Name": "Риланд",
-    "SpecializedUnitId": 22
+    "SpecializedUnitIds": [ 22, 23 ]
   },
   {
     "Id": 20,
@@ -99,12 +100,12 @@
   {
     "Id": 21,
     "Name": "Ивор",
-    "SpecializedUnitId": 18
+    "SpecializedUnitIds": [ 18, 19 ]
   },
   {
     "Id": 22,
     "Name": "Кланси",
-    "SpecializedUnitId": 24
+    "SpecializedUnitIds": [ 24, 25 ]
   },
   {
     "Id": 23,
@@ -143,22 +144,22 @@
   {
     "Id": 31,
     "Name": "Аерис",
-    "SpecializedUnitId": 20
+    "SpecializedUnitIds": [ 20, 21 ]
   },
   {
     "Id": 32,
     "Name": "Пигедрам",
-    "SpecializedUnitId": 30
+    "SpecializedUnitIds": [ 30, 31 ]
   },
   {
     "Id": 33,
     "Name": "Тан",
-    "SpecializedUnitId": 36
+    "SpecializedUnitIds": [ 36, 37 ]
   },
   {
     "Id": 34,
     "Name": "Жосефина",
-    "SpecializedUnitId": 32
+    "SpecializedUnitIds": [ 32, 33 ]
   },
   {
     "SpecializedSecondarySkill": "Armorer",
@@ -167,12 +168,13 @@
   },
   {
     "Id": 36,
-    "Name": "Торосар"
+    "Name": "Торосар",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 37,
     "Name": "Фафнер",
-    "SpecializedUnitId": 38
+    "SpecializedUnitIds": [ 38, 39 ]
   },
   {
     "Id": 38,
@@ -181,7 +183,7 @@
   {
     "Id": 39,
     "Name": "Иона",
-    "SpecializedUnitId": 36
+    "SpecializedUnitIds": [ 36, 37 ]
   },
   {
     "Id": 40,
@@ -202,7 +204,7 @@
   {
     "Id": 44,
     "Name": "Теодор",
-    "SpecializedUnitId": 34
+    "SpecializedUnitIds": [ 34, 35 ]
   },
   {
     "Id": 45,
@@ -220,22 +222,22 @@
   {
     "Id": 48,
     "Name": "Фиона",
-    "SpecializedUnitId": 74
+    "SpecializedUnitIds": [ 74, 75 ]
   },
   {
     "Id": 49,
     "Name": "Рашка",
-    "SpecializedUnitId": 80
+    "SpecializedUnitIds": [ 80, 81 ]
   },
   {
     "Id": 50,
     "Name": "Мариус",
-    "SpecializedUnitId": 76
+    "SpecializedUnitIds": [ 76, 77 ]
   },
   {
     "Id": 51,
     "Name": "Игнат",
-    "SpecializedUnitId": 70
+    "SpecializedUnitIds": [ 70, 71 ]
   },
   {
     "Id": 52,
@@ -244,16 +246,17 @@
   {
     "Id": 53,
     "Name": "Калх",
-    "SpecializedUnitId": 72
+    "SpecializedUnitIds": [ 72, 73 ]
   },
   {
     "Id": 54,
-    "Name": "Пир"
+    "Name": "Пир",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 55,
     "Name": "Нимус",
-    "SpecializedUnitId": 78
+    "SpecializedUnitIds": [ 78, 79 ]
   },
   {
     "Id": 56,
@@ -295,27 +298,27 @@
   {
     "Id": 64,
     "Name": "Стракер",
-    "SpecializedUnitId": 44
+    "SpecializedUnitIds": [ 44, 45 ]
   },
   {
     "Id": 65,
     "Name": "Вокиал",
-    "SpecializedUnitId": 48
+    "SpecializedUnitIds": [ 48, 49 ]
   },
   {
     "Id": 66,
     "Name": "Моандор",
-    "SpecializedUnitId": 50
+    "SpecializedUnitIds": [ 50, 51 ]
   },
   {
     "Id": 67,
     "Name": "Чарна",
-    "SpecializedUnitId": 46
+    "SpecializedUnitIds": [ 46, 47 ]
   },
   {
     "Id": 68,
     "Name": "Тамика",
-    "SpecializedUnitId": 52
+    "SpecializedUnitIds": [ 52, 53 ]
   },
   {
     "Id": 69,
@@ -328,7 +331,7 @@
   {
     "Id": 71,
     "Name": "Галтран",
-    "SpecializedUnitId": 42
+    "SpecializedUnitIds": [ 42, 43 ]
   },
   {
     "Id": 72,
@@ -369,21 +372,22 @@
   {
     "Id": 80,
     "Name": "Лорелей",
-    "SpecializedUnitId": 58
+    "SpecializedUnitIds": [ 58, 59 ]
   },
   {
     "Id": 81,
-    "Name": "Арлаш"
+    "Name": "Арлаш",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 82,
     "Name": "Дас",
-    "SpecializedUnitId": 64
+    "SpecializedUnitIds": [ 64, 65 ]
   },
   {
     "Id": 83,
     "Name": "Аджит",
-    "SpecializedUnitId": 60
+    "SpecializedUnitIds": [ 60, 61 ]
   },
   {
     "Id": 84,
@@ -396,12 +400,12 @@
   {
     "Id": 86,
     "Name": "Синка",
-    "SpecializedUnitId": 66
+    "SpecializedUnitIds": [ 66, 67 ]
   },
   {
     "Id": 87,
     "Name": "Шакти",
-    "SpecializedUnitId": 56
+    "SpecializedUnitIds": [ 56, 57 ]
   },
   {
     "Id": 88,
@@ -437,35 +441,37 @@
     "SpecializedSpell": "StoneSkin",
     "Id": 95,
     "Name": "Дарксторн"
-  },
+  }
+  ,
   {
     "Id": 96,
     "Name": "Йог",
-    "SpecializedUnitId": 108
+    "SpecializedUnitIds": [ 108, 109 ]
   },
   {
     "Id": 97,
-    "Name": "Гурниссон"
+    "Name": "Гурниссон",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 98,
     "Name": "Жабаркас",
-    "SpecializedUnitId": 102
+    "SpecializedUnitIds": [ 102, 103 ]
   },
   {
     "Id": 99,
     "Name": "Шива",
-    "SpecializedUnitId": 106
+    "SpecializedUnitIds": [ 106, 107 ]
   },
   {
     "Id": 100,
     "Name": "Гретчин",
-    "SpecializedUnitId": 98
+    "SpecializedUnitIds": [ 98, 99 ]
   },
   {
     "Id": 101,
     "Name": "Креллион",
-    "SpecializedUnitId": 104
+    "SpecializedUnitIds": [ 104, 105 ]
   },
   {
     "SpecializedSecondarySkill": "Offense",
@@ -475,7 +481,7 @@
   {
     "Id": 103,
     "Name": "Тираксор",
-    "SpecializedUnitId": 100
+    "SpecializedUnitIds": [ 100, 101 ]
   },
   {
     "Id": 104,
@@ -485,7 +491,7 @@
   {
     "Id": 105,
     "Name": "Вей",
-    "SpecializedUnitId": 104
+    "SpecializedUnitIds": [ 104, 105 ]
   },
   {
     "Id": 106,
@@ -516,17 +522,17 @@
   {
     "Id": 112,
     "Name": "Брон",
-    "SpecializedUnitId": 90
+    "SpecializedUnitIds": [ 90, 91 ]
   },
   {
     "Id": 113,
     "Name": "Дракон",
-    "SpecializedUnitId": 84
+    "SpecializedUnitIds": [ 84, 85 ]
   },
   {
     "Id": 114,
     "Name": "Вистан",
-    "SpecializedUnitId": 86
+    "SpecializedUnitIds": [ 86, 87 ]
   },
   {
     "SpecializedSecondarySkill": "Armorer",
@@ -536,21 +542,22 @@
   {
     "Id": 116,
     "Name": "Алкин",
-    "SpecializedUnitId": 92
+    "SpecializedUnitIds": [ 92, 93 ]
   },
   {
     "Id": 117,
     "Name": "Корбак",
-    "SpecializedUnitId": 88
+    "SpecializedUnitIds": [ 88, 89 ]
   },
   {
     "Id": 118,
-    "Name": "Гервульф"
+    "Name": "Гервульф",
+    "SpecializedUnitIds": [ 158 ]
   },
   {
     "Id": 119,
     "Name": "Брохильд",
-    "SpecializedUnitId": 94
+    "SpecializedUnitIds": [ 94, 95 ]
   },
   {
     "SpecializedSpell": "Weakness",
@@ -590,42 +597,42 @@
   {
     "Id": 128,
     "Name": "Пасис",
-    "SpecializedUnitId": 122
+    "SpecializedUnitIds": [ 122, 123 ]
   },
   {
     "Id": 129,
     "Name": "Тунар",
-    "SpecializedUnitId": 120
+    "SpecializedUnitIds": [ 120, 121 ]
   },
   {
     "Id": 130,
     "Name": "Игнисса",
-    "SpecializedUnitId": 118
+    "SpecializedUnitIds": [ 118, 119 ]
   },
   {
     "Id": 131,
     "Name": "Лакус",
-    "SpecializedUnitId": 116
+    "SpecializedUnitIds": [ 116, 117 ]
   },
   {
     "Id": 132,
     "Name": "Монер",
-    "SpecializedUnitId": 122
+    "SpecializedUnitIds": [ 122, 123 ]
   },
   {
     "Id": 133,
     "Name": "Эрдамон",
-    "SpecializedUnitId": 120
+    "SpecializedUnitIds": [ 120, 121 ]
   },
   {
     "Id": 134,
     "Name": "Фьюр",
-    "SpecializedUnitId": 118
+    "SpecializedUnitIds": [ 118, 119 ]
   },
   {
     "Id": 135,
     "Name": "Кальт",
-    "SpecializedUnitId": 116
+    "SpecializedUnitIds": [ 116, 117 ]
   },
   {
     "Id": 136,
@@ -663,5 +670,78 @@
   {
     "Id": 143,
     "Name": "Гриндан"
+  },
+  {
+    "Id": 143,
+    "Name": "Cassiopeia",
+    "SpecializedUnitIds": [ 141, 141 ]
+  },
+  {
+    "Id": 144,
+    "Name": "Corkes",
+    "SpecializedSecondarySkill": "Offense"
+  },
+  {
+    "Id": 145,
+    "Name": "Jeremy",
+    "SpecializedUnitIds": [ 159 ]
+  },
+  {
+    "Id": 146,
+    "Name": "Illor",
+    "SpecializedUnitIds": [ 148, 149 ]
+  },
+  {
+    "Id": 147,
+    "Name": "Derek",
+    "SpecializedUnitIds": [ 143, 144 ]
+  },
+  {
+    "Id": 148,
+    "Name": "Leena"
+  },
+  {
+    "Id": 149,
+    "Name": "Anabel",
+    "SpecializedUnitIds": [ 145, 146, 147 ]
+  },
+  {
+    "Id": 150,
+    "Name": "Miriam"
+  },
+  {
+    "Id": 151,
+    "Name": "Casmetra",
+    "SpecializedUnitIds": [ 150, 151 ]
+  },
+  {
+    "Id": 152,
+    "Name": "Eovacius"
+  },
+  {
+    "Id": 153,
+    "Name": "Spint",
+    "SpecializedSecondarySkill": "Sorcery"
+  },
+  {
+    "Id": 154,
+    "Name": "Andal"
+  },
+  {
+    "Id": 155,
+    "Name": "Manfred",
+    "SpecializedSpell": "Fireball"
+  },
+  {
+    "Id": 156,
+    "Name": "Zilare"
+  },
+  {
+    "Id": 157,
+    "Name": "Astra"
+  },
+  {
+    "Id": 157,
+    "Name": "Dargem"
   }
 ]

@@ -30,5 +30,9 @@
   {
     "Id": 7,
     "Name": "Lava"
+  },
+  {
+    "Id": 8,
+    "Name": "Highlands"
   }
 ]

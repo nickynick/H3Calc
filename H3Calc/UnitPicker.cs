@@ -15,23 +15,61 @@ namespace H3Calc
 {
     public partial class UnitPicker : Form
     {
-        public List<Unit> Units { get; set; }        
+        public List<Unit> Units { get; set; }
+
+        public Dictionary<int, int> RowColumnsCount = new Dictionary<int, int>()
+        {
+            {0,  13},{1, 13 },{2, 13 },{3, 13 },{4, 13 },{5, 13 },{6, 13 },{7, 13 },{8, 13 },
+            {9, 14 },
+            {10, 14 },
+            {11, 4 }
+        };
+
+        public bool UnitExists(int clickedRow, int clickedColumn)
+        {
+            if (!RowColumnsCount.ContainsKey(clickedRow) || (clickedColumn > RowColumnsCount[clickedRow] ) )
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public int CalculateUnitId(int clickedRow, int clickedColumn)
+        {
+            var unitId = 0;
+
+            for (var i = 0; i <= clickedRow; i++)
+            {
+                if (i < clickedRow)
+                {
+                    unitId += (i == 0) ? RowColumnsCount[i] : RowColumnsCount[i] + 1;
+                }
+                else
+                {
+                    unitId += (i == 0) ? clickedColumn : clickedColumn + 1;
+                }
+            }
+
+            return unitId;
+        }
+
 
         public event EventHandler<UnitEventArgs> UnitPicked;
 
         public UnitPicker(List<Unit> units)
         {
             InitializeComponent();
-            this.ClientSize = new Size(950, 695);
+            this.ClientSize = new Size(860, 768);
 
             Units = units;
         }        
 
         private Unit UnitFromPicker(int x, int y)
         {
-            const int kPortraitWidth = 58;
-            const int kPortraitHeight = 64;
-            const int kPadding = 5;
+            const int kPortraitWidth = 50;
+            const int kPortraitHeight = 55;
+            const int kPadding = 4;
 
             if ((x % (kPortraitWidth + kPadding) < kPadding) || (y % (kPortraitHeight + kPadding) < kPadding))
             {
@@ -41,12 +79,12 @@ namespace H3Calc
             int row = y / (kPortraitHeight + kPadding);
             int column = x / (kPortraitWidth + kPadding);
 
-            if (row != 9 && column == 14)
+            if (!UnitExists(row, column))
             {
                 return null;
             }
 
-            int unitId = row * 14 + column;
+            int unitId = CalculateUnitId(row, column);
             return Units.FirstOrDefault(u => u.Id == unitId);
         }
 
@@ -57,7 +95,7 @@ namespace H3Calc
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
+            {
             Unit unit = UnitFromPicker(e.X, e.Y);
 
             if (unit != null && UnitPicked != null)

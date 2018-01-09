@@ -176,4 +176,34 @@ namespace H3Calc.Engine
             damageModifier.DamageMultipliers.Add(multiplier);
         }
     }
+
+    public class Artillery : SecondarySkill
+    {
+        public override void ApplyOnAttack(AttackData attackData, CombatDamageModifier damageModifier)
+        {
+            if (SkillLevel == SecondarySkillLevel.None)
+            {
+                return;
+            }
+
+            if (attackData.Attacker.Id == 158) //158 - Ballista
+            {
+                if (SkillLevel == SecondarySkillLevel.Expert)
+                {
+                    damageModifier.BaseDamageMultiplier = 2;
+                }
+            }
+            else if (attackData.Attacker.Id == 159) //159 - Cannon
+            {
+                if (SkillLevel == SecondarySkillLevel.Advanced)
+                {
+                    damageModifier.BaseDamageMultiplier = 2;
+                }
+                else if (SkillLevel == SecondarySkillLevel.Expert)
+                {
+                    damageModifier.BaseDamageMultiplier = 3;
+                }
+            }
+        }
+    }
 }
