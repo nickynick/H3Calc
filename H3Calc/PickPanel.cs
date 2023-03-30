@@ -267,6 +267,9 @@ namespace H3Calc
             Hero hero = GetSelectedHero();
             if (hero != null)
             {
+                if(Data.HeroStats == null ) 
+                    Data.HeroStats = new HeroStats();
+
                 HeroStats stats = Data.HeroStats;
 
                 stats.Hero = hero;
@@ -510,7 +513,10 @@ namespace H3Calc
 
             if (sourceMode != ApplicationMode.Simple)
             {
-                HasHeroChbx.Checked = (HeroComboBox.SelectedValue != null);                
+                HasHeroChbx.Checked = (HeroComboBox.SelectedValue != null && HeroComboBox.SelectedIndex != 0);
+
+                if (HeroComboBox.SelectedIndex == 0)
+                    this.Data.HeroStats = null;
             }
             else
             {
@@ -544,6 +550,12 @@ namespace H3Calc
             UnitPicker unitPicker = (UnitPicker)sender;
             unitPicker.Close();
         }
+
+        private void HeroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(HeroComboBox.SelectedIndex == 0)
+            this.Data.HeroStats = null;
+        }
     }
 
     public class PickPanelData
@@ -555,10 +567,10 @@ namespace H3Calc
         {
             get
             {
-                if (heroStats == null)
-                {
-                    heroStats = new HeroStats();
-                }
+                //if (heroStats == null)
+                //{
+                //    heroStats = new HeroStats();
+                //}
                 return heroStats;
             }
             set

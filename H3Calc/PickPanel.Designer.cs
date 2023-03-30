@@ -210,6 +210,7 @@
             this.HeroComboBox.Name = "HeroComboBox";
             this.HeroComboBox.Size = new System.Drawing.Size(130, 21);
             this.HeroComboBox.TabIndex = 53;
+            this.HeroComboBox.SelectedIndexChanged += new System.EventHandler(this.HeroComboBox_SelectedIndexChanged);
             // 
             // HeroWaterComboBox
             // 
